@@ -1,8 +1,12 @@
+import { Provider as ChakraProvider } from "@/shared/chakra-ui/provider";
+
+import AuthPage from "@/pages/auth";
+
 function App() {
     return (
-        <>
-            <h1>PickMe - Auth</h1>
-        </>
+        <ChakraProvider>
+            <AuthPage />
+        </ChakraProvider>
     );
 }
 
