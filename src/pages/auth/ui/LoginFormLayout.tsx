@@ -1,9 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Stack, Heading, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
+
 import LoginCredential from "@/entities/LoginCredential";
 
 export default function LoginFormLayout(): React.ReactElement {
@@ -11,7 +13,11 @@ export default function LoginFormLayout(): React.ReactElement {
         register,
         handleSubmit,
         formState: { errors, isValid },
-    } = useForm<LoginCredential>();
+    } = useForm<LoginCredential>({
+        // 유효성 검사
+        resolver: yupResolver(LoginCredential.validateSchema),
+        mode: "onChange",
+    });
 
     const onSubmit = (data: LoginCredential) => {
         console.log(data);

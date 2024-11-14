@@ -1,9 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Stack, Heading, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
+
 import SignupCredential from "@/entities/SignupCredential";
 
 export default function SignupFormLayout(): React.ReactElement {
@@ -11,7 +13,11 @@ export default function SignupFormLayout(): React.ReactElement {
         register,
         handleSubmit,
         formState: { errors, isValid },
-    } = useForm<SignupCredential>();
+    } = useForm<SignupCredential>({
+        // 유효성 검사
+        resolver: yupResolver(SignupCredential.validateSchema),
+        mode: "onChange",
+    });
 
     const onSubmit = (data: SignupCredential) => {
         console.log(data);
