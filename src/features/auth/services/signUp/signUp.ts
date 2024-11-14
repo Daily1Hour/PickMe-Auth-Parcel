@@ -13,7 +13,7 @@ export interface Response {
     message: string;
 }
 
-export async function signUp({ username, password, email }: SignupCredential): Promise<Response> {
+export async function signup({ username, password, email }: SignupCredential): Promise<Response> {
     // Required attributes를 추가
     const requiredAttribute: ICognitoUserAttributeData = {
         Name: "email",

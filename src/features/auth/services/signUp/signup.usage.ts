@@ -1,9 +1,9 @@
-import { signUp } from "./signUp";
+import { signup } from "./signup";
 
 // Usage
 (async function () {
     try {
-        const resultMessage = await signUp({
+        const resultMessage = await signup({
             username: "testuser",
             password: "Abcde12345**",
             email: "jwch11@gmail.com",
