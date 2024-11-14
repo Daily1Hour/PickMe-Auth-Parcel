@@ -2,8 +2,6 @@
   "name": "pickme-auth",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "index.js",
   "scripts": {
     "lint": "npx steiger ./src",
     "test": "jest"
@@ -19,6 +17,8 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "^6.3.12",
+    "dotenv": "^16.4.5",
     "steiger": "^0.5.1"
   }
 }
