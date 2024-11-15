@@ -1,14 +1,17 @@
 import React from "react";
 
-import { Flex, Box, Button } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
+import { Flex, Box } from "@chakra-ui/react";
 
 import LoginPresentation from "./ui/LoginPresentation";
 import SignupPresentation from "./ui/SignupPresentation";
+import UserInfoPresentation from "./ui/UserInfoPresentation";
 import useLoginForm from "./ui/hooks/useLoginForm";
 import useSignupForm from "./ui/hooks/useSignupForm";
 import useLoginFetch from "./api/useLoginFetch";
 import useSignupFetch from "./api/useSignupFetch";
 import getLoggedIn from "@/shared/lib/getLoggedIn";
+import getTokens, { UserTokens } from "@/shared/lib/getTokens";
 
 export default function AuthPage(): React.ReactElement {
     const loginFormMethods = useLoginForm();
@@ -16,6 +19,10 @@ export default function AuthPage(): React.ReactElement {
     const { handleSubmit: handleLoginSubmit } = useLoginFetch();
     const { handleSubmit: handleSignupSubmit } = useSignupFetch();
     const { isLoggedIn, logoutHandler } = getLoggedIn();
+    const { data: tokens, isLoading } = useQuery<UserTokens>({
+        queryKey: ["tokens"],
+        queryFn: getTokens,
+    });
 
     return (
         <Flex bg="gray.100" p={3}>
@@ -29,7 +36,11 @@ export default function AuthPage(): React.ReactElement {
                     </Box>
                 </>
             ) : (
-                <Button onClick={logoutHandler}>로그아웃</Button>
+                <UserInfoPresentation
+                    {...tokens}
+                    isLoading={isLoading}
+                    logoutClick={logoutHandler}
+                />
             )}
         </Flex>
     );
