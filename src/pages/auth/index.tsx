@@ -11,18 +11,15 @@ import useSignupForm from "./ui/hooks/useSignupForm";
 import useLoginFetch from "./api/useLoginFetch";
 import useSignupFetch from "./api/useSignupFetch";
 import getLoggedIn from "@/shared/lib/getLoggedIn";
-import getTokens, { UserTokens } from "@/shared/lib/getTokens";
+import useUserInfo from "@/shared/lib/useUserInfo";
 
 export default function AuthPage(): React.ReactElement {
     const loginFormMethods = useLoginForm();
     const signupFormMethods = useSignupForm();
     const { handleSubmit: handleLoginSubmit } = useLoginFetch();
     const { handleSubmit: handleSignupSubmit } = useSignupFetch();
-    const { isLoggedIn, logoutHandler } = getLoggedIn();
-    const { data: tokens, isLoading } = useQuery<UserTokens>({
-        queryKey: ["tokens"],
-        queryFn: getTokens,
-    });
+    const { isLoggedIn, logout } = getLoggedIn();
+    const userInfo = useUserInfo();
 
     return (
         <Flex bg="gray.100" p={3}>
@@ -37,9 +34,9 @@ export default function AuthPage(): React.ReactElement {
                 </>
             ) : (
                 <UserInfoPresentation
-                    {...tokens}
-                    isLoading={isLoading}
-                    logoutClick={logoutHandler}
+                    {...userInfo}
+                    isLoggedIn={isLoggedIn}
+                    onLogoutClick={logout}
                 />
             )}
         </Flex>
