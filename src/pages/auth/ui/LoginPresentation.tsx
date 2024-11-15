@@ -1,34 +1,22 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
 
-import { useMutation } from "@tanstack/react-query";
 import { Stack, Heading, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
 import LoginCredential from "@/entities/LoginCredential";
-import { login } from "@/features/auth/services/login/login";
 
-interface LoginFormLayoutProps extends UseFormReturn<LoginCredential> {}
+interface LoginFormLayoutProps extends UseFormReturn<LoginCredential> {
+    onSubmit: (data: LoginCredential) => void;
+}
 
 export default function LoginPresentation({
     register,
     handleSubmit,
     formState: { errors, isValid },
+    onSubmit,
 }: LoginFormLayoutProps): React.ReactElement {
-    const { mutate } = useMutation({
-        mutationFn: login,
-        onSuccess: async ({ accessToken, idToken, refreshToken }) => {
-            console.log("accessToken:", accessToken);
-            console.log("idToken:", idToken);
-            console.log("refreshToken:", refreshToken);
-        },
-    });
-
-    const onSubmit = async (data: LoginCredential) => {
-        mutate(data);
-    };
-
     return (
         <Stack>
             <Heading as="h2">로그인</Heading>
