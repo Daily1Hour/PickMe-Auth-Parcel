@@ -5,9 +5,9 @@ import { Flex, Box } from "@chakra-ui/react";
 import LoginPresentation from "./ui/LoginPresentation";
 import SignupPresentation from "./ui/SignupPresentation";
 import useLoginForm from "./ui/hooks/useLoginForm";
-import useLoginFetch from "./ui/hooks/useLoginFetch";
 import useSignupForm from "./ui/hooks/useSignupForm";
-import useSignupFetch from "./ui/hooks/useSignupFetch";
+import useLoginFetch from "./api/useLoginFetch";
+import useSignupFetch from "./api/useSignupFetch";
 
 export default function AuthPage(): React.ReactElement {
     const loginFormMethods = useLoginForm();
