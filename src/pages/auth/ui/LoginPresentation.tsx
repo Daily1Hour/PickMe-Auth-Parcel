@@ -1,24 +1,19 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Stack, Heading, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
 import LoginCredential from "@/entities/LoginCredential";
 
-export default function LoginFormLayout(): React.ReactElement {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isValid },
-    } = useForm<LoginCredential>({
-        // 유효성 검사
-        resolver: yupResolver(LoginCredential.validateSchema),
-        mode: "onChange",
-    });
+interface LoginFormLayoutProps extends UseFormReturn<LoginCredential> {}
 
+export default function LoginPresentation({
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+}: LoginFormLayoutProps): React.ReactElement {
     const onSubmit = (data: LoginCredential) => {
         console.log(data);
     };

@@ -2,17 +2,22 @@ import React from "react";
 
 import { Flex, Box } from "@chakra-ui/react";
 
-import LoginFormLayout from "./ui/LoginFormLayout";
-import SignupFormLayout from "./ui/SignupFormLayout";
+import LoginPresentation from "./ui/LoginPresentation";
+import SignupPresentation from "./ui/SignupPresentation";
+import useLoginForm from "./ui/hooks/useLoginForm";
+import useSignupForm from "./ui/hooks/useSignupForm";
 
 export default function AuthPage(): React.ReactElement {
+    const loginFormMethods = useLoginForm();
+    const signupFormMethods = useSignupForm();
+
     return (
         <Flex bg="gray.100" p={3}>
             <Box flex="5">
-                <LoginFormLayout />
+                <LoginPresentation {...loginFormMethods} />
             </Box>
             <Box flex="5">
-                <SignupFormLayout />
+                <SignupPresentation {...signupFormMethods} />
             </Box>
         </Flex>
     );

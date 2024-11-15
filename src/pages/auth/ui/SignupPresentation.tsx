@@ -1,24 +1,19 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Stack, Heading, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
 import SignupCredential from "@/entities/SignupCredential";
 
-export default function SignupFormLayout(): React.ReactElement {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isValid },
-    } = useForm<SignupCredential>({
-        // 유효성 검사
-        resolver: yupResolver(SignupCredential.validateSchema),
-        mode: "onChange",
-    });
+interface SignupFormLayoutProps extends UseFormReturn<SignupCredential> {}
 
+export default function SignupPresentation({
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+}: SignupFormLayoutProps): React.ReactElement {
     const onSubmit = (data: SignupCredential) => {
         console.log(data);
     };
