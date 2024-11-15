@@ -1,6 +1,5 @@
 import React from "react";
 
-import { useQuery } from "@tanstack/react-query";
 import { Flex, Box } from "@chakra-ui/react";
 
 import LoginPresentation from "./ui/LoginPresentation";
@@ -18,7 +17,7 @@ export default function AuthPage(): React.ReactElement {
     const signupFormMethods = useSignupForm();
     const { handleSubmit: handleLoginSubmit } = useLoginFetch();
     const { handleSubmit: handleSignupSubmit } = useSignupFetch();
-    const { isLoggedIn, logout } = getLoggedIn();
+    const { isLoggedIn, onLogout } = getLoggedIn();
     const userInfo = useUserInfo();
 
     return (
@@ -36,7 +35,7 @@ export default function AuthPage(): React.ReactElement {
                 <UserInfoPresentation
                     {...userInfo}
                     isLoggedIn={isLoggedIn}
-                    onLogoutClick={logout}
+                    onLogoutClick={onLogout}
                 />
             )}
         </Flex>
