@@ -7,19 +7,21 @@ import SignupPresentation from "./ui/SignupPresentation";
 import useLoginForm from "./ui/hooks/useLoginForm";
 import useLoginFetch from "./ui/hooks/useLoginFetch";
 import useSignupForm from "./ui/hooks/useSignupForm";
+import useSignupFetch from "./ui/hooks/useSignupFetch";
 
 export default function AuthPage(): React.ReactElement {
     const loginFormMethods = useLoginForm();
     const signupFormMethods = useSignupForm();
-    const { handleSubmit } = useLoginFetch();
+    const { handleSubmit: handleLoginSubmit } = useLoginFetch();
+    const { handleSubmit: handleSignupSubmit } = useSignupFetch();
 
     return (
         <Flex bg="gray.100" p={3}>
             <Box flex="5">
-                <LoginPresentation {...loginFormMethods} onSubmit={handleSubmit} />
+                <LoginPresentation {...loginFormMethods} onSubmit={handleLoginSubmit} />
             </Box>
             <Box flex="5">
-                <SignupPresentation {...signupFormMethods} />
+                <SignupPresentation {...signupFormMethods} onSubmit={handleSignupSubmit} />
             </Box>
         </Flex>
     );

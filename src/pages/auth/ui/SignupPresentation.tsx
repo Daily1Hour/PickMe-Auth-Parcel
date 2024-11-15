@@ -7,17 +7,16 @@ import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
 import SignupCredential from "@/entities/SignupCredential";
 
-interface SignupFormLayoutProps extends UseFormReturn<SignupCredential> {}
+interface SignupFormLayoutProps extends UseFormReturn<SignupCredential> {
+    onSubmit: (data: SignupCredential) => void;
+}
 
 export default function SignupPresentation({
     register,
     handleSubmit,
     formState: { errors, isValid },
+    onSubmit,
 }: SignupFormLayoutProps): React.ReactElement {
-    const onSubmit = (data: SignupCredential) => {
-        console.log(data);
-    };
-
     return (
         <Stack>
             <Heading as="h2">회원가입</Heading>
