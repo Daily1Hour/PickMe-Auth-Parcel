@@ -3,8 +3,8 @@ import * as AWSCognitoIdentity from "amazon-cognito-identity-js";
 
 // Cognito User Pool 정보
 const userPoolData: AWSCognitoIdentity.ICognitoUserPoolData = {
-    UserPoolId: process.env.USER_POOL_ID as string,
-    ClientId: process.env.CLIENT_ID as string,
+    UserPoolId: import.meta.env.VITE_COGNITO_USER_POOL_ID,
+    ClientId: import.meta.env.VITE_COGNITO_CLIENT_ID,
 };
 
 export default userPoolData;
