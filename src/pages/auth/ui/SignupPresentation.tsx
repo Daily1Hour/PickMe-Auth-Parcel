@@ -64,12 +64,12 @@ export default function SignupPresentation({
 
                     <Field
                         label="비밀번호 확인"
-                        invalid={!!errors.conformPassword}
-                        errorText={errors.conformPassword?.message}
+                        invalid={!!errors.confirmPassword}
+                        errorText={errors.confirmPassword?.message}
                         required
                     >
                         <PasswordInput
-                            {...register("conformPassword", {
+                            {...register("confirmPassword", {
                                 required: "비밀번호를 다시 입력해주세요",
                             })}
                         />

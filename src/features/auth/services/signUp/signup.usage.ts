@@ -6,6 +6,7 @@ import { signup } from "./signup";
         const resultMessage = await signup({
             username: "testuser",
             password: "Abcde12345**",
+            confirmPassword: "Abcde12345**",
             email: "jwch11@gmail.com",
         });
 

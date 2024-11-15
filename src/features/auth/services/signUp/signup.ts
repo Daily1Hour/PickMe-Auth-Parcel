@@ -6,7 +6,7 @@ import {
     CognitoUserPool,
 } from "amazon-cognito-identity-js";
 
-import SignupCredential from "../../../../entities/SignupCredential";
+import SignupCredential from "@/entities/SignupCredential";
 import userPoolData from "../userPoolData";
 
 export interface Response {

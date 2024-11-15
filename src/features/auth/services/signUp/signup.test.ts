@@ -57,6 +57,7 @@ describe("signup 함수 테스트", () => {
         const signupCredential = {
             username: "testuser",
             password: "testpassword",
+            confirmPassword: "testpassword",
             email: "test@example.com",
         };
 
