@@ -13,10 +13,6 @@ permissions:
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
-    env:
-      VITE_COGNITO_USER_POOL_ID: ${{ secrets.VITE_COGNITO_USER_POOL_ID }}
-      VITE_COGNITO_CLIENT_ID: ${{ secrets.VITE_COGNITO_CLIENT_ID }}
-      VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
