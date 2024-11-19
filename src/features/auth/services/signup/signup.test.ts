@@ -15,11 +15,11 @@ describe("signup 함수 테스트", () => {
     let mockSignUp: jest.Mock;
 
     beforeAll(() => {
-        mockSignUp = jest.fn((username, password, attributes, validationData, callback) => {
+        mockSignUp = jest.fn((username, _password, attributes, _validationData, callback) => {
             const result: ISignUpResult = {
                 user: new CognitoUser({
                     Username: username,
-                    Pool: new CognitoUserPool(userPoolData),
+                    Pool: userPoolData,
                 }),
                 userConfirmed: false,
                 userSub: "testUserSub",
@@ -33,7 +33,7 @@ describe("signup 함수 테스트", () => {
         });
 
         (CognitoUserPool as jest.MockedClass<typeof CognitoUserPool>).mockImplementation(
-            (data, wrapRefreshSessionCallback) => ({
+            (_data, _wrapRefreshSessionCallback) => ({
                 signUp: mockSignUp,
                 getUserPoolId: jest.fn(),
                 getUserPoolName: jest.fn(),

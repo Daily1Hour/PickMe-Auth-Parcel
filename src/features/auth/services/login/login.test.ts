@@ -22,7 +22,7 @@ describe("login 함수 테스트", () => {
         } as unknown as CognitoUserSession;
 
         (CognitoUser.prototype.authenticateUser as jest.Mock).mockImplementation(
-            (details, callbacks) => {
+            (_details, callbacks) => {
                 callbacks.onSuccess(mockCognitoUserSession);
             },
         );

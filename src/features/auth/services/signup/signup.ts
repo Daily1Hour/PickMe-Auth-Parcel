@@ -27,7 +27,7 @@ export async function signup({ username, password, email }: SignupCredential): P
             password,
             attributes,
             attributes,
-            (err: Error | undefined, result: ISignUpResult | undefined): void => {
+            (err: Error | undefined, _result: ISignUpResult | undefined): void => {
                 if (err) {
                     reject({ message: err.message || JSON.stringify(err) });
                 } else resolve({ message: "success" });
