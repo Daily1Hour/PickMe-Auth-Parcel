@@ -9,8 +9,8 @@ import useLoginForm from "./ui/hooks/useLoginForm";
 import useSignupForm from "./ui/hooks/useSignupForm";
 import useLoginFetch from "./api/useLoginFetch";
 import useSignupFetch from "./api/useSignupFetch";
-import getLoggedIn from "@/shared/lib/getLoggedIn";
-import useUserInfo from "@/shared/lib/useUserInfo";
+import getLoggedIn from "@/features/auth/lib/getLoggedIn";
+import useUserInfo from "@/features/auth/lib/useUserInfo";
 
 export default function AuthPage(): React.ReactElement {
     const loginFormMethods = useLoginForm();

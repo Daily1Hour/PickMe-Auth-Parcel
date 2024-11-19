@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { useQuery } from "@tanstack/react-query";
 
-import getTokens, { UserTokens } from "@/shared/lib/getTokens";
+import getTokens, { UserTokens } from "./getTokens";
 
 interface UserInfo extends jwt.JwtPayload {
     isSuccess: boolean;

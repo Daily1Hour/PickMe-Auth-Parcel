@@ -6,8 +6,9 @@ import {
     CognitoUserAttribute,
 } from "amazon-cognito-identity-js";
 
-import { Response, signup } from "./signup";
+import { signup } from "./signup";
 import userPoolData from "../userPool";
+import SignupResponse from "../../model/SignupResponse";
 
 jest.mock("amazon-cognito-identity-js");
 
@@ -62,7 +63,7 @@ describe("signup 함수 테스트", () => {
         };
 
         // Act
-        const result: Response = await signup(signupCredential);
+        const result: SignupResponse = await signup(signupCredential);
 
         // Assert
         expect(result.message).toContain("success");
