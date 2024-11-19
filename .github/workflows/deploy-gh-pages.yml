@@ -13,13 +13,15 @@ permissions:
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
-    env:
-      VITE_COGNITO_USER_POOL_ID: ${{ secrets.VITE_COGNITO_USER_POOL_ID }}
-      VITE_COGNITO_CLIENT_ID: ${{ secrets.VITE_COGNITO_CLIENT_ID }}
-      VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Checkout gh-pages branch
+        run: |
+          git fetch --all
+          git checkout gh-pages || git checkout --orphan gh-pages  # 'gh-pages' 브랜치가 없다면 새로 만듦
+          git reset --hard
 
       - name: Get latest run ID # Gradle Build 워크플로우의 ID를 가져옴
         id: get_run_id
