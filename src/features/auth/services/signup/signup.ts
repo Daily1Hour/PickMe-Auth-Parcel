@@ -7,12 +7,9 @@ import {
 
 import SignupCredential from "@/entities/SignupCredential";
 import userPool from "../userPool";
+import SignupResponse from "../../model/SignupResponse";
 
-export interface Response {
-    message: string;
-}
-
-export async function signup({ username, password, email }: SignupCredential): Promise<Response> {
+export async function signup({ username, password, email }: SignupCredential): Promise<SignupResponse> {
     // Required attributes를 추가
     const requiredAttribute: ICognitoUserAttributeData = {
         Name: "email",
@@ -20,7 +17,7 @@ export async function signup({ username, password, email }: SignupCredential): P
     };
     const attributes = [new CognitoUserAttribute(requiredAttribute)];
 
-    return new Promise((resolve: (value: Response) => void, reject) => {
+    return new Promise((resolve: (value: SignupResponse) => void, reject) => {
         // 가입 요청
         userPool.signUp(
             username,

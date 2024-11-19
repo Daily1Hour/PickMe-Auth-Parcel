@@ -5,7 +5,8 @@ import {
     CognitoUserSession,
 } from "amazon-cognito-identity-js";
 
-import { login, Parameters, Response } from "./login";
+import { login, Parameters } from "./login";
+import LoginResponse from "../../model/LoginResponse";
 
 jest.mock("amazon-cognito-identity-js");
 
@@ -36,7 +37,7 @@ describe("login 함수 테스트", () => {
         };
 
         // Act
-        const response: Response = await login(params);
+        const response: LoginResponse = await login(params);
 
         // Assert
         expect(response).toEqual({

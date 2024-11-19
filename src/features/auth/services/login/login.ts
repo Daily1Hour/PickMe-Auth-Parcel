@@ -1,19 +1,14 @@
 import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-cognito-identity-js";
 
 import userPool from "../userPool";
+import LoginResponse from "../../model/LoginResponse";
 
 export interface Parameters {
     username: string;
     password: string;
 }
 
-export interface Response {
-    idToken: string;
-    accessToken: string;
-    refreshToken: string;
-}
-
-export async function login({ username, password }: Parameters): Promise<Response> {
+export async function login({ username, password }: Parameters): Promise<LoginResponse> {
     // CognitoUser 인스턴스 생성
     const cognitoUser = new CognitoUser({
         Username: username,
