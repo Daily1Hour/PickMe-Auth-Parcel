@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Stack } from "@chakra-ui/react";
 
 import LoginPresentation from "./ui/LoginPresentation";
 import SignupPresentation from "./ui/SignupPresentation";
@@ -8,6 +8,7 @@ import UserInfoPresentation from "./ui/UserInfoPresentation";
 import useLoginForm from "./ui/hooks/useLoginForm";
 import useSignupForm from "./ui/hooks/useSignupForm";
 import SocialLoginPresentation from "./ui/SocialLoginPresentation";
+import TokenInfoPresentation from "./ui/TokenInfoPresentation";
 import useLoginFetch from "./api/useLoginFetch";
 import useSignupFetch from "./api/useSignupFetch";
 import getLoggedIn from "@/features/auth/lib/getLoggedIn";
@@ -34,11 +35,14 @@ export default function AuthPage(): React.ReactElement {
                     </Box>
                 </>
             ) : (
-                <UserInfoPresentation
-                    {...userInfo}
-                    isLoggedIn={isLoggedIn}
-                    onLogoutClick={onLogout}
-                />
+                <Stack>
+                    <UserInfoPresentation
+                        {...userInfo}
+                        isLoggedIn={isLoggedIn}
+                        onLogoutClick={onLogout}
+                    />
+                    <TokenInfoPresentation isSuccess={userInfo.isSuccess} />
+                </Stack>
             )}
         </Flex>
     );
