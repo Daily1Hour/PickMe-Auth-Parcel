@@ -1,7 +1,7 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
 
-import { Stack, Heading, Button, Input } from "@chakra-ui/react";
+import { Stack, Button, Input, Box, Link } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
@@ -18,10 +18,9 @@ export default function LoginPresentation({
     onSubmit,
 }: LoginFormLayoutProps): React.ReactElement {
     return (
-        <Stack>
-            <Heading as="h2">로그인</Heading>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Stack gap="4" align="flex-start" maxW="sm">
+        <Stack align="center" mx="10%" mt="20%">
+            <form style={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+                <Stack gap="4" align="flex-start">
                     <Field
                         label="아이디"
                         invalid={!!errors.username}
@@ -29,6 +28,7 @@ export default function LoginPresentation({
                         required
                     >
                         <Input
+                            borderRadius="lg"
                             {...register("username", {
                                 required: "아이디를 입력해주세요",
                             })}
@@ -42,6 +42,7 @@ export default function LoginPresentation({
                         required
                     >
                         <PasswordInput
+                            borderRadius="lg"
                             {...register("password", {
                                 required: "비밀번호를 입력해주세요",
                             })}
@@ -51,14 +52,20 @@ export default function LoginPresentation({
 
                 <Button
                     type="submit"
-                    colorPalette="blue"
+                    colorPalette="green"
+                    w="100%"
+                    borderRadius="lg"
                     mt={5}
-                    bg={{ base: "colorPalette.600", _dark: "colorPalette.400" }}
+                    bg={{ base: "colorPalette.700", _dark: "colorPalette.400" }}
                     disabled={!isValid}
                 >
-                    제출
+                    로그인
                 </Button>
             </form>
+
+            <Box w="100%" textAlign="left" mt="20px" fontSize={10}>
+                <Link>비밀번호 찾기</Link>
+            </Box>
         </Stack>
     );
 }
