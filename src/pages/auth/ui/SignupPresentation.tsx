@@ -1,7 +1,7 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
 
-import { Stack, Heading, Button, Input } from "@chakra-ui/react";
+import { Stack, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
@@ -18,10 +18,9 @@ export default function SignupPresentation({
     onSubmit,
 }: SignupFormLayoutProps): React.ReactElement {
     return (
-        <Stack>
-            <Heading as="h2">회원가입</Heading>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Stack gap="4" align="flex-start" maxW="sm">
+        <Stack align="center" mx="10%" mt="20%">
+            <form style={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+                <Stack gap="4" align="flex-start">
                     <Field
                         label="아이디"
                         invalid={!!errors.username}
@@ -29,6 +28,7 @@ export default function SignupPresentation({
                         required
                     >
                         <Input
+                            borderRadius="lg"
                             {...register("username", {
                                 required: "아이디를 입력해주세요",
                             })}
@@ -42,6 +42,7 @@ export default function SignupPresentation({
                         required
                     >
                         <Input
+                            borderRadius="lg"
                             {...register("email", {
                                 required: "이메일을 입력해주세요",
                             })}
@@ -55,6 +56,7 @@ export default function SignupPresentation({
                         required
                     >
                         <PasswordInput
+                            borderRadius="lg"
                             {...register("password", {
                                 required: "비밀번호 입력해주세요",
                             })}
@@ -68,6 +70,7 @@ export default function SignupPresentation({
                         required
                     >
                         <PasswordInput
+                            borderRadius="lg"
                             {...register("confirmPassword", {
                                 required: "비밀번호를 다시 입력해주세요",
                             })}
@@ -77,12 +80,14 @@ export default function SignupPresentation({
 
                 <Button
                     type="submit"
-                    colorPalette="blue"
+                    colorPalette="green"
+                    w="100%"
+                    borderRadius="lg"
                     mt={5}
-                    bg={{ base: "colorPalette.600", _dark: "colorPalette.400" }}
+                    bg={{ base: "colorPalette.700", _dark: "colorPalette.400" }}
                     disabled={!isValid}
                 >
-                    제출
+                    회원가입
                 </Button>
             </form>
         </Stack>

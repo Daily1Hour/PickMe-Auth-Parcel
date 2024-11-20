@@ -7,6 +7,7 @@ import SignupPresentation from "./ui/SignupPresentation";
 import UserInfoPresentation from "./ui/UserInfoPresentation";
 import useLoginForm from "./ui/hooks/useLoginForm";
 import useSignupForm from "./ui/hooks/useSignupForm";
+import SocialLoginPresentation from "./ui/SocialLoginPresentation";
 import useLoginFetch from "./api/useLoginFetch";
 import useSignupFetch from "./api/useSignupFetch";
 import getLoggedIn from "@/features/auth/lib/getLoggedIn";
@@ -26,6 +27,7 @@ export default function AuthPage(): React.ReactElement {
                 <>
                     <Box flex="5">
                         <LoginPresentation {...loginFormMethods} onSubmit={handleLoginSubmit} />
+                        <SocialLoginPresentation />
                     </Box>
                     <Box flex="5">
                         <SignupPresentation {...signupFormMethods} onSubmit={handleSignupSubmit} />
