@@ -7,6 +7,9 @@ import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
 import LoginCredential from "@/entities/LoginCredential";
 
+const testUsername = import.meta.env.VITE_TEST_USERNAME;
+const testPassword = import.meta.env.VITE_TEST_PASSWORD;
+
 interface LoginFormLayoutProps extends UseFormReturn<LoginCredential> {
     onSubmit: (data: LoginCredential) => void;
 }
@@ -32,6 +35,7 @@ export default function LoginPresentation({
                             {...register("username", {
                                 required: "아이디를 입력해주세요",
                             })}
+                            value={testUsername}
                         />
                     </Field>
 
@@ -46,6 +50,7 @@ export default function LoginPresentation({
                             {...register("password", {
                                 required: "비밀번호를 입력해주세요",
                             })}
+                            value={testPassword}
                         />
                     </Field>
                 </Stack>
