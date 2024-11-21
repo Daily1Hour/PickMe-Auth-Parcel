@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { signup } from "@/entities/auth/services/signup/signup";
+import signup from "@/entities/auth/services/signup/signup";
 import SignupCredential from "@/entities/auth/models/SignupCredential";
 
 export default function useSignupFetch() {

@@ -6,10 +6,10 @@ import {
 } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import SignupResponse from "../SignupResponse";
 import SignupCredential from "../../models/SignupCredential";
+import { SignupResponse } from "../types";
 
-export async function signup({
+export default async function signup({
     username,
     password,
     email,
