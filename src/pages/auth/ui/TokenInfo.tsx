@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { Stack, Text } from "@chakra-ui/react";
 
-import getTokens from "@/entities/auth/services/getTokens";
+import getTokens from "@/entities/auth/services/sessions/getTokens";
 import useUserInfo from "@/features/userInfo/api/useUserInfo";
 
 export default function TokenInfo(): React.ReactElement {

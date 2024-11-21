@@ -1,12 +1,7 @@
 import { CognitoUserSession } from "amazon-cognito-identity-js";
 
 import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
-
-export interface UserTokens {
-    idToken: string;
-    accessToken: string;
-    refreshToken: string;
-}
+import { UserTokens } from "../types";
 
 export default async function getTokens(): Promise<UserTokens> {
     const { cognitoUser } = getLoggedIn();
