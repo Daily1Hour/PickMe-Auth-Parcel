@@ -15,7 +15,7 @@ export default function AuthPage(): React.ReactElement {
             {!isLoggedIn ? (
                 <AuthControls />
             ) : (
-                <Stack>
+                <Stack w="100%">
                     <UserInfo />
                     <TokenInfo />
                 </Stack>
