@@ -1,6 +1,6 @@
 import { CognitoUserSession } from "amazon-cognito-identity-js";
 
-import getLoggedIn from "@/entities/auth/services/getLoggedIn";
+import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
 
 export interface UserTokens {
     idToken: string;

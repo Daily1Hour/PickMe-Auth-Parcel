@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Stack, Text } from "@chakra-ui/react";
 import { ProgressCircleRing, ProgressCircleRoot } from "@/shared/chakra-ui/progress-circle";
 
-import getLoggedIn from "@/entities/auth/services/getLoggedIn";
+import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
 import useUserInfo from "../api/useUserInfo";
 
 export default function UserInfo(): React.ReactElement {

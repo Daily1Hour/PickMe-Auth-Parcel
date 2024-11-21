@@ -5,7 +5,7 @@ import { Flex, Stack } from "@chakra-ui/react";
 import AuthControls from "@/features/auth/ui/AuthControls";
 import TokenInfo from "@/pages/auth/ui/TokenInfo";
 import UserInfo from "@/features/userInfo/ui/UserInfo";
-import getLoggedIn from "@/entities/auth/services/getLoggedIn";
+import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
 
 export default function AuthPage(): React.ReactElement {
     const { isLoggedIn } = getLoggedIn();
