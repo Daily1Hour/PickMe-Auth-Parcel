@@ -3,17 +3,15 @@ import { useState, useEffect } from "react";
 import { Stack, Text } from "@chakra-ui/react";
 
 import getTokens from "@/features/auth/lib/getTokens";
+import useUserInfo from "../lib/useUserInfo";
 
-export default function TokenInfoPresentation({
-    isSuccess,
-}: {
-    isSuccess: boolean;
-}): React.ReactElement {
+export default function TokenInfoPresentation(): React.ReactElement {
     const [tokens, setTokens] = useState<{
         idToken: string;
         accessToken: string;
         refreshToken: string;
     } | null>(null);
+    const { isSuccess } = useUserInfo();
 
     useEffect(() => {
         if (isSuccess) {

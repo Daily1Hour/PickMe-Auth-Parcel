@@ -12,20 +12,17 @@ import {
 import LoginPresentation from "./LoginPresentation";
 import SignupPresentation from "./SignupPresentation";
 import SocialLoginPresentation from "./SocialLoginPresentation";
+import useLoginFetch from "../api/useLoginFetch";
+import useSignupFetch from "../api/useSignupFetch";
+import useLoginForm from "./hooks/useLoginForm";
+import useSignupForm from "./hooks/useSignupForm";
 
-interface AuthControlsLayoutProps {
-    loginFormMethods: any;
-    handleLoginSubmit: any;
-    signupFormMethods: any;
-    handleSignupSubmit: any;
-}
+export default function AuthControlsPresentation(): React.ReactElement {
+    const loginFormMethods = useLoginForm();
+    const signupFormMethods = useSignupForm();
+    const { handleSubmit: handleLoginSubmit } = useLoginFetch();
+    const { handleSubmit: handleSignupSubmit } = useSignupFetch();
 
-export default function AuthControlsPresentation({
-    loginFormMethods,
-    handleLoginSubmit,
-    signupFormMethods,
-    handleSignupSubmit,
-}: AuthControlsLayoutProps): React.ReactElement {
     return (
         <HStack>
             <PopoverRoot>
