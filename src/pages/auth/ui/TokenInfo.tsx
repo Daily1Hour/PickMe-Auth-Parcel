@@ -1,33 +1,15 @@
-import { useState, useEffect } from "react";
-
 import { Stack, Text } from "@chakra-ui/react";
 
-import getTokens from "@/entities/auth/service/session/getTokens";
-import useUserInfo from "@/features/userInfo/api/useUserInfo";
+import useTokens from "@/features/tokens/api/useTokens";
 
 export default function TokenInfo(): React.ReactElement {
-    const [tokens, setTokens] = useState<{
-        idToken: string;
-        accessToken: string;
-        refreshToken: string;
-    } | null>(null);
-    const { isSuccess } = useUserInfo();
-
-    useEffect(() => {
-        if (isSuccess) {
-            (async () => {
-                const { idToken, accessToken, refreshToken } = await getTokens();
-                setTokens({ idToken, accessToken, refreshToken });
-                console.log(idToken, accessToken, refreshToken); // Ensure all elements are used
-            })();
-        }
-    }, [isSuccess]);
+    const { idToken, accessToken, refreshToken } = useTokens();
 
     return (
         <Stack w="100%">
-            <Text>idToken: {tokens?.idToken}</Text>
-            <Text>accessToken: {tokens?.accessToken}</Text>
-            <Text>refreshToken: {tokens?.refreshToken}</Text>
+            <Text>idToken: {idToken}</Text>
+            <Text>accessToken: {accessToken}</Text>
+            <Text>refreshToken: {refreshToken}</Text>
         </Stack>
     );
 }
