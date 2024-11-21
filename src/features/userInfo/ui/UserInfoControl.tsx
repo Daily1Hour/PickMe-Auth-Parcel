@@ -5,7 +5,7 @@ import { Avatar, AvatarGroup } from "@/shared/chakra-ui/avatar";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/shared/chakra-ui/menu";
 
 import useUserInfo from "../api/useUserInfo";
-import useLoggedIn from "../../auth/api/useLoggedIn";
+import useLoggedIn from "../api/useLoggedIn";
 
 export default function UserInfo(): React.ReactElement {
     const { "cognito:username": username, email } = useUserInfo();

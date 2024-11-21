@@ -3,7 +3,7 @@ import React from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 
 import AuthControls from "@/features/auth/ui/AuthControls";
-import useLoggedIn from "@/features/auth/api/useLoggedIn";
+import useLoggedIn from "@/features/userInfo/api/useLoggedIn";
 import UserInfo from "@/features/userInfo/ui/UserInfoControl";
 import TokenInfo from "@/pages/auth/ui/TokenInfo";
 
