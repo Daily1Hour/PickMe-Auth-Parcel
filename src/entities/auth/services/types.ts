@@ -9,6 +9,13 @@ export interface LoginResponse {
     refreshToken: string;
 }
 
+export interface SignupRequest {
+    username: string;
+    password: string;
+    confirmPassword: string;
+    email: string;
+}
+
 export interface SignupResponse {
     message: string;
 }

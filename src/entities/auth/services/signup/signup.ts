@@ -6,14 +6,13 @@ import {
 } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import SignupCredential from "../../models/SignupCredential";
-import { SignupResponse } from "../types";
+import { SignupRequest, SignupResponse } from "../types";
 
 export default async function signup({
     username,
     password,
     email,
-}: SignupCredential): Promise<SignupResponse> {
+}: SignupRequest): Promise<SignupResponse> {
     // Required attributes를 추가
     const requiredAttribute: ICognitoUserAttributeData = {
         Name: "email",

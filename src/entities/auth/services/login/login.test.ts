@@ -1,49 +1,66 @@
-import {
-    CognitoUserPool,
-    CognitoUser,
-    AuthenticationDetails,
-    CognitoUserSession,
-} from "amazon-cognito-identity-js";
+import { describe, it, expect, vi, beforeEach, afterEach, Mock } from "vitest";
+
+import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-cognito-identity-js";
 
 import login from "./login";
+import userPool from "../../config/userPool";
 import { LoginRequest, LoginResponse } from "../types";
 
-jest.mock("amazon-cognito-identity-js");
+vi.mock("amazon-cognito-identity-js");
 
-describe("login 함수 테스트", () => {
+describe("login", () => {
+    const username = "testuser";
+    const password = "testpassword";
+    const loginRequest: LoginRequest = { username, password };
+
+    let authenticateUserMock: Mock;
+
     beforeEach(() => {
-        (CognitoUserPool as jest.Mock).mockClear();
-        (CognitoUser as jest.Mock).mockClear();
-        (AuthenticationDetails as jest.Mock).mockClear();
-
-        const mockCognitoUserSession = {
-            getIdToken: jest.fn().mockReturnValue({ getJwtToken: () => "testIdToken" }),
-            getAccessToken: jest.fn().mockReturnValue({ getJwtToken: () => "testAccessToken" }),
-            getRefreshToken: jest.fn().mockReturnValue({ getToken: () => "testRefreshToken" }),
-        } as unknown as CognitoUserSession;
-
-        (CognitoUser.prototype.authenticateUser as jest.Mock).mockImplementation(
-            (_details, callbacks) => {
-                callbacks.onSuccess(mockCognitoUserSession);
-            },
-        );
+        authenticateUserMock = vi.fn();
+        (CognitoUser as Mock).mockImplementation(() => ({
+            authenticateUser: authenticateUserMock,
+        }));
     });
 
-    it("로그인 성공", async () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it("로그인 성공 시 토큰 반환", async () => {
+        const idToken = "idToken";
+        const accessToken = "accessToken";
+        const refreshToken = "refreshToken";
+
         // Arrange
-        const params: LoginRequest = {
-            username: "testuser",
-            password: "testpassword",
-        };
+        authenticateUserMock.mockImplementation((_details, callbacks) => {
+            callbacks.onSuccess({
+                getIdToken: () => ({ getJwtToken: () => idToken }),
+                getAccessToken: () => ({ getJwtToken: () => accessToken }),
+                getRefreshToken: () => ({ getToken: () => refreshToken }),
+            } as CognitoUserSession);
+        });
 
         // Act
-        const response: LoginResponse = await login(params);
+        const response: LoginResponse = await login(loginRequest);
 
         // Assert
-        expect(response).toEqual({
-            idToken: "testIdToken",
-            accessToken: "testAccessToken",
-            refreshToken: "testRefreshToken",
+        expect(response).toEqual({ idToken, accessToken, refreshToken });
+        expect(CognitoUser).toHaveBeenCalledWith({ Username: username, Pool: userPool });
+        expect(AuthenticationDetails).toHaveBeenCalledWith({
+            Username: username,
+            Password: password,
         });
+    });
+
+    it("로그인 실패 시 에러 반환", async () => {
+        const errorMessage = "Authentication failed";
+
+        // Arrange
+        authenticateUserMock.mockImplementation((_details, callbacks) => {
+            callbacks.onFailure(new Error(errorMessage));
+        });
+
+        // Act & Assert
+        await expect(login(loginRequest)).rejects.toThrow(errorMessage);
     });
 });
