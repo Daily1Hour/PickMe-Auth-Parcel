@@ -7,23 +7,23 @@ export default function TokenInfo(): React.ReactElement {
     const { idToken, accessToken, refreshToken } = useTokens();
 
     return (
-        <Stack mt={10}>
+        <Stack m={10}>
             <HStack>
                 <Heading>idToken:</Heading>
                 <ClipboardRoot value={idToken || ""}>
-                    <ClipboardLink />
+                    <ClipboardLink cursor="pointer" />
                 </ClipboardRoot>
             </HStack>
             <HStack>
                 <Heading>accessToken:</Heading>
                 <ClipboardRoot value={accessToken || ""}>
-                    <ClipboardLink />
+                    <ClipboardLink cursor="pointer" />
                 </ClipboardRoot>
             </HStack>
             <HStack>
                 <Heading>refreshToken:</Heading>
                 <ClipboardRoot value={refreshToken || ""}>
-                    <ClipboardLink />
+                    <ClipboardLink cursor="pointer" />
                 </ClipboardRoot>
             </HStack>
         </Stack>

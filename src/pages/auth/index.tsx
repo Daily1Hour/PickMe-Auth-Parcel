@@ -4,19 +4,23 @@ import { Flex, Stack } from "@chakra-ui/react";
 
 import AuthControls from "@/features/auth/ui/AuthControls";
 import useLoggedIn from "@/features/auth/api/useLoggedIn";
-import UserInfo from "@/features/userInfo/ui/UserInfo";
+import UserInfo from "@/features/userInfo/ui/UserInfoControl";
 import TokenInfo from "@/pages/auth/ui/TokenInfo";
 
 export default function AuthPage(): React.ReactElement {
     const { isLoggedIn } = useLoggedIn();
 
     return (
-        <Flex bg="gray.100" p={3}>
+        <Flex>
             {!isLoggedIn ? (
-                <AuthControls />
+                <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
+                    <AuthControls />
+                </Flex>
             ) : (
                 <Stack w="100%">
-                    <UserInfo />
+                    <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
+                        <UserInfo />
+                    </Flex>
                     <TokenInfo />
                 </Stack>
             )}

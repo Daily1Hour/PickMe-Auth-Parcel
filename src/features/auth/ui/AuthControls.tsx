@@ -27,7 +27,7 @@ export default function AuthControls(): React.ReactElement {
         <HStack>
             <PopoverRoot>
                 <PopoverTrigger asChild>
-                    <Button>로그인</Button>
+                    <Button colorPalette="green">로그인</Button>
                 </PopoverTrigger>
                 <PopoverContent>
                     <PopoverArrow />
@@ -39,8 +39,8 @@ export default function AuthControls(): React.ReactElement {
             </PopoverRoot>
 
             <PopoverRoot>
-                <PopoverTrigger>
-                    <Button>회원가입</Button>
+                <PopoverTrigger asChild>
+                    <Button colorPalette="green">회원가입</Button>
                 </PopoverTrigger>
                 <PopoverContent>
                     <PopoverArrow />
