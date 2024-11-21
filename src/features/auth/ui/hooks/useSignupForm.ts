@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import SignupCredential from "@/entities/auth/models/SignupCredential";
+import SignupCredential from "@/entities/auth/model/SignupCredential";
 
 export default function useSignupForm() {
     return useForm<SignupCredential>({

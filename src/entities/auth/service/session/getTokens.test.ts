@@ -2,8 +2,8 @@ import { describe, it, expect, vi, beforeEach, afterEach, Mock } from "vitest";
 
 import { CognitoUserSession } from "amazon-cognito-identity-js";
 
-import getTokens from "@/entities/auth/services/sessions/getTokens";
-import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
+import getTokens from "./getTokens";
+import getLoggedIn from "../../repository/getLoggedIn";
 
 vi.mock("@/entities/auth/repository/getLoggedIn");
 

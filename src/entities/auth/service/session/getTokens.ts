@@ -1,6 +1,6 @@
 import { CognitoUserSession } from "amazon-cognito-identity-js";
 
-import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
+import getLoggedIn from "../../repository/getLoggedIn";
 import { UserTokens } from "../types";
 
 export default async function getTokens(): Promise<UserTokens> {

@@ -1,5 +1,5 @@
-import { UserTokens } from "../types";
 import getTokens from "./getTokens";
+import { UserTokens } from "../types";
 
 // Usage
 getTokens()
