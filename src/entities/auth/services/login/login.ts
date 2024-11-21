@@ -1,7 +1,7 @@
 import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-cognito-identity-js";
 
-import userPool from "../userPool";
-import LoginResponse from "../../model/LoginResponse";
+import userPool from "../../config/userPool";
+import LoginResponse from "../LoginResponse";
 
 export interface Parameters {
     username: string;

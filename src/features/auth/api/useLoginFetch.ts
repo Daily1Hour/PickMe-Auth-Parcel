@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { login } from "@/features/auth/services/login/login";
-import LoginCredential from "@/entities/LoginCredential";
+import { login } from "@/entities/auth/services/login/login";
+import LoginCredential from "@/entities/auth/models/LoginCredential";
 
 export default function useLoginFetch() {
     const { mutate } = useMutation({

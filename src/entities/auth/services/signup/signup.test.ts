@@ -7,8 +7,8 @@ import {
 } from "amazon-cognito-identity-js";
 
 import { signup } from "./signup";
-import userPoolData from "../userPool";
-import SignupResponse from "../../model/SignupResponse";
+import userPoolData from "../../config/userPool";
+import SignupResponse from "../SignupResponse";
 
 jest.mock("amazon-cognito-identity-js");
 

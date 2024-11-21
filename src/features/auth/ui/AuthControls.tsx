@@ -9,15 +9,15 @@ import {
     PopoverTrigger,
 } from "@/shared/chakra-ui/popover";
 
-import LoginPresentation from "./LoginPresentation";
-import SignupPresentation from "./SignupPresentation";
-import SocialLoginPresentation from "./SocialLoginPresentation";
+import LoginPresentation from "./presentations/Login";
+import SignupPresentation from "./presentations/Signup";
+import SocialLoginPresentation from "./presentations/SocialLogin";
 import useLoginFetch from "../api/useLoginFetch";
 import useSignupFetch from "../api/useSignupFetch";
 import useLoginForm from "./hooks/useLoginForm";
 import useSignupForm from "./hooks/useSignupForm";
 
-export default function AuthControlsPresentation(): React.ReactElement {
+export default function AuthControls(): React.ReactElement {
     const loginFormMethods = useLoginForm();
     const signupFormMethods = useSignupForm();
     const { handleSubmit: handleLoginSubmit } = useLoginFetch();

@@ -6,7 +6,7 @@ import {
 } from "amazon-cognito-identity-js";
 
 import { login, Parameters } from "./login";
-import LoginResponse from "../../model/LoginResponse";
+import LoginResponse from "../LoginResponse";
 
 jest.mock("amazon-cognito-identity-js");
 

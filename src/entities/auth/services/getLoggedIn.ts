@@ -1,5 +1,6 @@
-import userPool from "@/features/auth/services/userPool";
 import { CognitoUser } from "amazon-cognito-identity-js";
+
+import userPool from "@/entities/auth/config/userPool";
 
 interface LoggedInData {
     isLoggedIn: boolean;

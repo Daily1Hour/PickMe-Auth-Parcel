@@ -5,7 +5,7 @@ import { Stack, Button, Input } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui/field";
 import { PasswordInput } from "@/shared/chakra-ui/password-input";
 
-import SignupCredential from "@/entities/SignupCredential";
+import SignupCredential from "@/entities/auth/models/SignupCredential";
 
 interface SignupFormLayoutProps extends UseFormReturn<SignupCredential> {
     onSubmit: (data: SignupCredential) => void;

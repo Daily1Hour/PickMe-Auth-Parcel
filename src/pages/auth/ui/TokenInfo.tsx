@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 
 import { Stack, Text } from "@chakra-ui/react";
 
-import getTokens from "@/features/auth/lib/getTokens";
-import useUserInfo from "@/features/auth/lib/useUserInfo";
+import getTokens from "@/entities/auth/services/getTokens";
+import useUserInfo from "@/features/userInfo/api/useUserInfo";
 
-export default function TokenInfoPresentation(): React.ReactElement {
+export default function TokenInfo(): React.ReactElement {
     const [tokens, setTokens] = useState<{
         idToken: string;
         accessToken: string;

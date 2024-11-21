@@ -3,10 +3,10 @@ import React from "react";
 import { Button, Stack, Text } from "@chakra-ui/react";
 import { ProgressCircleRing, ProgressCircleRoot } from "@/shared/chakra-ui/progress-circle";
 
-import useUserInfo from "../lib/useUserInfo";
-import getLoggedIn from "../lib/getLoggedIn";
+import getLoggedIn from "@/entities/auth/services/getLoggedIn";
+import useUserInfo from "../api/useUserInfo";
 
-export default function UserInfoPResentation(): React.ReactElement {
+export default function UserInfo(): React.ReactElement {
     const { "cognito:username": username, email } = useUserInfo();
     const { isLoggedIn, onLogout } = getLoggedIn();
 
