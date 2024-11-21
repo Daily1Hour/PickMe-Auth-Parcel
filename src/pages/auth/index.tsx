@@ -2,13 +2,13 @@ import React from "react";
 
 import { Flex, Stack } from "@chakra-ui/react";
 
-import AuthControlsPresentation from "./ui/AuthControlsPresentation";
-import UserInfoPresentation from "./ui/UserInfoPresentation";
-import useLoginForm from "./ui/hooks/useLoginForm";
-import useSignupForm from "./ui/hooks/useSignupForm";
-import TokenInfoPresentation from "./ui/TokenInfoPresentation";
-import useLoginFetch from "./api/useLoginFetch";
-import useSignupFetch from "./api/useSignupFetch";
+import AuthControlsPresentation from "@/features/auth/ui/AuthControlsPresentation";
+import useLoginForm from "@/features/auth/ui/hooks/useLoginForm";
+import useSignupForm from "@/features/auth/ui/hooks/useSignupForm";
+import TokenInfoPresentation from "@/features/auth/ui/TokenInfoPresentation";
+import UserInfoPresentation from "@/features/auth/ui/UserInfoPresentation";
+import useLoginFetch from "@/features/auth/api/useLoginFetch";
+import useSignupFetch from "@/features/auth/api/useSignupFetch";
 import getLoggedIn from "@/features/auth/lib/getLoggedIn";
 import useUserInfo from "@/features/auth/lib/useUserInfo";
 
