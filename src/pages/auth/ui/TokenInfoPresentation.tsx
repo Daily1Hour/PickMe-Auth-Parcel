@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Stack, Text } from "@chakra-ui/react";
 
 import getTokens from "@/features/auth/lib/getTokens";
-import useUserInfo from "../lib/useUserInfo";
+import useUserInfo from "@/features/auth/lib/useUserInfo";
 
 export default function TokenInfoPresentation(): React.ReactElement {
     const [tokens, setTokens] = useState<{
