@@ -1,47 +1,27 @@
 import React from "react";
 
-import { Flex, Box, Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 
-import LoginPresentation from "./ui/LoginPresentation";
-import SignupPresentation from "./ui/SignupPresentation";
-import UserInfoPresentation from "./ui/UserInfoPresentation";
-import useLoginForm from "./ui/hooks/useLoginForm";
-import useSignupForm from "./ui/hooks/useSignupForm";
-import SocialLoginPresentation from "./ui/SocialLoginPresentation";
-import TokenInfoPresentation from "./ui/TokenInfoPresentation";
-import useLoginFetch from "./api/useLoginFetch";
-import useSignupFetch from "./api/useSignupFetch";
-import getLoggedIn from "@/features/auth/lib/getLoggedIn";
-import useUserInfo from "@/features/auth/lib/useUserInfo";
+import AuthControls from "@/features/auth/ui/AuthControls";
+import useLoggedIn from "@/features/userInfo/api/useLoggedIn";
+import UserInfo from "@/features/userInfo/ui/UserInfoControl";
+import TokenInfo from "@/pages/auth/ui/TokenInfo";
 
 export default function AuthPage(): React.ReactElement {
-    const loginFormMethods = useLoginForm();
-    const signupFormMethods = useSignupForm();
-    const { handleSubmit: handleLoginSubmit } = useLoginFetch();
-    const { handleSubmit: handleSignupSubmit } = useSignupFetch();
-    const { isLoggedIn, onLogout } = getLoggedIn();
-    const userInfo = useUserInfo();
+    const { isLoggedIn } = useLoggedIn();
 
     return (
-        <Flex bg="gray.100" p={3}>
+        <Flex>
             {!isLoggedIn ? (
-                <>
-                    <Box flex="5">
-                        <LoginPresentation {...loginFormMethods} onSubmit={handleLoginSubmit} />
-                        <SocialLoginPresentation />
-                    </Box>
-                    <Box flex="5">
-                        <SignupPresentation {...signupFormMethods} onSubmit={handleSignupSubmit} />
-                    </Box>
-                </>
+                <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
+                    <AuthControls />
+                </Flex>
             ) : (
-                <Stack>
-                    <UserInfoPresentation
-                        {...userInfo}
-                        isLoggedIn={isLoggedIn}
-                        onLogoutClick={onLogout}
-                    />
-                    <TokenInfoPresentation isSuccess={userInfo.isSuccess} />
+                <Stack w="100%">
+                    <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
+                        <UserInfo />
+                    </Flex>
+                    <TokenInfo />
                 </Stack>
             )}
         </Flex>
