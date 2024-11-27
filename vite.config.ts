@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
     const serverPort = Number(process.env.VITE_SERVER_PORT); // 서버포트
-    const spaEntryPoints = "src/app/mfa.tsx";
+    const spaEntryPoints = "src/app/parcel.tsx";
     const isMFA = mode === "mfa";
 
     return {
