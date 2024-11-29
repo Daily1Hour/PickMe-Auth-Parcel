@@ -7,7 +7,7 @@ import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/shared/chakra-ui
 import useUserInfo from "../api/useUserInfo";
 import useLoggedIn from "../api/useLoggedIn";
 
-export default function UserInfo(): React.ReactElement {
+export default function UserMenu(): React.ReactElement {
     const { "cognito:username": username, email } = useUserInfo();
     const { onLogout } = useLoggedIn();
 

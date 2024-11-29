@@ -17,7 +17,7 @@ import useSignupFetch from "../api/useSignupFetch";
 import useLoginForm from "./hooks/useLoginForm";
 import useSignupForm from "./hooks/useSignupForm";
 
-export default function AuthControls(): React.ReactElement {
+export default function AuthActions(): React.ReactElement {
     const loginFormMethods = useLoginForm();
     const signupFormMethods = useSignupForm();
     const { handleSubmit: handleLoginSubmit } = useLoginFetch();

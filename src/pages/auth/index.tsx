@@ -1,11 +1,10 @@
 import React from "react";
 
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
-import AuthControls from "@/features/auth/ui/AuthControls";
-import useLoggedIn from "@/features/userInfo/api/useLoggedIn";
-import UserInfo from "@/features/userInfo/ui/UserInfoControl";
-import TokenInfo from "@/pages/auth/ui/TokenInfo";
+import { useLoggedIn } from "@/features/userMenu";
+import AuthControls from "./ui/AuthControls";
+import TokenInfo from "./ui/TokenInfo";
 
 const isDevMode = import.meta.env.MODE === "development";
 
@@ -14,10 +13,13 @@ export default function AuthPage(): React.ReactElement {
 
     return (
         <>
-            <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
-                {!isLoggedIn ? <AuthControls /> : <UserInfo />}
-            </Flex>
+            <Box bg="gray.100">
+                <AuthControls />
+            </Box>
+
             {isDevMode && isLoggedIn && <TokenInfo />}
         </>
     );
 }
+
+export { AuthControls };
