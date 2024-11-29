@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Box } from "@chakra-ui/react";
+
 import { useLoggedIn } from "@/features/userMenu";
 import AuthControls from "./ui/AuthControls";
 import TokenInfo from "./ui/TokenInfo";
@@ -11,7 +13,10 @@ export default function AuthPage(): React.ReactElement {
 
     return (
         <>
-            <AuthControls />
+            <Box bg="gray.100">
+                <AuthControls />
+            </Box>
+
             {isDevMode && isLoggedIn && <TokenInfo />}
         </>
     );

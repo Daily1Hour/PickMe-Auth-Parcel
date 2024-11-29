@@ -9,7 +9,7 @@ export default function AuthControls(): React.ReactElement {
     const { isLoggedIn } = useLoggedIn();
 
     return (
-        <Flex w="100%" bg="gray.100" p={3} justifyContent="right">
+        <Flex w="100%" p={3} justifyContent="right">
             {!isLoggedIn ? <AuthActions /> : <UserInfo />}
         </Flex>
     );
