@@ -20,6 +20,7 @@ jobs:
       VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
       VITE_TEST_USERNAME: ${{ secrets.VITE_TEST_USERNAME }}
       VITE_TEST_PASSWORD: ${{ secrets.VITE_TEST_PASSWORD }}
+      VITE_MF_TYPE: ${{ vars.VITE_MF_TYPE }}
 
     steps:
       - name: Checkout repository
