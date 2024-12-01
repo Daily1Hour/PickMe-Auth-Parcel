@@ -1,0 +1,1 @@
+import{Q as r,R as o,b as t,j as e,f as s,P as n,A as i}from"./assets/clipboard-D8l2zukr.js";import{g as u}from"./assets/clipboard-D8l2zukr.js";import{i as a}from"./assets/single-spa-react-CjqfbTZA.js";const c=new r,p=a({React:o,ReactDOM:t,rootComponent:()=>e.jsx(s,{client:c,children:e.jsx(n,{children:e.jsx(i,{})})})});export{u as getTokens,p as parcel};
