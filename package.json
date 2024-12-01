@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:mfa": "tsc -b && vite build --mode mfa",
     "lint": "npx steiger ./src",
     "test": "vitest",
     "preview": "vite preview",
-    "start": "npm run build:mfa && npm run preview"
+    "start": "npm run build && npm run preview"
   },
   "author": "",
   "license": "ISC",

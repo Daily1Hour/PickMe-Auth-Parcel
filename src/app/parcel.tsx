@@ -20,3 +20,5 @@ export const parcel = singleSpaReact({
         </QueryClientProvider>
     ),
 });
+
+export { default as getTokens } from "@/entities/auth/service/session/getTokens";

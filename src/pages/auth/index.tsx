@@ -6,18 +6,19 @@ import { useLoggedIn } from "@/features/userMenu";
 import AuthControls from "./ui/AuthControls";
 import TokenInfo from "./ui/TokenInfo";
 
-const isDevMode = import.meta.env.MODE === "development";
+const isTokenView = import.meta.env.VITE_TOKEN_VIEW === "true";
 
 export default function AuthPage(): React.ReactElement {
     const { isLoggedIn } = useLoggedIn();
 
+    console.log("isTokenView", isTokenView);
     return (
         <>
             <Box bg="gray.100">
                 <AuthControls />
             </Box>
 
-            {isDevMode && isLoggedIn && <TokenInfo />}
+            {isTokenView && isLoggedIn && <TokenInfo />}
         </>
     );
 }
