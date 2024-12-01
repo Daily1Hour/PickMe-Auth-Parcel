@@ -53,7 +53,7 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 
 `npm run build:mfa`
 
-### Parcel 주입 방법
+### Parcel 컴포넌트 주입 방법
 
 -   React
 
@@ -130,6 +130,17 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
     </script>
 
     <div bind:this={container}></div>
+    ```
+
+### Parcel 유틸리티 함수 사용 방법
+
+-   **getTokens 함수**  
+    현재 로그인되어있는 사용자 토큰 3종을 읽어온다.
+
+    ```ts
+    const { getTokens } = await import(parcelURL);
+
+    const { idToken, accessToken, refreshToken } = await getTokens();
     ```
 
 ## 📂 폴더 구조
