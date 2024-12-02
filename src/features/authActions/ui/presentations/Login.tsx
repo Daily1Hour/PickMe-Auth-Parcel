@@ -35,7 +35,7 @@ export default function LoginPresentation({
                             {...register("username", {
                                 required: "아이디를 입력해주세요",
                             })}
-                            value={testUsername}
+                            defaultValue={testUsername}
                         />
                     </Field>
 
@@ -50,7 +50,7 @@ export default function LoginPresentation({
                             {...register("password", {
                                 required: "비밀번호를 입력해주세요",
                             })}
-                            value={testPassword}
+                            defaultValue={testPassword}
                         />
                     </Field>
                 </Stack>
