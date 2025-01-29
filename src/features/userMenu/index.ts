@@ -1,6 +1,3 @@
-import UserMenu from "./ui/UserMenu";
-import useLoggedIn from "./api/useLoggedIn";
-import useUserInfo from "./api/useUserInfo";
+export { default } from "./ui/UserMenu";
+export * from "./api";
 
-export { useLoggedIn, useUserInfo };
-export default UserMenu;

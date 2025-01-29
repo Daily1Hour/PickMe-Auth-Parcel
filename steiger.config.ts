@@ -6,7 +6,6 @@ export default defineConfig([
   {
     rules: {
       "fsd/no-public-api-sidestep": "off",
-      "fsd/public-api": "off",
       "fsd/insignificant-slice": "off",
     },
   },

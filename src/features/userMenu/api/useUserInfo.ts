@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { useQuery } from "@tanstack/react-query";
 
-import getTokens from "@/entities/auth/service/session/getTokens";
+import { getTokens } from "@/entities/auth/service";
 import { UserTokens } from "@/entities/auth/service/types";
 
 interface UserInfo extends jwt.JwtPayload {

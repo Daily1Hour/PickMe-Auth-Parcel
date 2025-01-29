@@ -9,13 +9,9 @@ import {
     PopoverTrigger,
 } from "@/shared/chakra-ui/popover";
 
-import LoginPresentation from "./presentations/Login";
-import SignupPresentation from "./presentations/Signup";
-import SocialLoginPresentation from "./presentations/SocialLogin";
-import useLoginFetch from "../api/useLoginFetch";
-import useSignupFetch from "../api/useSignupFetch";
-import useLoginForm from "./hooks/useLoginForm";
-import useSignupForm from "./hooks/useSignupForm";
+import { useLoginFetch, useSignupFetch } from "../api";
+import { useLoginForm, useSignupForm } from "./hooks";
+import { Login, Signup, SocialLogin } from "./presentations";
 
 export default function AuthActions(): React.ReactElement {
     const loginFormMethods = useLoginForm();
@@ -32,8 +28,8 @@ export default function AuthActions(): React.ReactElement {
                 <PopoverContent>
                     <PopoverArrow />
                     <PopoverBody>
-                        <LoginPresentation {...loginFormMethods} onSubmit={handleLoginSubmit} />
-                        <SocialLoginPresentation />
+                        <Login {...loginFormMethods} onSubmit={handleLoginSubmit} />
+                        <SocialLogin />
                     </PopoverBody>
                 </PopoverContent>
             </PopoverRoot>
@@ -45,7 +41,7 @@ export default function AuthActions(): React.ReactElement {
                 <PopoverContent>
                     <PopoverArrow />
                     <PopoverBody>
-                        <SignupPresentation {...signupFormMethods} onSubmit={handleSignupSubmit} />
+                        <Signup {...signupFormMethods} onSubmit={handleSignupSubmit} />
                     </PopoverBody>
                 </PopoverContent>
             </PopoverRoot>
