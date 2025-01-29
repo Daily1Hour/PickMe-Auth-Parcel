@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider as ChakraProvider } from "@/third-party/chakra-ui";
 

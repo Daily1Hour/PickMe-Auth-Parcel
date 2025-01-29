@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { Avatar, AvatarGroup } from "@/third-party/chakra-ui";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/third-party/chakra-ui";

@@ -1,4 +1,3 @@
-import "dotenv/config";
 import {
     ICognitoUserAttributeData,
     ISignUpResult,
@@ -27,6 +26,7 @@ export default async function signup({
             password,
             attributes,
             attributes,
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             (err: Error | undefined, _result: ISignUpResult | undefined): void => {
                 if (err) {
                     reject({ message: err.message || JSON.stringify(err) });

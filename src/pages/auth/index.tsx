@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Box } from "@chakra-ui/react";
 
 import { useLoggedIn } from "@/features/userMenu";

@@ -1,9 +1,7 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
-
 import { Stack, Button, Input, Box, Link } from "@chakra-ui/react";
-import { Field } from "@/third-party/chakra-ui";
-import { PasswordInput } from "@/third-party/chakra-ui";
+import { Field, PasswordInput } from "@/third-party/chakra-ui";
 
 import { LoginCredential } from "@/entities/auth";
 
