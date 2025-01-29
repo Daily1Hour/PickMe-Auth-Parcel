@@ -1,7 +1,7 @@
 import { Stack, Heading, ClipboardRoot, HStack } from "@chakra-ui/react";
 import { ClipboardLink } from "@/shared/chakra-ui";
 
-import useTokens from "@/features/tokens/api/useTokens";
+import useTokens from "../hook/useTokens";
 
 export default function TokenInfo(): React.ReactElement {
     const { idToken, accessToken, refreshToken } = useTokens();
