@@ -19,9 +19,3 @@ export interface SignupRequest {
 export interface SignupResponse {
     message: string;
 }
-
-export interface UserTokens {
-    idToken: string;
-    accessToken: string;
-    refreshToken: string;
-}

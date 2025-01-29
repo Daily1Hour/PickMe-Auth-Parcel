@@ -4,7 +4,7 @@ import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-c
 
 import login from "./login";
 import userPool from "../../config/userPool";
-import { LoginRequest, LoginResponse } from "../types";
+import { LoginRequest, LoginResponse } from "../../api/dto";
 
 vi.mock("amazon-cognito-identity-js");
 

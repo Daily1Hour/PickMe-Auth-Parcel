@@ -5,7 +5,7 @@ import {
 } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import { SignupRequest, SignupResponse } from "../types";
+import { SignupRequest, SignupResponse } from "../../api/dto";
 
 export default async function signup({
     username,

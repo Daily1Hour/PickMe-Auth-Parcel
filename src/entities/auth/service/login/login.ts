@@ -1,7 +1,7 @@
 import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import { LoginRequest, LoginResponse } from "../types";
+import { LoginRequest, LoginResponse } from "../../api/dto";
 
 export default async function login({ username, password }: LoginRequest): Promise<LoginResponse> {
     // CognitoUser 인스턴스 생성
