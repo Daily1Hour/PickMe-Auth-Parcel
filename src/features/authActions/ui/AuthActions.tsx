@@ -9,8 +9,10 @@ import {
 } from "@/third-party/chakra-ui";
 
 import { useLoginFetch, useSignupFetch } from "../api";
-import { useLoginForm, useSignupForm } from "./hooks";
-import { Login, Signup, SocialLogin } from "./presentations";
+import { useLoginForm, useSignupForm } from "../hook";
+import Login from "./Login";
+import Signup from "./Signup";
+import SocialLogin from "./SocialLogin";
 
 export default function AuthActions(): React.ReactElement {
     const loginFormMethods = useLoginForm();
