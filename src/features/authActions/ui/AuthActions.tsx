@@ -7,7 +7,7 @@ import {
     PopoverContent,
     PopoverRoot,
     PopoverTrigger,
-} from "@/shared/chakra-ui";
+} from "@/third-party/chakra-ui";
 
 import { useLoginFetch, useSignupFetch } from "../api";
 import { useLoginForm, useSignupForm } from "./hooks";

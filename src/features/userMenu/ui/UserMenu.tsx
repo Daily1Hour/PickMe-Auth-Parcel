@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Box, Heading, Text } from "@chakra-ui/react";
-import { Avatar, AvatarGroup } from "@/shared/chakra-ui";
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/shared/chakra-ui";
+import { Avatar, AvatarGroup } from "@/third-party/chakra-ui";
+import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/third-party/chakra-ui";
 
 import { useUserInfo, useLoggedIn } from "../api";
 
