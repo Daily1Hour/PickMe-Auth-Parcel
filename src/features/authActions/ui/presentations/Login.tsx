@@ -5,7 +5,7 @@ import { Stack, Button, Input, Box, Link } from "@chakra-ui/react";
 import { Field } from "@/shared/chakra-ui";
 import { PasswordInput } from "@/shared/chakra-ui";
 
-import { LoginCredential } from "@/entities/auth/model";
+import { LoginCredential } from "@/entities/auth";
 
 const testUsername = import.meta.env.VITE_TEST_USERNAME;
 const testPassword = import.meta.env.VITE_TEST_PASSWORD;
