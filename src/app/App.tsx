@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Provider as ChakraProvider } from "@/shared/chakra-ui/provider";
+import { Provider as ChakraProvider } from "@/shared/chakra-ui";
 
 import AuthPage from "@/pages/auth";
 

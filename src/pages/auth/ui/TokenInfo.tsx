@@ -1,5 +1,5 @@
 import { Stack, Heading, ClipboardRoot, HStack } from "@chakra-ui/react";
-import { ClipboardLink } from "@/shared/chakra-ui/clipboard";
+import { ClipboardLink } from "@/shared/chakra-ui";
 
 import useTokens from "@/features/tokens/api/useTokens";
 

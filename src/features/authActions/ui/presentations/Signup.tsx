@@ -2,8 +2,8 @@ import React from "react";
 import { UseFormReturn } from "react-hook-form";
 
 import { Stack, Button, Input } from "@chakra-ui/react";
-import { Field } from "@/shared/chakra-ui/field";
-import { PasswordInput } from "@/shared/chakra-ui/password-input";
+import { Field } from "@/shared/chakra-ui";
+import { PasswordInput } from "@/shared/chakra-ui";
 
 import { SignupCredential } from "@/entities/auth/model";
 
