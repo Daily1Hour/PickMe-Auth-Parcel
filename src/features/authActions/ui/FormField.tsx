@@ -16,7 +16,7 @@ export default function FormField<T extends FieldValues>({
     const {
         register,
         formState: { errors },
-    } = useFormContext(); // useFormContext를 사용하여 FormProvider로 제공된 폼 상태 및 메서드를 가져옴
+    } = useFormContext<T>(); // useFormContext를 사용하여 FormProvider로 제공된 폼 상태 및 메서드를 가져옴
 
     return (
         <Field

@@ -2,6 +2,7 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 import { Stack, Link } from "@chakra-ui/react";
 
+import { LoginCredential } from "@/entities/auth";
 import { useLoginForm } from "../hook";
 import { useLoginFetch } from "../api";
 import FormLayout from "./FormLayout";
@@ -21,8 +22,17 @@ export default function LoginForm(): React.ReactElement {
         <Stack align="center" mx="10%" mt="10%">
             <FormProvider {...methods}>
                 <FormLayout title="로그인" onSubmit={onLoginSubmit} isValid={isValid}>
-                    <FormField name="username" label="아이디" default={testUsername} />
-                    <FormField name="password" label="이메일" default={testPassword} isPassword />
+                    <FormField<LoginCredential>
+                        name="username"
+                        label="아이디"
+                        default={testUsername}
+                    />
+                    <FormField<LoginCredential>
+                        name="password"
+                        label="비밀번호"
+                        default={testPassword}
+                        isPassword
+                    />
                 </FormLayout>
             </FormProvider>
 

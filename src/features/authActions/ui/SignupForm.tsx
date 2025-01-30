@@ -2,6 +2,7 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 import { Stack } from "@chakra-ui/react";
 
+import { SignupCredential } from "@/entities/auth";
 import { useSignupForm } from "../hook";
 import { useSignupFetch } from "../api";
 import FormLayout from "./FormLayout";
@@ -18,10 +19,14 @@ export default function SignupForm(): React.ReactElement {
         <Stack align="center" m="10%">
             <FormProvider {...methods}>
                 <FormLayout title="회원가입" onSubmit={onSignupSubmit} isValid={isValid}>
-                    <FormField name="username" label="아이디" />
-                    <FormField name="email" label="이메일" />
-                    <FormField name="password" label="비밀번호" isPassword />
-                    <FormField name="confirmPassword" label="비밀번호 확인" isPassword />
+                    <FormField<SignupCredential> name="username" label="아이디" />
+                    <FormField<SignupCredential> name="email" label="이메일" />
+                    <FormField<SignupCredential> name="password" label="비밀번호" isPassword />
+                    <FormField<SignupCredential>
+                        name="confirmPassword"
+                        label="비밀번호 확인"
+                        isPassword
+                    />
                 </FormLayout>
             </FormProvider>
         </Stack>
