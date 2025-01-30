@@ -17,12 +17,12 @@ export default function AuthActions(): React.ReactElement {
     return (
         <HStack>
             <PopoverLayout title="로그인">
-                <Login {...loginFormMethods} onSubmit={handleLoginSubmit} />
+                <Login methods={loginFormMethods} onSubmit={handleLoginSubmit} />
                 <SocialLogin />
             </PopoverLayout>
 
             <PopoverLayout title="회원가입">
-                <Signup {...signupFormMethods} onSubmit={handleSignupSubmit} />
+                <Signup methods={signupFormMethods} onSubmit={handleSignupSubmit} />
             </PopoverLayout>
         </HStack>
     );
