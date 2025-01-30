@@ -6,7 +6,7 @@
 
 [![Amazon Cognito](https://img.shields.io/badge/Amazon_Cognito-DD344C?style=flat-square&logo=amazoncognito&logoColor=white)](https://aws.amazon.com/ko/cognito/)  
 [![Single-SPA](https://img.shields.io/badge/Single_SPA-gray.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgODExLjIxIj48c2NyaXB0IHhtbG5zPSIiIGlkPSJjdXN0b20tdXNlcmFnZW50LXN0cmluZy1wYWdlLXNjcmlwdCIvPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZWU2ODlmO308L3N0eWxlPjwvZGVmcz48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwOC41NCwyMDAuMzMsNTI4LjQyLDQ3MC40Miw0NDkuMjcsNTgzLjg0LDU5LjM5LDM4Ni4yMmw0OS4xNS0xODUuODlNNzcuNCwxMjAuMTIsMCw0MTIuODZsNDY1LjYxLDIzNkw2MDAsNDU2LjI4LDc3LjQsMTIwLjEyWiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyODQuODQgNTU2LjM0IDQ2NS42IDY0OC44NSAxNTQuNjkgODExLjIxIDI4NC44NCA1NTYuMzQiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNDAxLjA2IDMyOC44NSA3Ny40IDEyMC4xMiA1NjkuMDkgMCA0MDEuMDYgMzI4Ljg1Ii8+PC9nPjwvZz48L3N2Zz4=&style=flat-square&logoColor)](https://single-spa.js.org/) [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://ko.vite.dev)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=javascript&logoColor=white)  
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)  
 [![React](https://img.shields.io/badge/React-191B1F?style=flat-square&logo=React&logoColor=61DAFB)](https://reactjs.org) [![React Query](https://img.shields.io/badge/React_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)](https://tanstack.com/query/latest/docs/framework/react/overview) [![React_Hook_Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=flat-square&logo=reacthookform&logoColor=white)](https://www.react-hook-form.com/)  
 [![Steiger](https://img.shields.io/badge/FSD_Steiger-211b1d.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgo8cGF0aCBkPSJNMCAwIEMyOC4zOCAwIDU2Ljc2IDAgODYgMCBDODYgMy42MyA4NiA3LjI2IDg2IDExIEM1Ny42MiAxMSAyOS4yNCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0VCRUFFQSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTAyKSIvPgo8cGF0aCBkPSJNMCAwIEMyOC4zOCAwIDU2Ljc2IDAgODYgMCBDODYgMy42MyA4NiA3LjI2IDg2IDExIEM1Ny42MiAxMSAyOS4yNCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0VCRUFFQSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsODcpIi8+CjxwYXRoIGQ9Ik0wIDAgQzI4LjM4IDAgNTYuNzYgMCA4NiAwIEM4NiAzLjYzIDg2IDcuMjYgODYgMTEgQzU3LjYyIDExIDI5LjI0IDExIDAgMTEgQzAgNy4zNyAwIDMuNzQgMCAwIFogIiBmaWxsPSIjRUJFQUVBIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1Nyw1NykiLz4KPHBhdGggZD0iTTAgMCBDMjguMzggMCA1Ni43NiAwIDg2IDAgQzg2IDMuNjMgODYgNy4yNiA4NiAxMSBDNTcuNjIgMTEgMjkuMjQgMTEgMCAxMSBDMCA3LjM3IDAgMy43NCAwIDAgWiAiIGZpbGw9IiNFQkVBRUEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU3LDQyKSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTQ3KSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTMyKSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTE3KSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsNzIpIi8+Cjwvc3ZnPgo=&style=flat-square&logoColor=black)](https://github.com/feature-sliced/steiger) [![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/) [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)  
 [![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=flat-square&logo=chakraui&logoColor=white)](https://www.chakra-ui.com/)
@@ -150,54 +150,60 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 ```python
 PickMe-Auth-Parcel
 ├─ src
+│  ├─ main.tsx # 개발 서버 진입점
+│  ├─ mfa.tsx # single-spa 애플리케이션 빌드 진입점
+│  ├─ parcel.tsx # single-spa Parcel 빌드 진입점
 │  ├─ app
-│  │  ├─ App.tsx # 프로바이더 스택
-│  │  ├─ main.tsx # 개발 서버 진입점
-│  │  ├─ mfa.tsx # single-spa 애플리케이션 빌드 진입점
-│  │  └─ parcel.tsx # single-spa Parcel 빌드 진입점
+│  │  └─ App.tsx # 프로바이더 스택
 │  ├─ entities # 도메인 모델
 │  │  └─ auth
+│  │     ├─ index.ts
+│  │     ├─ api
+│  │     │  └─ dto.ts # dto 모델
 │  │     ├─ config
 │  │     │  └─ userPool.ts # Cognito 유저풀 정보 및 인스턴스
 │  │     ├─ model # 모델 및 유효성 검사
+│  │     │  ├─ index.ts
 │  │     │  ├─ LoginCredential.ts
 │  │     │  └─ SignupCredential.ts
 │  │     ├─ repository # 브라우저 데이터 접근
 │  │     │  └─ getLoggedIn.ts
 │  │     └─ service # 유즈케이스
-│  │        ├─ login
+│  │        ├─ index.ts
+│  │        ├─ login # 로그인
 │  │        │  ├─ login.test.ts
 │  │        │  ├─ login.ts
 │  │        │  └─ login.usage.ts
-│  │        ├─ session
+│  │        ├─ session # 토큰 사용
 │  │        │  ├─ getTokens.test.ts
 │  │        │  ├─ getTokens.ts
 │  │        │  └─ getTokens.usage.ts
-│  │        ├─ signup
-│  │        │  ├─ signup.test.ts
-│  │        │  ├─ signup.ts
-│  │        │  └─ signup.usage.ts
-│  │        └─ types.ts
+│  │        └─ signup # 회원가입
+│  │           ├─ signup.test.ts
+│  │           ├─ signup.ts
+│  │           └─ signup.usage.ts
 │  ├─ features # 기능 구현체
 │  │  ├─ authActions # 로그인/회원가입 기능
-│  │  │  ├─ api
+│  │  │  ├─ api # 쿼리
+│  │  │  │  ├─ index.ts
 │  │  │  │  ├─ useLoginFetch.ts
 │  │  │  │  └─ useSignupFetch.ts
+│  │  │  ├─ hook # 폼 커스텀훅
+│  │  │  │  ├─ index.ts
+│  │  │  │  ├─ useLoginForm.ts
+│  │  │  │  └─ useSignupForm.ts
 │  │  │  ├─ index.ts
 │  │  │  └─ ui
-│  │  │     ├─ AuthActions.tsx
-│  │  │     ├─ hooks
-│  │  │     │  ├─ useLoginForm.ts
-│  │  │     │  └─ useSignupForm.ts
-│  │  │     └─ presentations
-│  │  │        ├─ Login.tsx
-│  │  │        ├─ Signup.tsx
-│  │  │        └─ SocialLogin.tsx
-│  │  ├─ tokens # 토큰 접근 기능
-│  │  │  └─ api
-│  │  │     └─ useTokens.ts
+│  │  │     ├─ index.ts
+│  │  │     ├─ FormField.tsx # 필드
+│  │  │     ├─ LoginForm.tsx # 로그인 폼
+│  │  │     ├─ SignupForm.tsx # 회원가입 폼
+│  │  │     ├─ SocialLoginForm.tsx # 소셜로그인 폼
+│  │  │     ├─ FormLayout.tsx # 폼 레이아웃
+│  │  │     └─ PopoverLayout.tsx # 팝오버 레이아웃
 │  │  └─ userMenu # 로그인 인증 후 사용자메뉴 기능
 │  │     ├─ api
+│  │     │  ├─ index.ts
 │  │     │  ├─ useLoggedIn.ts
 │  │     │  └─ useUserInfo.ts
 │  │     ├─ index.ts
@@ -205,12 +211,18 @@ PickMe-Auth-Parcel
 │  │        └─ UserMenu.tsx
 │  ├─ pages # 페이지
 │  │  └─ auth
+│  │     ├─ hook
+│  │     │  └─ useTokens.ts
 │  │     ├─ index.tsx
 │  │     └─ ui
-│  │        ├─ AuthControls.tsx
-│  │        └─ TokenInfo.tsx
+│  │        ├─ index.ts
+│  │        ├─ AuthControls.tsx # 로그인/회원가입 컨트롤
+│  │        └─ TokenInfo.tsx # 로그인 후 토큰 정보
 │  └─ shared # 공용
-│     └─ chakra-ui # third-party
+│  │  └─ trans
+│  │     └─ ko.ts
+│  └─ third-party
+│     └─ chakra-ui
 ├─ steiger.config.ts # FSD 린트
 └─ vite.config.ts # Vite 설정 파일
 ```
