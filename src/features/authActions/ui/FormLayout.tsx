@@ -12,7 +12,7 @@ export default function FormLayout({
     children: React.ReactNode;
 }): React.ReactElement {
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} style={{ width: "100%" }}>
             <Fieldset.Root>
                 <Fieldset.Legend display="none">{title}</Fieldset.Legend>
                 <Fieldset.Content>{children}</Fieldset.Content>
