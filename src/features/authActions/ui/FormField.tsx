@@ -2,7 +2,7 @@ import { FieldValues, Path, useFormContext } from "react-hook-form";
 import { Input } from "@chakra-ui/react";
 import { Field, PasswordInput } from "@/third-party/chakra-ui";
 
-import { FieldDictionary } from "@/shared/trans/ko";
+import { FieldDictionary } from "@/shared/trans-ko";
 
 export default function FormField<T extends FieldValues>({
     name, // 필드 이름

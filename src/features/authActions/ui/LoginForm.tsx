@@ -1,7 +1,7 @@
 import React from "react";
 import { FormProvider } from "react-hook-form";
 
-import { FormTitleDictionary } from "@/shared/trans/ko";
+import { FormTitleDictionary } from "@/shared/trans-ko";
 import { LoginCredential } from "@/entities/auth";
 import { useLoginForm } from "../hook";
 import { useLoginFetch } from "../api";
