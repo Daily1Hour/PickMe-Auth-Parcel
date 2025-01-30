@@ -1,9 +1,9 @@
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
-import { Stack, Button, Input, Box, Link } from "@chakra-ui/react";
-import { Field, PasswordInput } from "@/third-party/chakra-ui";
+import { Stack, Button, Box, Link } from "@chakra-ui/react";
 
 import { LoginCredential } from "@/entities/auth";
+import FormField from "./FormField";
 
 const testUsername = import.meta.env.VITE_TEST_USERNAME;
 const testPassword = import.meta.env.VITE_TEST_PASSWORD;
@@ -22,35 +22,21 @@ export default function LoginPresentation({
         <Stack align="center" mx="10%" mt="20%">
             <form style={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                 <Stack gap="4" align="flex-start">
-                    <Field
+                    <FormField
+                        name="username"
                         label="아이디"
-                        invalid={!!errors.username}
-                        errorText={errors.username?.message}
-                        required
-                    >
-                        <Input
-                            borderRadius="lg"
-                            {...register("username", {
-                                required: "아이디를 입력해주세요",
-                            })}
-                            defaultValue={testUsername}
-                        />
-                    </Field>
-
-                    <Field
-                        label="비밀번호"
-                        invalid={!!errors.password}
-                        errorText={errors.password?.message}
-                        required
-                    >
-                        <PasswordInput
-                            borderRadius="lg"
-                            {...register("password", {
-                                required: "비밀번호를 입력해주세요",
-                            })}
-                            defaultValue={testPassword}
-                        />
-                    </Field>
+                        register={register}
+                        errors={errors}
+                        defaultValues={testUsername}
+                    />
+                    <FormField
+                        name="password"
+                        label="이메일"
+                        register={register}
+                        errors={errors}
+                        defaultValues={testPassword}
+                        isPassword
+                    />
                 </Stack>
 
                 <Button

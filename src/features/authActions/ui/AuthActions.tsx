@@ -1,15 +1,9 @@
 import React from "react";
-import { Button, HStack } from "@chakra-ui/react";
-import {
-    PopoverArrow,
-    PopoverBody,
-    PopoverContent,
-    PopoverRoot,
-    PopoverTrigger,
-} from "@/third-party/chakra-ui";
+import { HStack } from "@chakra-ui/react";
 
 import { useLoginFetch, useSignupFetch } from "../api";
 import { useLoginForm, useSignupForm } from "../hook";
+import PopoverLayout from "./PopoverLayout";
 import Login from "./Login";
 import Signup from "./Signup";
 import SocialLogin from "./SocialLogin";
@@ -22,30 +16,14 @@ export default function AuthActions(): React.ReactElement {
 
     return (
         <HStack>
-            <PopoverRoot>
-                <PopoverTrigger asChild>
-                    <Button colorPalette="green">로그인</Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                    <PopoverArrow />
-                    <PopoverBody>
-                        <Login {...loginFormMethods} onSubmit={handleLoginSubmit} />
-                        <SocialLogin />
-                    </PopoverBody>
-                </PopoverContent>
-            </PopoverRoot>
+            <PopoverLayout title="로그인">
+                <Login {...loginFormMethods} onSubmit={handleLoginSubmit} />
+                <SocialLogin />
+            </PopoverLayout>
 
-            <PopoverRoot>
-                <PopoverTrigger asChild>
-                    <Button colorPalette="green">회원가입</Button>
-                </PopoverTrigger>
-                <PopoverContent>
-                    <PopoverArrow />
-                    <PopoverBody>
-                        <Signup {...signupFormMethods} onSubmit={handleSignupSubmit} />
-                    </PopoverBody>
-                </PopoverContent>
-            </PopoverRoot>
+            <PopoverLayout title="회원가입">
+                <Signup {...signupFormMethods} onSubmit={handleSignupSubmit} />
+            </PopoverLayout>
         </HStack>
     );
 }
