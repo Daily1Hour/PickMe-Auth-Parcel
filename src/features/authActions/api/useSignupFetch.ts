@@ -10,9 +10,9 @@ export default function useSignupFetch() {
         },
     });
 
-    const handleSubmit = (data: SignupCredential) => {
+    const submitSignup = (data: SignupCredential) => {
         mutate(data);
     };
 
-    return { handleSubmit };
+    return { submitSignup };
 }

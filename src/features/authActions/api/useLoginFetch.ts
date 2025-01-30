@@ -17,9 +17,9 @@ export default function useLoginFetch() {
         },
     });
 
-    const handleSubmit = (data: LoginCredential) => {
+    const submitLogin = (data: LoginCredential) => {
         mutate(data);
     };
 
-    return { handleSubmit };
+    return { submitLogin };
 }

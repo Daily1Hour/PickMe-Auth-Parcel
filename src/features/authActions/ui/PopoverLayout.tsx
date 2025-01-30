@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import {
     PopoverArrow,
     PopoverBody,
@@ -5,7 +6,6 @@ import {
     PopoverRoot,
     PopoverTrigger,
 } from "@/third-party/chakra-ui";
-import { Button } from "@chakra-ui/react";
 
 export default function PopoverLayout({
     title,
