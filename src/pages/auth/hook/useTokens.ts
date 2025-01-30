@@ -1,6 +1,6 @@
-import getTokens from "@/entities/auth/service/session/getTokens";
-import { UserTokens } from "@/entities/auth/service/types";
 import { useQuery } from "@tanstack/react-query";
+
+import { getTokens, UserTokens } from "@/entities/auth";
 
 export default function useTokens(): {
     idToken: string | null;

@@ -1,11 +1,9 @@
 import React from "react";
-
 import { Box, Heading, Text } from "@chakra-ui/react";
-import { Avatar, AvatarGroup } from "@/shared/chakra-ui/avatar";
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/shared/chakra-ui/menu";
+import { Avatar, AvatarGroup } from "@/third-party/chakra-ui";
+import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/third-party/chakra-ui";
 
-import useUserInfo from "../api/useUserInfo";
-import useLoggedIn from "../api/useLoggedIn";
+import { useUserInfo, useLoggedIn } from "../api";
 
 export default function UserMenu(): React.ReactElement {
     const { "cognito:username": username, email } = useUserInfo();

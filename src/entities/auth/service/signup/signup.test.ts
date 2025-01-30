@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import signup from "./signup";
 import userPool from "../../config/userPool";
-import { SignupRequest } from "../types";
+import { SignupRequest } from "../../api/dto";
 
 vi.mock("../../config/userPool");
 

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import getLoggedIn from "@/entities/auth/repository/getLoggedIn";
+import { getLoggedIn } from "@/entities/auth";
 
 export interface LoggedInData {
     isLoggedIn: boolean;

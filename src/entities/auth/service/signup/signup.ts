@@ -1,4 +1,3 @@
-import "dotenv/config";
 import {
     ICognitoUserAttributeData,
     ISignUpResult,
@@ -6,7 +5,7 @@ import {
 } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import { SignupRequest, SignupResponse } from "../types";
+import { SignupRequest, SignupResponse } from "../../api/dto";
 
 export default async function signup({
     username,
@@ -27,6 +26,7 @@ export default async function signup({
             password,
             attributes,
             attributes,
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             (err: Error | undefined, _result: ISignUpResult | undefined): void => {
                 if (err) {
                     reject({ message: err.message || JSON.stringify(err) });

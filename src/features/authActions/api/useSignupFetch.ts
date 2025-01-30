@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 
-import SignupCredential from "@/entities/auth/model/SignupCredential";
-import signup from "@/entities/auth/service/signup/signup";
+import { SignupCredential, signup } from "@/entities/auth";
 
 export default function useSignupFetch() {
     const { mutate } = useMutation({
@@ -11,9 +10,9 @@ export default function useSignupFetch() {
         },
     });
 
-    const handleSubmit = (data: SignupCredential) => {
+    const submitSignup = (data: SignupCredential) => {
         mutate(data);
     };
 
-    return { handleSubmit };
+    return { submitSignup };
 }

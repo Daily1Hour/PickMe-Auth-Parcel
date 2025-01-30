@@ -1,17 +1,14 @@
 import React from "react";
-
 import { Box } from "@chakra-ui/react";
 
 import { useLoggedIn } from "@/features/userMenu";
-import AuthControls from "./ui/AuthControls";
-import TokenInfo from "./ui/TokenInfo";
+import { AuthControls, TokenInfo } from "./ui";
 
-const isTokenView = import.meta.env.VITE_TOKEN_VIEW === "true";
+const isTokenView = import.meta.env.VITE_TOKEN_VIEW;
 
 export default function AuthPage(): React.ReactElement {
     const { isLoggedIn } = useLoggedIn();
 
-    console.log("isTokenView", isTokenView);
     return (
         <>
             <Box bg="gray.100">

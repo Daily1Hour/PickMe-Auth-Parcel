@@ -2,10 +2,9 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SiNaver } from "react-icons/si";
 import { RiKakaoTalkFill } from "react-icons/ri";
-
 import { defineStyle, HStack, IconButton } from "@chakra-ui/react";
 
-export default function SocialLoginPresentation(): React.ReactElement {
+export default function SocialLoginForm(): React.ReactElement {
     const googleRing = defineStyle({
         colorPalette: "grey",
         outlineWidth: "1px",

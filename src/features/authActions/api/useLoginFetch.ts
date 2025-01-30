@@ -1,7 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import LoginCredential from "@/entities/auth/model/LoginCredential";
-import login from "@/entities/auth/service/login/login";
+import { LoginCredential, login } from "@/entities/auth";
 
 export default function useLoginFetch() {
     const queryClient = useQueryClient();
@@ -18,9 +17,9 @@ export default function useLoginFetch() {
         },
     });
 
-    const handleSubmit = (data: LoginCredential) => {
+    const submitLogin = (data: LoginCredential) => {
         mutate(data);
     };
 
-    return { handleSubmit };
+    return { submitLogin };
 }

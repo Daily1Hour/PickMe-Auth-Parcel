@@ -16,16 +16,16 @@ export default defineConfig(({ mode }) => {
     // single-spa 옵션 설정
     const vitePluginSingleSpaOptions: SingleSpaPluginOptions = {
         serverPort,
-        spaEntryPoints: "src/app/main.ts",
+        spaEntryPoints: "src/main.ts",
     };
 
     // single-spa 빌드 진입점 설정
     switch (process.env.VITE_MF_TYPE) {
         case "application":
-            vitePluginSingleSpaOptions.spaEntryPoints = "src/app/application.tsx";
+            vitePluginSingleSpaOptions.spaEntryPoints = "src/application.tsx";
             break;
         case "parcel":
-            vitePluginSingleSpaOptions.spaEntryPoints = "src/app/parcel.tsx";
+            vitePluginSingleSpaOptions.spaEntryPoints = "src/parcel.tsx";
             break;
     }
 
