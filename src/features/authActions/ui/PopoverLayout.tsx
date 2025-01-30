@@ -17,7 +17,7 @@ export default function PopoverLayout({
     return (
         <PopoverRoot>
             <PopoverTrigger asChild>
-                <Button colorPalette="green">{title}</Button>
+                <Button colorPalette="teal">{title}</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverArrow />

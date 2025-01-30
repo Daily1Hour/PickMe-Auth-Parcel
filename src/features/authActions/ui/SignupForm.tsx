@@ -1,6 +1,5 @@
 import React from "react";
 import { FormProvider } from "react-hook-form";
-import { Stack } from "@chakra-ui/react";
 
 import { FormTitleDictionary } from "@/shared/trans/ko";
 import { SignupCredential } from "@/entities/auth";
@@ -16,19 +15,17 @@ export default function SignupForm(): React.ReactElement {
     const isValid = methods.formState.isValid; // 폼 상태 유효 여부
 
     return (
-        <Stack align="center" m="10%">
-            <FormProvider {...methods}>
-                <FormLayout
-                    title={FormTitleDictionary["signup"]}
-                    onSubmit={onSignupSubmit}
-                    isValid={isValid}
-                >
-                    <FormField<SignupCredential> name="username" />
-                    <FormField<SignupCredential> name="email" />
-                    <FormField<SignupCredential> name="password" isPassword />
-                    <FormField<SignupCredential> name="confirmPassword" isPassword />
-                </FormLayout>
-            </FormProvider>
-        </Stack>
+        <FormProvider {...methods}>
+            <FormLayout
+                title={FormTitleDictionary["signup"]}
+                onSubmit={onSignupSubmit}
+                isValid={isValid}
+            >
+                <FormField<SignupCredential> name="username" />
+                <FormField<SignupCredential> name="email" />
+                <FormField<SignupCredential> name="password" isPassword />
+                <FormField<SignupCredential> name="confirmPassword" isPassword />
+            </FormLayout>
+        </FormProvider>
     );
 }
