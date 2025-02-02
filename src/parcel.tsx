@@ -20,4 +20,4 @@ export const parcel = singleSpaReact({
     ),
 });
 
-export { getTokens } from "@/entities/auth/service";
+export { getTokens, getUser } from "@/entities/auth/service";
