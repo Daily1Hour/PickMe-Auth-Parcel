@@ -19,3 +19,13 @@ export interface SignupRequest {
 export interface SignupResponse {
     message: string;
 }
+
+export interface ForgotPasswordRequest {
+    username: string;
+}
+
+export interface ForgotPasswordResponse {
+    AttributeName: string;
+    DeliveryMedium: string;
+    Destination: string;
+}
