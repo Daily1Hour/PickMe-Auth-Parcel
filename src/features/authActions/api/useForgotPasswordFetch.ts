@@ -6,6 +6,7 @@ import { ForgotPasswordRequest, ForgotPasswordResponse } from "@/entities/auth/a
 
 export default function useForgotPasswordFetch() {
     const [response, setResponse] = useState<ForgotPasswordResponse>();
+    const [username, setUsername] = useState<string>();
 
     const { mutate } = useMutation({
         mutationFn: forgotPassword,
@@ -15,8 +16,9 @@ export default function useForgotPasswordFetch() {
     });
 
     const submit = (data: ForgotPasswordRequest) => {
+        setUsername(data.username); // 사용자명 저장
         mutate(data);
     };
 
-    return { submit, response };
+    return { submit, response, username };
 }
