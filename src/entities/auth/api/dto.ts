@@ -29,3 +29,14 @@ export interface ForgotPasswordResponse {
     DeliveryMedium: string;
     Destination: string;
 }
+
+export interface ResetPasswordRequest {
+    username: string;
+    code: string;
+    password: string;
+    confirmPassword: string;
+}
+
+export interface ResetPasswordResponse {
+    message: string;
+}
