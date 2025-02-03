@@ -7,6 +7,7 @@ import { useForgotPasswordForm } from "../hook";
 import { useForgotPasswordFetch } from "../api";
 import FormLayout from "./FormLayout";
 import FormField from "./FormField";
+import ResetPasswordForm from "./ResetPasswordForm";
 
 const testUsername = import.meta.env.VITE_TEST_USERNAME;
 
@@ -17,20 +18,24 @@ export default function ForgotPasswordForm(): React.ReactElement {
     const isValid = methods.formState.isValid; // 폼 상태 유효 여부
 
     return (
-        <FormProvider {...methods}>
-            <FormLayout
-                title={FormTitleDictionary["passwordForgot"]}
-                onSubmit={onPasswordResetSubmit}
-                isValid={isValid}
-            >
-                <FormField<{ username: string }> name="username" default={testUsername} />
-            </FormLayout>
+        <Stack>
+            <FormProvider {...methods}>
+                <FormLayout
+                    title={FormTitleDictionary["passwordForgot"]}
+                    onSubmit={onPasswordResetSubmit}
+                    isValid={isValid}
+                >
+                    <FormField<{ username: string }> name="username" default={testUsername} />
+                </FormLayout>
+            </FormProvider>
 
             {response && (
                 <Stack>
                     <Text>{response?.Destination}로 비밀번호 재설정 코드가 전송되었습니다.</Text>
+
+                    <ResetPasswordForm />
                 </Stack>
             )}
-        </FormProvider>
+        </Stack>
     );
 }
