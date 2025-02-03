@@ -1,6 +1,7 @@
 export const FormTitleDictionary = {
     login: "로그인",
     signup: "회원가입",
+    passwordForgot: "비밀번호 찾기",
 } as const;
 
 export const FieldDictionary = {
