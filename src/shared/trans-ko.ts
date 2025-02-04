@@ -19,5 +19,4 @@ export const ActionTypeDictionary = {
     [ActionType.Login]: "로그인",
     [ActionType.Signup]: "회원가입",
     [ActionType.ForgotPassword]: "비밀번호 찾기",
-    [ActionType.ResetPassword]: "비밀번호 재설정",
 } as const;
