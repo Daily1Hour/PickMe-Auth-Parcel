@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 
-import { forgotPassword } from "@/entities/auth";
-import { ForgotPasswordRequest, ForgotPasswordResponse } from "@/entities/auth/api/dto";
+import { forgotPassword, dto } from "@/entities/auth";
 
 export default function useForgotPasswordFetch() {
-    const [response, setResponse] = useState<ForgotPasswordResponse>();
+    const [response, setResponse] = useState<dto.ForgotPasswordResponse>();
     const [username, setUsername] = useState<string>();
 
     const { mutate } = useMutation({
@@ -15,7 +14,7 @@ export default function useForgotPasswordFetch() {
         },
     });
 
-    const submit = (data: ForgotPasswordRequest) => {
+    const submit = (data: dto.ForgotPasswordRequest) => {
         setUsername(data.username); // 사용자명 저장
         mutate(data);
     };

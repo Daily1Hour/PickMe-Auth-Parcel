@@ -3,6 +3,7 @@ import { useAtomValue } from "jotai";
 import { Stack } from "@chakra-ui/react";
 
 import ActionType from "@/shared/ActionType";
+import { actionTypeAtom } from "./atom";
 import {
     PopoverLayout,
     ActionLayout,
@@ -11,7 +12,6 @@ import {
     SocialLoginForm,
     SignupForm,
 } from "./ui";
-import { actionTypeAtom } from "./atom";
 
 export default function AuthActions(): React.ReactElement {
     const actionType = useAtomValue(actionTypeAtom); // 현재 액션 타입 상태

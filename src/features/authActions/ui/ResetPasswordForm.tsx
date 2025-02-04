@@ -2,11 +2,11 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
-import { ResetPasswordRequest } from "@/entities/auth/api/dto";
-import useResetPasswordFetch from "../api/useResetPasswordFetch";
+import { dto } from "@/entities/auth";
 import { useResetPasswordForm } from "../hook";
-import FormField from "./FormField";
+import { useResetPasswordFetch } from "../api";
 import FormLayout from "./FormLayout";
+import FormField from "./FormField";
 
 export default function ResetPasswordForm({ username }: { username: string }): React.ReactElement {
     const methods = useResetPasswordForm(); // 비밀번호 리셋 폼 상태 및 제출 메서드
@@ -21,10 +21,10 @@ export default function ResetPasswordForm({ username }: { username: string }): R
                 onSubmit={onSubmit}
                 isValid={isValid}
             >
-                <FormField<ResetPasswordRequest> name="username" default={username} isHidden />
-                <FormField<ResetPasswordRequest> name="code" />
-                <FormField<ResetPasswordRequest> name="password" isPassword />
-                <FormField<ResetPasswordRequest> name="confirmPassword" isPassword />
+                <FormField<dto.ResetPasswordRequest> name="username" default={username} isHidden />
+                <FormField<dto.ResetPasswordRequest> name="code" />
+                <FormField<dto.ResetPasswordRequest> name="password" isPassword />
+                <FormField<dto.ResetPasswordRequest> name="confirmPassword" isPassword />
             </FormLayout>
         </FormProvider>
     );
