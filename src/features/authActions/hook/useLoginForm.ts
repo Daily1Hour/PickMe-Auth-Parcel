@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { LoginCredential } from "@/entities/auth";
+import { Login, LoginSchema } from "../model";
 
 export default function useLoginForm() {
-    return useForm<LoginCredential>({
+    return useForm<Login>({
         // 유효성 검사
-        resolver: yupResolver(LoginCredential.validateSchema),
+        resolver: yupResolver(LoginSchema),
         mode: "onChange",
     });
 }
