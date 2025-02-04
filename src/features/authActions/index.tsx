@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { useAtomValue } from "jotai";
+
 import { Stack } from "@chakra-ui/react";
 
 import ActionType from "@/shared/ActionType";
@@ -10,29 +12,30 @@ import {
     SocialLoginForm,
     SignupForm,
 } from "./ui";
+import { actionTypeAtom } from "./atom";
 
 export default function AuthActions(): React.ReactElement {
-    const [actionType, setActionType] = useState<ActionType>(ActionType.Login);
+    const actionType = useAtomValue(actionTypeAtom);
 
     const renderComponent = (() => {
         switch (actionType) {
             case ActionType.Login:
                 return (
-                    <ActionLayout actionType={actionType} setActionType={setActionType}>
+                    <ActionLayout>
                         <LoginForm />
                         <SocialLoginForm />
                     </ActionLayout>
                 );
             case ActionType.Signup:
                 return (
-                    <ActionLayout actionType={actionType} setActionType={setActionType}>
+                    <ActionLayout>
                         <SignupForm />
                         <SocialLoginForm />
                     </ActionLayout>
                 );
             case ActionType.ForgotPassword:
                 return (
-                    <ActionLayout actionType={actionType} setActionType={setActionType}>
+                    <ActionLayout>
                         <ForgotPasswordForm />
                     </ActionLayout>
                 );

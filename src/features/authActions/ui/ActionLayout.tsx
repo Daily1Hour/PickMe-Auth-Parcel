@@ -1,18 +1,18 @@
 import React from "react";
+import { useAtom } from "jotai";
 import { HStack, Link } from "@chakra-ui/react";
 
 import ActionType from "@/shared/ActionType";
 import { ActionTypeDictionary } from "@/shared/trans-ko";
+import { actionTypeAtom } from "../atom";
 
 export default function ActionLayout({
-    actionType,
-    setActionType,
     children,
 }: {
-    actionType: ActionType;
-    setActionType: (value: ActionType) => void;
     children: React.ReactNode;
 }): React.ReactElement {
+    const [actionType, setActionType] = useAtom(actionTypeAtom);
+
     const types = [ActionType.ForgotPassword, ActionType.Login, ActionType.Signup];
 
     return (
