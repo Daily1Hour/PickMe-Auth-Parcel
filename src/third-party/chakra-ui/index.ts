@@ -8,3 +8,4 @@ export * from "./password-input";
 export * from "./popover";
 export * from "./progress-circle";
 export * from "./provider";
+export * from "./toaster";

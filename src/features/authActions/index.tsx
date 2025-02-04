@@ -1,35 +1,41 @@
-import React, { useState } from "react";
-import { HStack, Link, Stack } from "@chakra-ui/react";
+import React from "react";
+import { useAtomValue } from "jotai";
+import { Stack } from "@chakra-ui/react";
 
-import { PopoverLayout, LoginForm, SocialLoginForm, SignupForm } from "./ui";
+import ActionType from "@/shared/ActionType";
+import { actionTypeAtom } from "./atom";
+import {
+    PopoverLayout,
+    ActionLayout,
+    LoginForm,
+    ForgotPasswordForm,
+    SocialLoginForm,
+    SignupForm,
+} from "./ui";
 
 export default function AuthActions(): React.ReactElement {
-    const [isSignup, setIsSignup] = useState(false);
+    const actionType = useAtomValue(actionTypeAtom); // 현재 액션 타입 상태
+
+    const renderComponent = {
+        [ActionType.Login]: (
+            <Stack>
+                <LoginForm />
+                <SocialLoginForm />
+            </Stack>
+        ),
+        [ActionType.Signup]: (
+            <Stack>
+                <SignupForm />
+                <SocialLoginForm />
+            </Stack>
+        ),
+        [ActionType.ForgotPassword]: <ForgotPasswordForm />,
+    }[actionType]; // 액션 타입에 따른 렌더링할 컴포넌트
 
     return (
         <PopoverLayout title="로그인">
             <Stack align="center" mx="10%" mt="10%">
-                {!isSignup ? (
-                    <>
-                        <LoginForm />
-
-                        <HStack w="100%" justify="space-between" fontSize={12}>
-                            <Link>비밀번호 찾기</Link>
-                            <Link onClick={() => setIsSignup(true)}>회원가입</Link>
-                        </HStack>
-                    </>
-                ) : (
-                    <>
-                        <SignupForm />
-
-                        <HStack w="100%" justify="space-between" fontSize={12}>
-                            <Link>비밀번호 찾기</Link>
-                            <Link onClick={() => setIsSignup(false)}>로그인</Link>
-                        </HStack>
-                    </>
-                )}
-
-                <SocialLoginForm />
+                <ActionLayout>{renderComponent}</ActionLayout>
             </Stack>
         </PopoverLayout>
     );
