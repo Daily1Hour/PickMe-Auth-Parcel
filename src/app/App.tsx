@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Provider as ChakraProvider } from "@/third-party/chakra-ui";
+import { ChakraProvider } from "@chakra-ui/react";
 
+import { pickmeSystem } from "@/shared/thema";
 import AuthPage from "@/pages/auth";
 
 const queryClient = new QueryClient();
@@ -8,7 +9,7 @@ const queryClient = new QueryClient();
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <ChakraProvider>
+            <ChakraProvider value={pickmeSystem}>
                 <AuthPage />
             </ChakraProvider>
         </QueryClientProvider>
