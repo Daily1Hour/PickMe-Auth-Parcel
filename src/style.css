@@ -1,0 +1,19 @@
+:root {
+    --pickme-color-primary: teal;
+    --pickme-color-secondary: #03dac6;
+    --pickme-color-accent: #ff4081;
+
+    --pickme-bg-light: #ffffff;
+    --pickme-bg-dark: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --pickme-color-primary: teal;
+        --pickme-color-secondary: #03dac6;
+        --pickme-color-accent: #ff4081;
+
+        --pickme-bg-light: #121212;
+        --pickme-bg-dark: #ffffff;
+    }
+}

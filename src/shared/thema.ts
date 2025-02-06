@@ -1,3 +1,4 @@
+import "../style.css";
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
 const pickmeConfig = defineConfig({
@@ -5,23 +6,14 @@ const pickmeConfig = defineConfig({
         tokens: {
             colors: {
                 pickme: {
-                    50: { value: "teal" },
-                    100: { value: "teal" },
-                    200: { value: "teal" },
-                    300: { value: "teal" },
-                    400: { value: "teal" },
-                    500: { value: "teal" },
-                    600: { value: "teal" },
-                    700: { value: "white" },
-                    800: { value: "teal" },
-                    900: { value: "teal" },
+                    600: { value: "var(--pickme-color-primary)" }, // 기본 색상
                 },
             },
         },
         semanticTokens: {
             colors: {
                 pickme: {
-                    solid: { value: "{colors.pickme.500}" }, // 기본 색상
+                    solid: { value: "{colors.pickme.600}" },
                     contrast: { value: "white" }, // 대비
                     fg: { value: "{colors.pickme.700}" },
                     muted: { value: "{colors.pickme.700}" },
