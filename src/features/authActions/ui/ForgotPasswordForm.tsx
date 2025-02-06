@@ -3,6 +3,7 @@ import { FormProvider } from "react-hook-form";
 import { Stack, Text } from "@chakra-ui/react";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
+import { ForgotPasswordFieldValues } from "../model";
 import { useForgotPasswordForm } from "../hook";
 import { useForgotPasswordFetch } from "../api";
 import FormLayout from "./FormLayout";
@@ -25,7 +26,7 @@ export default function ForgotPasswordForm(): React.ReactElement {
                     onSubmit={onPasswordResetSubmit}
                     isValid={isValid}
                 >
-                    <FormField<{ username: string }> name="username" default={testUsername} />
+                    <FormField<ForgotPasswordFieldValues> name="username" default={testUsername} />
                 </FormLayout>
             </FormProvider>
 

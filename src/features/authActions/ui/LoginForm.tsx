@@ -2,7 +2,7 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
-import { LoginCredential } from "@/entities/auth";
+import { LoginFieldValues } from "../model";
 import { useLoginForm } from "../hook";
 import { useLoginFetch } from "../api";
 import FormLayout from "./FormLayout";
@@ -24,8 +24,8 @@ export default function LoginForm(): React.ReactElement {
                 onSubmit={onLoginSubmit}
                 isValid={isValid}
             >
-                <FormField<LoginCredential> name="username" default={testUsername} />
-                <FormField<LoginCredential> name="password" default={testPassword} isPassword />
+                <FormField<LoginFieldValues> name="username" default={testUsername} />
+                <FormField<LoginFieldValues> name="password" default={testPassword} isPassword />
             </FormLayout>
         </FormProvider>
     );

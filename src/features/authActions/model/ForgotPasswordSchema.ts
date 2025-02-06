@@ -7,4 +7,4 @@ const ForgotPasswordSchema = Yup.object().shape({
 
 export default ForgotPasswordSchema;
 
-export type ForgotPassword = InferType<typeof ForgotPasswordSchema>;
+export type ForgotPasswordFieldValues = InferType<typeof ForgotPasswordSchema>;

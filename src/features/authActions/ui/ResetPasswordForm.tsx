@@ -5,7 +5,7 @@ import { toaster } from "@/third-party/chakra-ui";
 
 import ActionType from "@/shared/ActionType";
 import { FormTitleDictionary } from "@/shared/trans-ko";
-import { dto } from "@/entities/auth";
+import { ResetPasswordFieldValues } from "../model";
 import { actionTypeAtom } from "../atom";
 import { useResetPasswordForm } from "../hook";
 import { useResetPasswordFetch } from "../api";
@@ -33,10 +33,10 @@ export default function ResetPasswordForm({ username }: { username: string }): R
                 onSubmit={onSubmit}
                 isValid={isValid}
             >
-                <FormField<dto.ResetPasswordRequest> name="username" default={username} isHidden />
-                <FormField<dto.ResetPasswordRequest> name="code" />
-                <FormField<dto.ResetPasswordRequest> name="password" isPassword />
-                <FormField<dto.ResetPasswordRequest> name="confirmPassword" isPassword />
+                <FormField<ResetPasswordFieldValues> name="username" default={username} isHidden />
+                <FormField<ResetPasswordFieldValues> name="code" />
+                <FormField<ResetPasswordFieldValues> name="password" isPassword />
+                <FormField<ResetPasswordFieldValues> name="confirmPassword" isPassword />
             </FormLayout>
         </FormProvider>
     );

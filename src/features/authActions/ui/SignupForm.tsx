@@ -2,7 +2,7 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
-import { SignupCredential } from "@/entities/auth";
+import { SignupFieldValues } from "../model";
 import { useSignupForm } from "../hook";
 import { useSignupFetch } from "../api";
 import FormLayout from "./FormLayout";
@@ -21,10 +21,10 @@ export default function SignupForm(): React.ReactElement {
                 onSubmit={onSignupSubmit}
                 isValid={isValid}
             >
-                <FormField<SignupCredential> name="username" />
-                <FormField<SignupCredential> name="email" />
-                <FormField<SignupCredential> name="password" isPassword />
-                <FormField<SignupCredential> name="confirmPassword" isPassword />
+                <FormField<SignupFieldValues> name="username" />
+                <FormField<SignupFieldValues> name="email" />
+                <FormField<SignupFieldValues> name="password" isPassword />
+                <FormField<SignupFieldValues> name="confirmPassword" isPassword />
             </FormLayout>
         </FormProvider>
     );

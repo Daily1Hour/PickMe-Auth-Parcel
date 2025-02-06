@@ -12,4 +12,4 @@ const ResetPasswordSchema = Yup.object().shape({
 
 export default ResetPasswordSchema;
 
-export type ResetPassword = InferType<typeof ResetPasswordSchema>;
+export type ResetPasswordFieldValues = InferType<typeof ResetPasswordSchema>;
