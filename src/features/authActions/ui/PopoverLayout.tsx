@@ -7,8 +7,9 @@ import {
     PopoverRoot,
     PopoverTrigger,
 } from "@/third-party/chakra-ui";
+import Button from "@styleguide/Button";
 
-import { PmButton, PmIconButton } from "@/shared/ui";
+import { PmIconButton } from "@/shared/ui";
 
 export default function PopoverLayout({
     title,
@@ -23,7 +24,7 @@ export default function PopoverLayout({
                 <BiLogInCircle />
             </PmIconButton>
         ),
-        md: <PmButton aria-label={title}>{title}</PmButton>,
+        md: <Button aria-label={title}>{title}</Button>,
     });
     const size = {
         w: { base: "calc(100vw - 15px)", md: "auto" },

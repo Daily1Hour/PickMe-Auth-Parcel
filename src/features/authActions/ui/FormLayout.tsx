@@ -1,8 +1,8 @@
 import { FieldValues, SubmitHandler, useFormContext } from "react-hook-form";
 import { Fieldset } from "@chakra-ui/react";
+import Button from "@styleguide/Button";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
-import { PmButton } from "@/shared/ui";
 
 export default function FormLayout<T extends FieldValues>({
     title,
@@ -25,9 +25,9 @@ export default function FormLayout<T extends FieldValues>({
                 <Fieldset.Content>{children}</Fieldset.Content>
             </Fieldset.Root>
 
-            <PmButton type="submit" mt={5} w="100%" disabled={!isValid}>
+            <Button type="submit" mt={5} w="100%" disabled={!isValid}>
                 {title}
-            </PmButton>
+            </Button>
         </form>
     );
 }
