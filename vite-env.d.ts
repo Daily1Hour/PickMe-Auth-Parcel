@@ -9,6 +9,7 @@ interface ImportMetaEnv {
     readonly VITE_SERVER_PORT: number;
     readonly VITE_MF_TYPE: "application" | "parcel";
     readonly VITE_TOKEN_VIEW: boolean;
+    readonly VITE_STYLEGUIDE_URL: string;
 }
 
 interface ImportMeta {

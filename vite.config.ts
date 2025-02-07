@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
     // 환경변수 증설
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-    // 서버포트
-    const serverPort = Number(process.env.VITE_SERVER_PORT);
+    const serverPort = Number(process.env.VITE_SERVER_PORT); // 서버 포트
+    const styleguideUrl = process.env.VITE_STYLEGUIDE_URL!; // 스타일가이드 URL
 
     // vite 설정
     return {
@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
             federation({
                 // 모듈 페더레이션 적용
                 remotes: {
-                    "@styleguide": "http://localhost:9001/pickme-style-guide.js",
+                    "@styleguide": styleguideUrl,
                 },
             }),
             tsconfigPaths(), // tsconfig.json의 paths 설정을 적용
