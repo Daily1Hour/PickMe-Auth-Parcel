@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
                 remotes: {
                     "@styleguide": styleguideUrl,
                 },
+                shared: ["react", "react-dom", "@chakra-ui/react"], // 공유 모듈 중복 번들링 방지
             }),
             tsconfigPaths(), // tsconfig.json의 paths 설정을 적용
             nodePolyfills(), // node.js 라이브러리 polyfills를 적용
