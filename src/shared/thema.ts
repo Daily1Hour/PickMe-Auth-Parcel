@@ -1,5 +1,6 @@
-import "../style.css";
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+
+import("@styleguide/GlobalStyles");
 
 const pickmeConfig = defineConfig({
     theme: {
