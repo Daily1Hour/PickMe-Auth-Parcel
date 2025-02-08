@@ -1,5 +1,5 @@
 import { BiLogInCircle } from "react-icons/bi";
-import { Button, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import { useBreakpointValue } from "@chakra-ui/react";
 import {
     PopoverArrow,
     PopoverBody,
@@ -7,6 +7,9 @@ import {
     PopoverRoot,
     PopoverTrigger,
 } from "@/third-party/chakra-ui";
+import Button from "@styleguide/Button";
+
+import { PmIconButton } from "@/shared/ui";
 
 export default function PopoverLayout({
     title,
@@ -17,15 +20,11 @@ export default function PopoverLayout({
 }): React.ReactElement {
     const button = useBreakpointValue({
         base: (
-            <IconButton colorPalette="teal" aria-label={title}>
+            <PmIconButton aria-label={title}>
                 <BiLogInCircle />
-            </IconButton>
+            </PmIconButton>
         ),
-        md: (
-            <Button colorPalette="teal" aria-label={title}>
-                {title}
-            </Button>
-        ),
+        md: <Button aria-label={title}>{title}</Button>,
     });
     const size = {
         w: { base: "calc(100vw - 15px)", md: "auto" },

@@ -12,4 +12,4 @@ const SignupSchema = Yup.object().shape({
 
 export default SignupSchema;
 
-export type Signup = InferType<typeof SignupSchema>;
+export type SignupFieldValues = InferType<typeof SignupSchema>;

@@ -29,11 +29,7 @@ export default function FormField<T extends FieldValues>({
             required
         >
             {!isPassword ? (
-                <Input
-                    {...register(name)}
-                    defaultValue={defaultValues}
-                    borderRadius="lg"
-                />
+                <Input {...register(name)} defaultValue={defaultValues} borderRadius="lg" />
             ) : (
                 <PasswordInput {...register(name)} defaultValue={defaultValues} borderRadius="lg" />
             )}

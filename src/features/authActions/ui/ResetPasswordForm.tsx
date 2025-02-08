@@ -4,8 +4,8 @@ import { FormProvider } from "react-hook-form";
 import { toaster } from "@/third-party/chakra-ui";
 
 import ActionType from "@/shared/ActionType";
-import { FormTitleDictionary } from "@/shared/trans-ko";
 import { dto } from "@/entities/auth";
+import { ResetPasswordFieldValues } from "../model";
 import { actionTypeAtom } from "../atom";
 import { useResetPasswordForm } from "../hook";
 import { useResetPasswordFetch } from "../api";
@@ -16,27 +16,22 @@ export default function ResetPasswordForm({ username }: { username: string }): R
     const setType = useSetAtom(actionTypeAtom);
     const methods = useResetPasswordForm(); // 비밀번호 리셋 폼 상태 및 제출 메서드
     const { submit } = useResetPasswordFetch(); // 비밀번호 리셋 API 호출 메서드
-    const isValid = methods.formState.isValid; // 폼 상태 유효 여부
-    const onSubmit = methods.handleSubmit(async (e) => {
+    const onSubmit = async (e: dto.ResetPasswordRequest) => {
         const { message } = await submit(e); // 폼 제출
 
         if (message === "success") {
             toaster.create({ title: "비밀번호 리셋에 성공했습니다.", type: "success" }); // 성공 토스트 메시지
             setType(ActionType.Login); // 로그인 액션으로 변경
         }
-    });
+    };
 
     return (
         <FormProvider {...methods}>
-            <FormLayout
-                title={FormTitleDictionary["passwordReset"]}
-                onSubmit={onSubmit}
-                isValid={isValid}
-            >
-                <FormField<dto.ResetPasswordRequest> name="username" default={username} isHidden />
-                <FormField<dto.ResetPasswordRequest> name="code" />
-                <FormField<dto.ResetPasswordRequest> name="password" isPassword />
-                <FormField<dto.ResetPasswordRequest> name="confirmPassword" isPassword />
+            <FormLayout<ResetPasswordFieldValues> title="passwordReset" onSubmit={onSubmit}>
+                <FormField<ResetPasswordFieldValues> name="username" default={username} isHidden />
+                <FormField<ResetPasswordFieldValues> name="code" />
+                <FormField<ResetPasswordFieldValues> name="password" isPassword />
+                <FormField<ResetPasswordFieldValues> name="confirmPassword" isPassword />
             </FormLayout>
         </FormProvider>
     );

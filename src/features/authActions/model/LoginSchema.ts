@@ -8,4 +8,4 @@ const LoginSchema = Yup.object().shape({
 
 export default LoginSchema;
 
-export type Login = InferType<typeof LoginSchema>;
+export type LoginFieldValues = InferType<typeof LoginSchema>;

@@ -10,9 +10,9 @@ export default function useSignupFetch() {
         },
     });
 
-    const submitSignup = (data: dto.SignupRequest) => {
+    const submit = (data: dto.SignupRequest) => {
         mutate(data);
     };
 
-    return { submitSignup };
+    return { submit };
 }

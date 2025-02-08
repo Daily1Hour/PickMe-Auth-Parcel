@@ -2,28 +2,24 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SiNaver } from "react-icons/si";
 import { RiKakaoTalkFill } from "react-icons/ri";
-import { defineStyle, HStack, IconButton } from "@chakra-ui/react";
+import { chakra, HStack } from "@chakra-ui/react";
+
+import { PmProviderIconButton } from "@/shared/ui";
 
 export default function SocialLoginForm(): React.ReactElement {
-    const googleRing = defineStyle({
-        colorPalette: "grey",
-        outlineWidth: "1px",
-        outlineColor: "colorPalette.300",
-        outlineOffset: "1px",
-        outlineStyle: "solid",
-    });
+    const NaverIcon = chakra(SiNaver, { base: { boxSize: "1rem" } });
 
     return (
-        <HStack justify="center" mx="10%" mt="10%" fontSize={50}>
-            <IconButton size="2xl" bg="#FEE500" color="#191919" rounded="full" aria-label="kakao">
-                <RiKakaoTalkFill size="48px" />
-            </IconButton>
-            <IconButton size="2xl" bg="#06CC80" color="white" rounded="full" aria-label="naver">
-                <SiNaver />
-            </IconButton>
-            <IconButton size="2xl" bg="white" css={googleRing} rounded="full" aria-label="google">
+        <HStack justify="center" mx="10%" mt="10%">
+            <PmProviderIconButton size="xl" bg="#FFFFFF" color="#FF0000" aria-label="google">
                 <FcGoogle />
-            </IconButton>
+            </PmProviderIconButton>
+            <PmProviderIconButton size="xl" bg="#06CC80" color="#FFFFFF" aria-label="naver">
+                <NaverIcon />
+            </PmProviderIconButton>
+            <PmProviderIconButton size="xl" bg="#FEE500" color="#191919" aria-label="kakao">
+                <RiKakaoTalkFill />
+            </PmProviderIconButton>
         </HStack>
     );
 }

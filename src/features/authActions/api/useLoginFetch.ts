@@ -17,9 +17,9 @@ export default function useLoginFetch() {
         },
     });
 
-    const submitLogin = (data: dto.LoginRequest) => {
+    const submit = (data: dto.LoginRequest) => {
         mutate(data);
     };
 
-    return { submitLogin };
+    return { submit };
 }
