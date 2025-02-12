@@ -7,7 +7,7 @@ import {
     PopoverRoot,
     PopoverTrigger,
 } from "@/third-party/chakra-ui";
-import Button from "@styleguide/Button";
+import { Button } from "@styleguide/react";
 
 import { PmIconButton } from "@/shared/ui";
 

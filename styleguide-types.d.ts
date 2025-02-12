@@ -1,15 +1,13 @@
-declare module "@styleguide/GlobalStyles" {
+declare module "@styleguide/global" {
     export {};
 }
 
-declare module "@styleguide/chakra-ui-system" {
-    import { SystemContext } from "@chakra-ui/react";
-    const chakraUiSystem: SystemContext;
-    export default chakraUiSystem;
-}
+declare module "@styleguide/react" {
+    import { ButtonProps, SystemContext } from "@chakra-ui/react";
 
-declare module "@styleguide/Button" {
-    import { ButtonProps } from "@chakra-ui/react";
+    const chakraUiSystem: SystemContext;
+
     const Button: React.FC<ButtonProps>;
-    export default Button;
+
+    export { Button, chakraUiSystem };
 }

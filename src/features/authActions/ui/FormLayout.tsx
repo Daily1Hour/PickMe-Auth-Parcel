@@ -1,6 +1,6 @@
 import { FieldValues, SubmitHandler, useFormContext } from "react-hook-form";
 import { Fieldset } from "@chakra-ui/react";
-import Button from "@styleguide/Button";
+import { Button } from "@styleguide/react";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
 
