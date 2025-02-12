@@ -18,6 +18,10 @@ export const parcel = singleSpaReact({
             </ChakraProvider>
         </QueryClientProvider>
     ),
+    errorBoundary(err, info, props) {
+        console.error(err, info, props);
+        return <div>Error</div>;
+    },
 });
 
 export { getTokens, getUser } from "@/entities/auth/service";
