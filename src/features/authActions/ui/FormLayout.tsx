@@ -1,6 +1,5 @@
 import { FieldValues, SubmitHandler, useFormContext } from "react-hook-form";
-import { Fieldset } from "@chakra-ui/react";
-import Button from "@styleguide/Button";
+import { Fieldset, Button } from "@chakra-ui/react";
 
 import { FormTitleDictionary } from "@/shared/trans-ko";
 
@@ -25,7 +24,15 @@ export default function FormLayout<T extends FieldValues>({
                 <Fieldset.Content>{children}</Fieldset.Content>
             </Fieldset.Root>
 
-            <Button type="submit" mt={5} w="100%" disabled={!isValid}>
+            <Button
+                type="submit"
+                colorPalette="green"
+                w="100%"
+                borderRadius="lg"
+                mt={5}
+                bg={{ base: "colorPalette.700", _dark: "colorPalette.400" }}
+                disabled={!isValid}
+            >
                 {title}
             </Button>
         </form>
