@@ -1,6 +1,5 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
-import { Toaster } from "@/third-party/chakra-ui";
+import { Flex } from "@chakra-ui/react";
 
 import { useLoggedIn } from "@/features/userMenu";
 import { AuthControls, TokenInfo } from "./ui";
@@ -12,13 +11,11 @@ export default function AuthPage(): React.ReactElement {
 
     return (
         <>
-            <Box bg="pink.700">
+            <Flex w="100%" p={3} justifyContent="right" bg="pink.700">
                 <AuthControls />
-            </Box>
+            </Flex>
 
             {isTokenView && isLoggedIn && <TokenInfo />}
-
-            <Toaster />
         </>
     );
 }

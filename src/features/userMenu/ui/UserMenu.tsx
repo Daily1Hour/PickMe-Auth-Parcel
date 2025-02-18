@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { MdLogout } from "react-icons/md";
+import { Box, Icon, Separator, Text } from "@chakra-ui/react";
 import { Avatar, AvatarGroup } from "@/third-party/chakra-ui";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/third-party/chakra-ui";
 
@@ -16,12 +17,29 @@ export default function UserMenu(): React.ReactElement {
                     <Avatar name={username} cursor="pointer" />
                 </AvatarGroup>
             </MenuTrigger>
-            <MenuContent>
+
+            <MenuContent
+                colorPalette="pickme-primary"
+                bg="colorPalette.solid"
+                color="colorPalette.contrast"
+                boxShadow="0px 0px 10px #444"
+            >
                 <Box p={3}>
                     <Text textStyle="lg">{username}</Text>
-                    <Text>{email}</Text>
+                    <Text textStyle="xs">{email}</Text>
                 </Box>
-                <MenuItem value="logout" onClick={onLogout} cursor="pointer">
+
+                <Separator />
+                <MenuItem
+                    value="logout"
+                    cursor="pointer"
+                    justifyContent="center"
+                    color="colorPalette.contrast"
+                    onClick={onLogout}
+                >
+                    <Icon>
+                        <MdLogout />
+                    </Icon>
                     로그아웃
                 </MenuItem>
             </MenuContent>
