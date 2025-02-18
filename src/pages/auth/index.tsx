@@ -12,7 +12,7 @@ export default function AuthPage(): React.ReactElement {
 
     return (
         <>
-            <Box bg="gray.100">
+            <Box bg="pink.700">
                 <AuthControls />
             </Box>
 

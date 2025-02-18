@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import { pickmeSystem } from "@/shared/thema";
+import pickmeSystem from "@/shared/thema";
 import AuthPage, { AuthControls } from "@/pages/auth";
 
 const queryClient = new QueryClient();
