@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Avatar, AvatarGroup } from "@/third-party/chakra-ui";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "@/third-party/chakra-ui";
 
@@ -18,7 +18,7 @@ export default function UserMenu(): React.ReactElement {
             </MenuTrigger>
             <MenuContent>
                 <Box p={3}>
-                    <Heading>{username}</Heading>
+                    <Text textStyle="lg">{username}</Text>
                     <Text>{email}</Text>
                 </Box>
                 <MenuItem value="logout" onClick={onLogout} cursor="pointer">
