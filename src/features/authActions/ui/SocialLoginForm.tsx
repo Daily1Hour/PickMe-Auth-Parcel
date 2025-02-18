@@ -10,13 +10,13 @@ export default function SocialLoginForm(): React.ReactElement {
     return (
         <HStack justify="center" mx="10%" mt="10%" fontSize={50}>
             <CircleButton bg="#FFFFFF" aria-label="google">
-                <FcGoogle />
+                <FcGoogle style={{ width: "1.8rem", height: "1.8rem" }} />
             </CircleButton>
             <CircleButton bg="#06CC80" color="#FFFFFF" aria-label="naver">
-                <SiNaver />
+                <SiNaver id="naver" style={{ width: "1.2rem", height: "1.2rem" }} />
             </CircleButton>
             <CircleButton bg="#FEE500" color="#191919" aria-label="kakao">
-                <RiKakaoTalkFill size="48px" />
+                <RiKakaoTalkFill style={{ width: "1.8rem", height: "1.8rem" }} />
             </CircleButton>
         </HStack>
     );
