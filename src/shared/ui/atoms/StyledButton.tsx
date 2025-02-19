@@ -9,6 +9,10 @@ const style = {
         _hover: {
             backgroundColor: "transparent",
         },
+        _expanded: {
+            backgroundColor: "transparent",
+            boxShadow: "0px 0px 10px #FFF",
+        },
     },
 };
 
