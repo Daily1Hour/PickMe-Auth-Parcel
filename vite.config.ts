@@ -41,6 +41,10 @@ export default defineConfig(({ mode }) => {
     return {
         plugins,
         build: {
+            target: "esnext",
+            cssMinify: true, // css 코드 압축 여부
+            minify: true, // 빌드시 코드 압축 여부
+            cssCodeSplit: false, // css 코드 분할 여부
             emptyOutDir: false, // 빌드시 기존 파일 삭제 여부
         },
         server: {

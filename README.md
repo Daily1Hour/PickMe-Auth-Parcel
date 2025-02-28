@@ -2,6 +2,14 @@
 
 > Single-Spa Parcel 구성
 
+## 🚩 목차
+
+-   [🛠️ 기술 스택](#️-기술-스택)
+-   [🎨 스크린샷](#-스크린샷)
+-   [💡 주요 기능](#-주요-기능)
+-   [🚀 실행 방법](#-실행-방법)
+-   [📂 폴더 구조](#-폴더-구조)
+
 ## 🛠️ 기술 스택
 
 [![Amazon Cognito](https://img.shields.io/badge/Amazon_Cognito-DD344C?style=flat-square&logo=amazoncognito&logoColor=white)](https://aws.amazon.com/ko/cognito/)  
@@ -13,21 +21,24 @@
 
 ## 🎨 스크린샷
 
-<img title="로그인" width="33%" src="https://github.com/user-attachments/assets/c58f1b3a-1a71-4a95-ad58-a5ca7544a923" />
-<img title="회원가입" width="33%" src="https://github.com/user-attachments/assets/9d8e5e9a-212b-4f1e-b42f-8c51635a2e43" />  
-<img title="토큰" width="66%" src="https://github.com/user-attachments/assets/f6d61bc8-4d46-4296-ab9e-af86e654aa75" />
+<img title="회원가입" width="33%" src="https://github.com/user-attachments/assets/a3bccafc-e13d-41f1-95cf-69741f578beb" /> 
+<img title="로그인" width="33%" src="https://github.com/user-attachments/assets/cba71ae8-ccbf-4be6-8571-69fa8bd7a4c8" />
+<img title="비밀번호찾기" width="32%" src="https://github.com/user-attachments/assets/e8a369c4-4c39-4f86-b35b-dd3a539691cf" />  
+<img title="토큰" width="100%" src="https://github.com/user-attachments/assets/1fd709f1-c89e-4f5e-8cc7-79b4698d004d" />
 
-## 🔐 Amazon Cognito
+## 💡 주요 기능
+
+### 🔐 Amazon Cognito
 
 > 웹 및 모바일 앱을 위한 자격 증명 플랫폼  
 > 사용자 디렉터리, 인증 서버, OAuth 2.0 액세스 토큰 및 자격 증명에 대한 권한 부여 서비스
 
-### Cognito 사용자 풀 옵션
+Cognito 사용자 풀 옵션
 
 -   사용자 풀 로그인 옵션: 사용자 이름 (아이디)
 -   가입 필수 옵션: 사용자 이름, 이메일
 
-### 환경변수
+환경변수
 
 ```
 VITE_COGNITO_USER_POOL_ID= # Cognito 사용자 풀 아이디
@@ -39,19 +50,25 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 
 ### 로컬 스토리지 저장
 
--   idToken; 클라이언트에서 사용자 정보를 가져올 때 사용
--   accessToken; 백엔드 서비스에 접근할 때 사용
--   refreshToken; 두 토큰의 만료 시 갱신에 사용
+-   **idToken**; 클라이언트에서 사용자 정보를 가져올 때 사용
+-   **accessToken**; 백엔드 서비스에 접근할 때 사용
+-   **refreshToken**; 두 토큰의 만료 시 갱신에 사용
 
 ## 🚀 실행 방법
 
 ### 개발 서버 실행
 
-`npm run dev`
+```sh
+$ npm install
+$ npm run dev
+```
 
-### Parcel 빌드 실행
+### Single-SPA 주입 애플리케이션 빌드
 
-`npm run build:mfa`
+```sh
+$ npm install
+$ npm run build:single-spa
+```
 
 ### Parcel 컴포넌트 주입 방법
 
