@@ -15,13 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
       VITE_COGNITO_USER_POOL_ID: ${{ secrets.VITE_COGNITO_USER_POOL_ID }}
       VITE_COGNITO_CLIENT_ID: ${{ secrets.VITE_COGNITO_CLIENT_ID }}
       VITE_TEST_USERNAME: ${{ secrets.VITE_TEST_USERNAME }}
       VITE_TEST_PASSWORD: ${{ secrets.VITE_TEST_PASSWORD }}
       VITE_MF_TYPE: ${{ vars.VITE_MF_TYPE }}
-      VITE_TOKEN_VIEW: ${{ vars.VITE_TOKEN_VIEW }}
 
     steps:
       - name: Checkout repository
@@ -43,9 +41,16 @@ jobs:
 
       - name: Build Vite project
         env:
-          VITE_PARCEL_URL: ${{ secrets.VITE_PARCEL_URL }} # 환경 변수 설정
+          VITE_PUBLIC_URL: ${{ vars.VITE_GH_PAGE_URL }}
+          VITE_TOKEN_VIEW: ${{ vars.VITE_GH_PAGE_TOKEN_VIEW }}
         run: |
           npm run build # Vite 프로젝트 빌드
+
+      - name: Build Vite For single-spa
+        env:
+          VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
+          VITE_TOKEN_VIEW: ${{ vars.VITE_TOKEN_VIEW }}
+        run: |
           npm run build:single-spa # single-spa 앱 빌드
 
       - name: Upload Artifact
