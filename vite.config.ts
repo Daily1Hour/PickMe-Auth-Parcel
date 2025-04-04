@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => {
 
     // vite 설정
     return {
+        // 기본 경로 설정
+        base: PUBLIC_URL,
+
+        // 플러그인
         plugins: [
             react(), // React 라이브러리 적용
             tsconfigPaths(), // tsconfig.json의 paths 설정을 적용
@@ -27,13 +31,31 @@ export default defineConfig(({ mode }) => {
                 spaEntryPoints: "src/parcel.tsx",
             }),
         ],
+
+        // 개발 서버 설정
+        server: {
+            port: SERVER_PORT,
+            cors: true,
+        },
+
+        // 빌드 설정
         build: {
             target: "esnext", // 빌드 타겟 설정
-            cssMinify: true, // css 코드 압축 여부
             minify: "terser", // 빌드시 코드 압축 여부, 정밀 제어 terser 사용
+            terserOptions: {
+                // 압축, 난독화, 주석 제거
+                format: {
+                    comments: "all", // 주석을 모두 포함할지 여부
+                },
+            },
+
+            cssMinify: true, // css 코드 압축 여부
             cssCodeSplit: false, // css 코드 분할 여부
+
             emptyOutDir: false, // 빌드시 기존 파일 삭제 여부
+
             rollupOptions: {
+                //코드 병합/분할, chunk 설정
                 input: {
                     main: "index.html",
                     "widget.user": "src/userscript/widget.user.js",
@@ -44,20 +66,14 @@ export default defineConfig(({ mode }) => {
                     },
                 },
             },
-            terserOptions: {
-                format: {
-                    comments: "all", // 주석을 모두 포함할지 여부
-                },
-            },
         },
-        server: {
-            // 개발 서버 설정
-            port: SERVER_PORT,
-            cors: true,
-        },
+
+        // 프리뷰 서버 설정
         preview: {
             port: SERVER_PORT,
         },
-        base: PUBLIC_URL,
     };
 });
+
+// Vite 빌드 과정
+// 플러그인 실행 → Rollup 번들링 → Minify 압축(Terser) → CSS Minify, Code Split → 최종 빌드
