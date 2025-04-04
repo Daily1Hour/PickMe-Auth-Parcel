@@ -45,7 +45,7 @@ export default defineConfig(({ mode }) => {
         build: {
             target: "esnext",
             cssMinify: true, // css 코드 압축 여부
-            minify: false, // 빌드시 코드 압축 여부
+            minify: "terser", // 빌드시 코드 압축 여부, 정밀 제어 terser 사용 
             cssCodeSplit: false, // css 코드 분할 여부
             emptyOutDir: false, // 빌드시 기존 파일 삭제 여부
             rollupOptions: {
@@ -59,6 +59,11 @@ export default defineConfig(({ mode }) => {
                     banner: (chunkInfo) => {
                         return chunkInfo.name === "widget" ? `${userscriptMeta}` : "";
                     },
+                },
+            },
+            terserOptions: {
+                format: {
+                    comments: "all", // 주석을 모두 포함할지 여부
                 },
             },
         },
