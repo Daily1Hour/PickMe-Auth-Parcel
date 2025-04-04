@@ -5,6 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import vitePluginSingleSpa, { SingleSpaPluginOptions } from "vite-plugin-single-spa";
 
+import userscriptMeta from "./src/userscript/widget.meta";
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
     // 환경변수 증설
@@ -43,7 +45,7 @@ export default defineConfig(({ mode }) => {
         build: {
             target: "esnext",
             cssMinify: true, // css 코드 압축 여부
-            minify: true, // 빌드시 코드 압축 여부
+            minify: false, // 빌드시 코드 압축 여부
             cssCodeSplit: false, // css 코드 분할 여부
             emptyOutDir: false, // 빌드시 기존 파일 삭제 여부
             rollupOptions: {
@@ -54,6 +56,9 @@ export default defineConfig(({ mode }) => {
                 output: {
                     entryFileNames: (chunk) =>
                         chunk.name === "widget" ? "[name].user.js" : "assets/[name]-[hash].js", // 위젯 파일명 설정
+                    banner: (chunkInfo) => {
+                        return chunkInfo.name === "widget" ? `${userscriptMeta}` : "";
+                    },
                 },
             },
         },
