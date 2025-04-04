@@ -51,6 +51,10 @@ export default defineConfig(({ mode }) => {
                     main: "index.html",
                     widget: "src/userscript/widget.user.js",
                 },
+                output: {
+                    entryFileNames: (chunk) =>
+                        chunk.name === "widget" ? "[name].user.js" : "assets/[name]-[hash].js", // 위젯 파일명 설정
+                },
             },
         },
         server: {
