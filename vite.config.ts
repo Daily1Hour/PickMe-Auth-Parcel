@@ -30,19 +30,17 @@ export default defineConfig(({ mode }) => {
         build: {
             target: "esnext", // 빌드 타겟 설정
             cssMinify: true, // css 코드 압축 여부
-            minify: "terser", // 빌드시 코드 압축 여부, 정밀 제어 terser 사용 
+            minify: "terser", // 빌드시 코드 압축 여부, 정밀 제어 terser 사용
             cssCodeSplit: false, // css 코드 분할 여부
             emptyOutDir: false, // 빌드시 기존 파일 삭제 여부
             rollupOptions: {
                 input: {
                     main: "index.html",
-                    widget: "src/userscript/widget.user.js",
+                    "widget.user": "src/userscript/widget.user.js",
                 },
                 output: {
-                    entryFileNames: (chunk) =>
-                        chunk.name === "widget" ? "[name].user.js" : "assets/[name]-[hash].js", // 위젯 파일명 설정
                     banner: (chunkInfo) => {
-                        return chunkInfo.name === "widget" ? `${userscriptMeta}` : "";
+                        return chunkInfo.name === "widget.user" ? `${userscriptMeta}` : "";
                     },
                 },
             },
