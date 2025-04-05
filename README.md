@@ -7,8 +7,8 @@
 -   [🛠️ 기술 스택](#️-기술-스택)
 -   [🎨 스크린샷](#-스크린샷)
 -   [💡 주요 기능](#-주요-기능)
--   [🚀 실행 방법](#-실행-방법)
 -   [📂 폴더 구조](#-폴더-구조)
+-   [🚀 실행 방법](#-실행-방법)
 
 ## 🛠️ 기술 스택
 
@@ -53,6 +53,133 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 -   **idToken**; 클라이언트에서 사용자 정보를 가져올 때 사용
 -   **accessToken**; 백엔드 서비스에 접근할 때 사용
 -   **refreshToken**; 두 토큰의 만료 시 갱신에 사용
+
+## 📂 폴더 구조
+
+<details>
+<summary>열기</summary>
+
+> <image src="https://feature-sliced.design/kr/img/brand/logo-primary.png" width=40 />
+
+```python
+PickMe-Auth-Parcel
+├─ src
+│  ├─ main.tsx # 개발 서버 진입점
+│  ├─ parcel.tsx # single-spa Parcel 빌드 진입점
+│  ├─ app
+│  │  └─ App.tsx # 프로바이더 스택
+│  ├─ entities # 도메인 모델
+│  │  └─ auth
+│  │     ├─ index.ts
+│  │     ├─ api
+│  │     │  └─ dto.ts # dto 모델
+│  │     ├─ config
+│  │     │  └─ userPool.ts # Cognito 유저풀 정보 및 인스턴스
+│  │     ├─ model # 모델 및 유효성 검사
+│  │     │  ├─ index.ts
+│  │     │  ├─ LoginCredential.ts
+│  │     │  └─ SignupCredential.ts
+│  │     ├─ repository # 브라우저 데이터 접근
+│  │     │  └─ getLoggedIn.ts
+│  │     └─ service # 유즈케이스
+│  │        ├─ index.ts
+│  │        ├─ login # 로그인
+│  │        │  ├─ login.ts
+│  │        │  │  ├─ login.test.ts
+│  │        │  │  └─ login.usage.ts
+│  │        │  ├─ forgotPassword.ts
+│  │        │  │  └─ forgotPassword.usage.ts
+│  │        │  └─ resetPassword.ts
+│  │        ├─ session # 토큰 사용
+│  │        │  ├─ getTokens.ts
+│  │        │  │  ├─ getTokens.test.ts
+│  │        │  │  └─ getTokens.usage.ts
+│  │        │  └─ getUser.ts
+│  │        └─ signup # 회원가입
+│  │            └─ signup.ts
+│  │              ├─ signup.test.ts
+│  │              └─ signup.usage.ts
+│  ├─ features # 기능 구현체
+│  │  ├─ authActions # 로그인/회원가입 기능
+│  │  │  ├─ index.ts
+│  │  │  ├─ api # 쿼리
+│  │  │  │  ├─ index.ts
+│  │  │  │  ├─ useLoginFetch.ts
+│  │  │  │  ├─ useForgotPasswordFetch.ts
+│  │  │  │  ├─ useResetPasswordFetch.ts
+│  │  │  │  └─ useSignupFetch.ts
+│  │  │  ├─ atom # 상태저장소
+│  │  │  │  ├─ index.ts
+│  │  │  │  └─ actionTypeAtom.ts
+│  │  │  ├─ hook # 폼 커스텀훅
+│  │  │  │  ├─ index.ts
+│  │  │  │  ├─ useLoginForm.ts
+│  │  │  │  ├─ useForgotPasswordForm.ts
+│  │  │  │  ├─ useResetPasswordForm.ts
+│  │  │  │  └─ useSignupForm.ts
+│  │  │  ├─ model # 스키마
+│  │  │  │  ├─ index.ts
+│  │  │  │  ├─ LoginSchema.ts
+│  │  │  │  ├─ ForgotPasswordSchema.ts
+│  │  │  │  ├─ ResetPasswordSchema.ts
+│  │  │  │  └─ SignupSchema.ts
+│  │  │  └─ ui
+│  │  │     ├─ index.ts
+│  │  │     ├─ FormField.tsx # 필드
+│  │  │     ├─ FormLayout.tsx # 폼 레이아웃
+│  │  │     ├─ LoginForm.tsx # 로그인 폼
+│  │  │     ├─ ForgotPasswordForm.tsx # 비밀번호 찾기 폼
+│  │  │     ├─ ResetPasswordForm.tsx # 비밀번호 리셋 폼
+│  │  │     ├─ SignupForm.tsx # 회원가입 폼
+│  │  │     ├─ SocialLoginForm.tsx # 소셜로그인 폼
+│  │  │     ├─ ActionLayout.tsx # 액션 레이아웃
+│  │  │     └─ PopoverLayout.tsx # 팝오버 레이아웃
+│  │  └─ userMenu # 로그인 인증 후 사용자메뉴 기능
+│  │     ├─ index.ts
+│  │     ├─ api
+│  │     │  ├─ index.ts
+│  │     │  ├─ useLoggedIn.ts
+│  │     │  └─ useUserInfo.ts
+│  │     └─ ui
+│  │        └─ UserMenu.tsx
+│  ├─ pages # 페이지
+│  │  └─ auth
+│  │     ├─ index.tsx
+│  │     ├─ hook
+│  │     │  └─ useTokens.ts
+│  │     └─ ui
+│  │        ├─ index.ts
+│  │        ├─ AuthControls.tsx # 로그인/회원가입 컨트롤
+│  │        └─ TokenInfo.tsx # 로그인 후 토큰 정보
+│  ├─ shared # 공용
+│  │  ├─ ActionType.ts
+│  │  ├─ thema.ts
+│  │  ├─ trans-ko.ts
+│  │  └─ ui
+│  │     ├─ atoms
+│  │     │  ├─ index.ts
+│  │     │  ├─ ButtonBackground.tsx
+│  │     │  └─ StyledButton.tsx
+│  │     ├─ index.ts
+│  │     └─ molecules
+│  │        ├─ index.ts
+│  │        ├─ CircleButton.tsx
+│  │        ├─ PrimaryButton.tsx
+│  │        └─ SecondaryButton.tsx
+│  ├─ third-party
+│  │  └─ chakra-ui
+│  └─ userscript # 유저스크립트
+│     ├─ widget.meta.ts # 메타데이터
+│     └─ widget.user.js # 스크립트
+├─ package.json # 의존성 설정
+│  ├─ .prettierrc # 포맷터 설정
+│  ├─ eslint.config.js # 린트 설정
+│  └─ steiger.config.ts # FSD 린트 설정
+└─ vite.config.ts # Vite 설정 파일
+   └─ vite-env.d.ts # 환경변수 타입 정의
+```
+
+</details>
 
 ## 🚀 실행 방법
 
@@ -159,87 +286,3 @@ $ npm run build:single-spa
 
     const { idToken, accessToken, refreshToken } = await getTokens();
     ```
-
-## 📂 폴더 구조
-
-> <image src="https://feature-sliced.design/kr/img/brand/logo-primary.png" width=40 />
-
-```python
-PickMe-Auth-Parcel
-├─ src
-│  ├─ main.tsx # 개발 서버 진입점
-│  ├─ mfa.tsx # single-spa 애플리케이션 빌드 진입점
-│  ├─ parcel.tsx # single-spa Parcel 빌드 진입점
-│  ├─ app
-│  │  └─ App.tsx # 프로바이더 스택
-│  ├─ entities # 도메인 모델
-│  │  └─ auth
-│  │     ├─ index.ts
-│  │     ├─ api
-│  │     │  └─ dto.ts # dto 모델
-│  │     ├─ config
-│  │     │  └─ userPool.ts # Cognito 유저풀 정보 및 인스턴스
-│  │     ├─ model # 모델 및 유효성 검사
-│  │     │  ├─ index.ts
-│  │     │  ├─ LoginCredential.ts
-│  │     │  └─ SignupCredential.ts
-│  │     ├─ repository # 브라우저 데이터 접근
-│  │     │  └─ getLoggedIn.ts
-│  │     └─ service # 유즈케이스
-│  │        ├─ index.ts
-│  │        ├─ login # 로그인
-│  │        │  ├─ login.test.ts
-│  │        │  ├─ login.ts
-│  │        │  └─ login.usage.ts
-│  │        ├─ session # 토큰 사용
-│  │        │  ├─ getTokens.test.ts
-│  │        │  ├─ getTokens.ts
-│  │        │  └─ getTokens.usage.ts
-│  │        └─ signup # 회원가입
-│  │           ├─ signup.test.ts
-│  │           ├─ signup.ts
-│  │           └─ signup.usage.ts
-│  ├─ features # 기능 구현체
-│  │  ├─ authActions # 로그인/회원가입 기능
-│  │  │  ├─ api # 쿼리
-│  │  │  │  ├─ index.ts
-│  │  │  │  ├─ useLoginFetch.ts
-│  │  │  │  └─ useSignupFetch.ts
-│  │  │  ├─ hook # 폼 커스텀훅
-│  │  │  │  ├─ index.ts
-│  │  │  │  ├─ useLoginForm.ts
-│  │  │  │  └─ useSignupForm.ts
-│  │  │  ├─ index.ts
-│  │  │  └─ ui
-│  │  │     ├─ index.ts
-│  │  │     ├─ FormField.tsx # 필드
-│  │  │     ├─ LoginForm.tsx # 로그인 폼
-│  │  │     ├─ SignupForm.tsx # 회원가입 폼
-│  │  │     ├─ SocialLoginForm.tsx # 소셜로그인 폼
-│  │  │     ├─ FormLayout.tsx # 폼 레이아웃
-│  │  │     └─ PopoverLayout.tsx # 팝오버 레이아웃
-│  │  └─ userMenu # 로그인 인증 후 사용자메뉴 기능
-│  │     ├─ api
-│  │     │  ├─ index.ts
-│  │     │  ├─ useLoggedIn.ts
-│  │     │  └─ useUserInfo.ts
-│  │     ├─ index.ts
-│  │     └─ ui
-│  │        └─ UserMenu.tsx
-│  ├─ pages # 페이지
-│  │  └─ auth
-│  │     ├─ hook
-│  │     │  └─ useTokens.ts
-│  │     ├─ index.tsx
-│  │     └─ ui
-│  │        ├─ index.ts
-│  │        ├─ AuthControls.tsx # 로그인/회원가입 컨트롤
-│  │        └─ TokenInfo.tsx # 로그인 후 토큰 정보
-│  └─ shared # 공용
-│  │  └─ trans
-│  │     └─ ko.ts
-│  └─ third-party
-│     └─ chakra-ui
-├─ steiger.config.ts # FSD 린트
-└─ vite.config.ts # Vite 설정 파일
-```
