@@ -7,8 +7,13 @@
 -   [🛠️ 기술 스택](#️-기술-스택)
 -   [🎨 스크린샷](#-스크린샷)
 -   [💡 주요 기능](#-주요-기능)
+    -   [🔐 Amazon Cognito](#-amazon-cognito)
+    -   [🗃️ 로컬 스토리지 저장](#️-로컬-스토리지-저장)
 -   [📂 폴더 구조](#-폴더-구조)
 -   [🚀 실행 방법](#-실행-방법)
+    -   [💻 개발 서버 실행](#-개발-서버-실행)
+    -   [🧬 Single-SPA 주입](#-single-spa-주입)
+    -   [📜 유저스크립트](#-유저스크립트)
 
 ## 🛠️ 기술 스택
 
@@ -60,7 +65,7 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 <img title="Cognito 앱클라이언트" width="45%" src="https://github.com/user-attachments/assets/80a398c7-ca05-46ef-8427-ceabcc26f840" />
 <img title="Cognito 사용자풀" width="45%" src="https://github.com/user-attachments/assets/850e0042-992d-4130-a3aa-872e065407f1" />
 
-### 로컬 스토리지 저장
+### 🗃️ 로컬 스토리지 저장
 
 -   **idToken**; 클라이언트에서 사용자 정보를 가져올 때 사용
 -   **accessToken**; 백엔드 서비스에 접근할 때 사용
@@ -195,21 +200,23 @@ PickMe-Auth-Parcel
 
 ## 🚀 실행 방법
 
-### 개발 서버 실행
+### 💻 개발 서버 실행
 
 ```sh
 $ npm install
 $ npm run dev
 ```
 
-### Single-SPA 주입 애플리케이션 빌드
+### 🧬 Single-SPA 주입
+
+#### 애플리케이션 빌드
 
 ```sh
 $ npm install
-$ npm run build:single-spa
+$ npm run build
 ```
 
-### Parcel 컴포넌트 주입 방법
+#### Parcel 컴포넌트 주입 방법
 
 -   React
 
@@ -288,7 +295,7 @@ $ npm run build:single-spa
     <div bind:this={container}></div>
     ```
 
-### Parcel 유틸리티 함수 사용 방법
+#### Parcel 유틸리티 함수 사용 방법
 
 -   **getTokens 함수**  
     현재 로그인되어있는 사용자 토큰 3종을 읽어온다.
@@ -298,3 +305,22 @@ $ npm run build:single-spa
 
     const { idToken, accessToken, refreshToken } = await getTokens();
     ```
+
+### 📜 유저스크립트
+
+1. 유저 스크립트 관리자 설치
+
+    - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+    - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+    - Safari: [Tampermonkey](http://tampermonkey.net/?browser=safari)
+    - Microsoft Edge: [Tampermonkey](https://www.microsoft.com/store/p/tampermonkey/9nblggh5162s)
+    - Opera: [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/), [Violentmonkey](https://addons.opera.com/extensions/details/violent-monkey/)
+    - Maxthon: [Violentmonkey](http://extension.maxthon.com/detail/index.php?view_id=1680)
+    - Dolphin: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.dolphin)
+    - UC: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.uc)
+    - Qupzilla: (추가 소프트웨어가 필요하지 않습니다)
+    - AdGuard: (추가 소프트웨어가 필요하지 않습니다)
+
+2. 스크립트 다운로드 (스크립트 관리자를 설치했으면 자동으로 감지합니다.)
+
+    [![Download](https://img.shields.io/badge/Download-@pickme/auth-A41752.svg?style=for-the-badge&logo=tampermonkey)](https://daily1hour.github.io/PickMe-Auth-Parcel/widget.user.js)
