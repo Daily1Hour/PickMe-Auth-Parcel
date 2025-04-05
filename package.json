@@ -6,12 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:single-spa": "vite build --mode single-spa",
     "test": "vitest",
     "preview": "vite preview",
-    "preview:single-spa": "vite preview --mode single-spa",
     "lint": "npx steiger ./src",
-    "start": "npm run build && npm run build:single-spa && npm run preview:single-spa"
+    "start": "npm run build && npm run preview"
   },
   "author": "",
   "license": "ISC",
@@ -46,6 +44,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "terser": "^5.39.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",

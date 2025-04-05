@@ -12,6 +12,7 @@
         "chakra",
         "pickme",
         "steiger",
-        "tanstack"
+        "tanstack",
+        "userscript",
     ]
 }
