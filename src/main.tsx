@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import "@/shared/styles";
 import AuthPage from "@/pages/auth";
 import App from "./app/App";
 
