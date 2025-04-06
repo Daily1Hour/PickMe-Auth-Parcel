@@ -8,6 +8,8 @@ containerDiv.style.position = "fixed";
 containerDiv.style.top = "0";
 containerDiv.style.right = "0";
 containerDiv.style.zIndex = "99999";
+containerDiv.style.background =
+    "radial-gradient(ellipse at center, var(--pickme-color-primary) 0%, var(--pickme-color-primary) 30%, transparent 60%)";
 document.body.appendChild(containerDiv);
 
 // 스크립트 모듈 방식으로 로드
