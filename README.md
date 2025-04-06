@@ -18,17 +18,19 @@
 ## 🛠️ 기술 스택
 
 [![Amazon Cognito](https://img.shields.io/badge/Amazon_Cognito-DD344C?style=flat-square&logo=amazoncognito&logoColor=white)](https://aws.amazon.com/ko/cognito/)  
-[![Single-SPA](https://img.shields.io/badge/Single_SPA-f5bcd3.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgODExLjIxIj48c2NyaXB0IHhtbG5zPSIiIGlkPSJjdXN0b20tdXNlcmFnZW50LXN0cmluZy1wYWdlLXNjcmlwdCIvPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZWU2ODlmO308L3N0eWxlPjwvZGVmcz48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwOC41NCwyMDAuMzMsNTI4LjQyLDQ3MC40Miw0NDkuMjcsNTgzLjg0LDU5LjM5LDM4Ni4yMmw0OS4xNS0xODUuODlNNzcuNCwxMjAuMTIsMCw0MTIuODZsNDY1LjYxLDIzNkw2MDAsNDU2LjI4LDc3LjQsMTIwLjEyWiIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyODQuODQgNTU2LjM0IDQ2NS42IDY0OC44NSAxNTQuNjkgODExLjIxIDI4NC44NCA1NTYuMzQiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNDAxLjA2IDMyOC44NSA3Ny40IDEyMC4xMiA1NjkuMDkgMCA0MDEuMDYgMzI4Ljg1Ii8+PC9nPjwvZz48L3N2Zz4=&style=flat-square&logoColor)](https://single-spa.js.org/)
-[![Userscript](https://img.shields.io/badge/Userscript-00485B?style=flat-square&logo=tampermonkey&logoColor=white)](https://aws.amazon.com/ko/cognito/)  
+[![Single-SPA](https://img.shields.io/badge/single--spa-ee689f.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgODExLjIxIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZmZmZjt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMDguNTQsMjAwLjMzLDUyOC40Miw0NzAuNDIsNDQ5LjI3LDU4My44NCw1OS4zOSwzODYuMjJsNDkuMTUtMTg1Ljg5TTc3LjQsMTIwLjEyLDAsNDEyLjg2bDQ2NS42MSwyMzZMNjAwLDQ1Ni4yOCw3Ny40LDEyMC4xMloiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMjg0Ljg0IDU1Ni4zNCA0NjUuNiA2NDguODUgMTU0LjY5IDgxMS4yMSAyODQuODQgNTU2LjM0Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjQwMS4wNiAzMjguODUgNzcuNCAxMjAuMTIgNTY5LjA5IDAgNDAxLjA2IDMyOC44NSIvPjwvZz48L2c+PC9zdmc+&style=flat-square&logoColor=white)](https://single-spa.js.org/)
+[![Userscript](https://img.shields.io/badge/Userscript-670000?style=flat-square&logo=greasyfork&logoColor=white)](https://greasyfork.org/ko)  
 [![React](https://img.shields.io/badge/React-191B1F?style=flat-square&logo=React&logoColor=61DAFB)](https://reactjs.org)
 [![React Query](https://img.shields.io/badge/React_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)](https://tanstack.com/query/latest/docs/framework/react/overview)
 [![React_Hook_Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=flat-square&logo=reacthookform&logoColor=white)](https://www.react-hook-form.com/)
 [![Jotai](https://img.shields.io/badge/👻_Jotai-dbeafe?style=flat-square&logoColor=white)](https://jotai.org/)  
+[![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=flat-square&logo=chakraui&logoColor=white)](https://www.chakra-ui.com/)
 [![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)](https://axios-http.com/kr/docs/intro)
-[![Yup](https://img.shields.io/badge/🔲_Yup-black?style=flat-square&logo=yup&logoColor=white)](https://github.com/jquense/yup)
-[![JWT](https://img.shields.io/badge/JWT-black?style=flat-square&logo=jsonwebtokens&logoColor=white)](https://github.com/jquense/yup)  
-[![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=flat-square&logo=chakraui&logoColor=white)](https://www.chakra-ui.com/)  
+[![Yup](https://img.shields.io/badge/🔲_Yup-333333?style=flat-square&logo=yup&logoColor=white)](https://github.com/jquense/yup)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)](https://github.com/jquense/yup)  
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://ko.vite.dev)
+[![Rollup.js](https://img.shields.io/badge/Rollup-EC4A3F?style=flat-square&logo=rollupdotjs&logoColor=white)](https://rollupjs.org/)
+[![Terser](https://img.shields.io/badge/Terser-1E4A7A.svg?logo=data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Zz48cGF0aCBmaWxsPSIjZmZjODQzIiBkPSJNMjU2LDMyOWw2MywzNnYxMjhIMTkzVjM2NUwyNTYsMzI5eiBNMzE5LDE0N1YxOUgxOTN2MTI4bDYzLDM2TDMxOSwxNDd6Ii8+PHBhdGggZmlsbD0iI2ZmMzUwZiIgZD0iTTI1NiwxODNsNjMtMzZ2NzNMMjU2LDE4M3ogTTE5MywyOTJ2NzNsNjMtMzZMMTkzLDI5MnoiLz48cGF0aCBmaWxsPSIjZmY0MzM4IiBkPSJNMzE5LDIyMHYtNzNsMTEwLTY0bDYzLDEwOWwtMTExLDY0TDMxOSwyMjB6IE0xMzAsMjU2TDE5LDMyMGw2MywxMDlsMTExLTY0di03M0wxMzAsMjU2eiIvPjxwYXRoIGZpbGw9IiMwMDJmMzIiIGQ9Ik0zMTksMjIwbDYyLDM2bC02MiwzNlYyMjB6IE0xOTMsMjIwbC02MywzNmw2MywzNlYyMjB6Ii8+PHBhdGggZmlsbD0iIzAwYjNlMyIgZD0iTTE5MywyMjBsLTYzLDM2TDE5LDE5Mkw4Myw4M2wxMTAsNjRWMjIweiBNMzE5LDI5MnY3M2wxMTAsNjRsNjMtMTA5bC0xMTEtNjRMMzE5LDI5MnoiLz48cGF0aCBmaWxsPSIjMDA4YzNjIiBkPSJNMzE5LDI5MnY3M2wtNjMtMzZMMzE5LDI5MnogTTI1NiwxODNsLTYzLTM2djczTDI1NiwxODN6Ii8+PHBvbHlnb24gZmlsbD0iIzAwMjUwRCIgcG9pbnRzPSIyNTYsMTgzIDE5MywyMjAgMTkzLDI5MiAyNTYsMzI5IDMxOSwyOTIgMzE5LDIyMCIvPjwvZz48L3N2Zz4=&style=flat-square&logoColor)](https://terser.org/)  
 [![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 [![FSDSteiger](https://img.shields.io/badge/FSD_Steiger-211b1d.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgo8cGF0aCBkPSJNMCAwIEMyOC4zOCAwIDU2Ljc2IDAgODYgMCBDODYgMy42MyA4NiA3LjI2IDg2IDExIEM1Ny42MiAxMSAyOS4yNCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0VCRUFFQSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTAyKSIvPgo8cGF0aCBkPSJNMCAwIEMyOC4zOCAwIDU2Ljc2IDAgODYgMCBDODYgMy42MyA4NiA3LjI2IDg2IDExIEM1Ny42MiAxMSAyOS4yNCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0VCRUFFQSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsODcpIi8+CjxwYXRoIGQ9Ik0wIDAgQzI4LjM4IDAgNTYuNzYgMCA4NiAwIEM4NiAzLjYzIDg2IDcuMjYgODYgMTEgQzU3LjYyIDExIDI5LjI0IDExIDAgMTEgQzAgNy4zNyAwIDMuNzQgMCAwIFogIiBmaWxsPSIjRUJFQUVBIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1Nyw1NykiLz4KPHBhdGggZD0iTTAgMCBDMjguMzggMCA1Ni43NiAwIDg2IDAgQzg2IDMuNjMgODYgNy4yNiA4NiAxMSBDNTcuNjIgMTEgMjkuMjQgMTEgMCAxMSBDMCA3LjM3IDAgMy43NCAwIDAgWiAiIGZpbGw9IiNFQkVBRUEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU3LDQyKSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTQ3KSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTMyKSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsMTE3KSIvPgo8cGF0aCBkPSJNMCAwIEMxMy41MyAwIDI3LjA2IDAgNDEgMCBDNDEgMy42MyA0MSA3LjI2IDQxIDExIEMyNy40NyAxMSAxMy45NCAxMSAwIDExIEMwIDcuMzcgMCAzLjc0IDAgMCBaICIgZmlsbD0iI0U5RThFOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTcsNzIpIi8+Cjwvc3ZnPgo=&style=flat-square&logoColor=black)](https://github.com/feature-sliced/steiger)
 [![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io/)
@@ -44,6 +46,11 @@
 <img title="토큰" width="100%" src="https://github.com/user-attachments/assets/1fd709f1-c89e-4f5e-8cc7-79b4698d004d" />
 
 ## 💡 주요 기능
+
+이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
+회원가입 시 이메일 인증을 통해 사용자를 확인하며,
+로그인 후에는 액세스 토큰, 리프레시 토큰, ID 토큰을 로컬 스토리지에 저장하여 인증 상태를 유지합니다.  
+안전하고 신뢰할 수 있는 사용자 인증 흐름을 제공합니다.
 
 ### 🔐 Amazon Cognito
 
@@ -209,6 +216,10 @@ $ npm run dev
 
 ### 🧬 Single-SPA 주입
 
+1. 빌드
+2. 배포 또는 프리뷰
+3. 배포 주소를 parcelURL로 사용하여 다른 애플리케이션에 주입
+
 #### 애플리케이션 빌드
 
 ```sh
@@ -298,7 +309,8 @@ $ npm run build
 #### Parcel 유틸리티 함수 사용 방법
 
 -   **getTokens 함수**  
-    현재 로그인되어있는 사용자 토큰 3종을 읽어온다.
+    현재 로그인되어있는 사용자의 토큰 3종을 읽어옵니다.  
+    이 기능은 동일 도메인에서 로그인되어 있어야 작동합니다.
 
     ```ts
     const { getTokens } = await import(parcelURL);
@@ -308,19 +320,21 @@ $ npm run build
 
 ### 📜 유저스크립트
 
+`@pickme/auth`를 위젯 형태로 페이지에 삽입하여,  
+사용자 관리 애플리케이션을 페이지에 통합할 필요 없이 개발 페이지에서도 사용할 수 있도록 합니다.
+
 1. 유저 스크립트 관리자 설치
 
     - Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
     - Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
-    - Safari: [Tampermonkey](http://tampermonkey.net/?browser=safari)
-    - Microsoft Edge: [Tampermonkey](https://www.microsoft.com/store/p/tampermonkey/9nblggh5162s)
+    - Safari: [Tampermonkey](http://tampermonkey.net/?browser=safari), [Userscripts](https://apps.apple.com/app/userscripts/id1463298887)
+    - Microsoft Edge: [Tampermonkey](https://www.microsoft.com/store/p/tampermonkey/9nblggh5162s), [Violentmonkey](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao)
     - Opera: [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/), [Violentmonkey](https://addons.opera.com/extensions/details/violent-monkey/)
     - Maxthon: [Violentmonkey](http://extension.maxthon.com/detail/index.php?view_id=1680)
-    - Dolphin: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.dolphin)
-    - UC: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.uc)
-    - Qupzilla: (추가 소프트웨어가 필요하지 않습니다)
     - AdGuard: (추가 소프트웨어가 필요하지 않습니다)
 
 2. 스크립트 다운로드 (스크립트 관리자를 설치했으면 자동으로 감지합니다.)
 
     [![Download](https://img.shields.io/badge/Download-@pickme/auth-A41752.svg?style=for-the-badge&logo=tampermonkey)](https://daily1hour.github.io/PickMe-Auth-Parcel/widget.user.js)
+
+3. 개발 서버로 열린 `http://localhost` 도메인에서 자동으로 `@pickme/auth`가 페이지에 삽입됩니다.
