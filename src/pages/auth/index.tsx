@@ -4,8 +4,6 @@ import { Flex } from "@chakra-ui/react";
 import { useLoggedIn } from "@/features/userMenu";
 import { AuthControls, TokenInfo } from "./ui";
 
-const isTokenView = import.meta.env.VITE_TOKEN_VIEW;
-
 export default function AuthPage(): React.ReactElement {
     const { isLoggedIn } = useLoggedIn();
 
@@ -15,7 +13,7 @@ export default function AuthPage(): React.ReactElement {
                 <AuthControls />
             </Flex>
 
-            {isTokenView && isLoggedIn && <TokenInfo />}
+            {isLoggedIn && <TokenInfo />}
         </>
     );
 }
