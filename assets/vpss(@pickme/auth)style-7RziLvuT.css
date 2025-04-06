@@ -1,0 +1,1 @@
+:root{--pickme-color-primary: #e27396;--pickme-color-secondary: #b3dee2;--pickme-color-tertiary: #eaf2d7;--pickme-border: rgba(0, 0, 0, .12);--pickme-bg-light: #ffffff}@media (prefers-color-scheme: dark){:root{--pickme-color-primary: #f7bfd1;--pickme-color-secondary: #55888d;--pickme-color-tertiary: #eaf2d7;--pickme-bg-dark: #10004a}}
