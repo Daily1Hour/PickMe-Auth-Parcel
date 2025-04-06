@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 
+import { AuthControls } from "@/pages/auth";
 import App from "./app/App";
 
 export const parcel = singleSpaReact({
     React,
     ReactDOM,
-    rootComponent: App,
+    rootComponent: () => (
+        <App>
+            <AuthControls />
+        </App>
+    ),
     errorBoundary(err, info, props) {
         console.error(err, info, props);
         return <div>Error</div>;
