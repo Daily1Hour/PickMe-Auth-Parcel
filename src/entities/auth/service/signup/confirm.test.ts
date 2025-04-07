@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, Mock } from "vitest";
 import { CognitoUser } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
@@ -24,7 +24,7 @@ describe("confirm", () => {
         const mockConfirmRegistration = vi.fn((_code, _forceAliasCreation, callback) => {
             callback(null, "SUCCESS");
         });
-        (CognitoUser as jest.Mock).mockImplementation(() => ({
+        (CognitoUser as Mock).mockImplementation(() => ({
             confirmRegistration: mockConfirmRegistration,
         }));
 
