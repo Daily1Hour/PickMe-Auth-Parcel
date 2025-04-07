@@ -1,47 +1,48 @@
-import { ISignUpResult } from "amazon-cognito-identity-js";
+import {
+    CodeDeliveryDetails,
+    IAuthenticationDetailsData,
+    ICognitoUserSessionData,
+    ISignUpResult,
+} from "amazon-cognito-identity-js";
 
-export interface LoginRequest {
-    username: string;
-    password: string;
-}
+export type LoginRequest = {
+    [K in keyof IAuthenticationDetailsData as Lowercase<K & string>]: IAuthenticationDetailsData[K];
+};
+export type LoginResponse = ICognitoUserSessionData;
 
-export interface LoginResponse {
-    idToken: string;
-    accessToken: string;
-    refreshToken: string;
-}
-
-export interface SignupRequest {
+export type SignupRequest = {
     username: string;
     password: string;
     confirmPassword: string;
     email: string;
-}
-
-export interface ConfirmReuest {
-    username: string;
-    code: string;
-}
-
+};
 export type SignupResponse = ISignUpResult | undefined;
 
-export interface ForgotPasswordRequest {
-    username: string;
-}
-
-export interface ForgotPasswordResponse {
-    AttributeName: string;
-    DeliveryMedium: string;
-    Destination: string;
-}
-
-export interface ResetPasswordRequest {
+export type ConfirmReuest = {
     username: string;
     code: string;
+};
+export type ConfirmResponse = {
+    message: string;
+};
+
+export type ForgotPasswordRequest = {
+    username: string;
+};
+export type ForgotPasswordResponse = CodeDeliveryDetails;
+
+export type ResetPasswordRequest = {
+    username: string;
     password: string;
     confirmPassword: string;
-}
-
-export interface ResetPasswordResponse {
+    code: string;
+};
+export type ResetPasswordResponse = {
     message: string;
-}
+};
+
+export type UserTokens = {
+    idToken: string;
+    accessToken: string;
+    refreshToken: string;
+};

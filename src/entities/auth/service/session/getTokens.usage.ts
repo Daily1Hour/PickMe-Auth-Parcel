@@ -1,4 +1,5 @@
-import getTokens, { UserTokens } from "./getTokens";
+import { UserTokens } from "../../api/dto";
+import getTokens from "./getTokens";
 
 // Usage
 getTokens()

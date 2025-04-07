@@ -26,7 +26,6 @@ export default async function signup({
             password,
             attributes,
             attributes,
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             (err: Error | undefined, result: ISignUpResult | undefined): void => {
                 if (err) {
                     reject({ message: err.message || JSON.stringify(err) });

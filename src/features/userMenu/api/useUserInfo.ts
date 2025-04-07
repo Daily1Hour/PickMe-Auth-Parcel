@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
 import { useQuery } from "@tanstack/react-query";
 
-import { getTokens, UserTokens } from "@/entities/auth";
+import { dto, getTokens } from "@/entities/auth";
 
 interface UserInfo extends jwt.JwtPayload {
     isSuccess: boolean;
 }
 
 export default function useUserInfo(): UserInfo {
-    const { data, isSuccess } = useQuery<UserTokens>({
+    const { data, isSuccess } = useQuery<dto.UserTokens>({
         queryKey: ["tokens"],
         queryFn: getTokens,
     });
