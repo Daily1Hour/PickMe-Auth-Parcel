@@ -112,6 +112,7 @@ PickMe-Auth-Parcel
 │  │        │  │  ├─ login.test.ts
 │  │        │  │  └─ login.usage.ts
 │  │        │  ├─ forgotPassword.ts
+│  │        │  │  ├─ forgotPassword.test.ts
 │  │        │  │  └─ forgotPassword.usage.ts
 │  │        │  └─ resetPassword.ts
 │  │        ├─ session # 토큰 사용
@@ -120,9 +121,11 @@ PickMe-Auth-Parcel
 │  │        │  │  └─ getTokens.usage.ts
 │  │        │  └─ getUser.ts
 │  │        └─ signup # 회원가입
-│  │            └─ signup.ts
-│  │              ├─ signup.test.ts
-│  │              └─ signup.usage.ts
+│  │           ├─ signup.ts
+│  │           │  ├─ signup.test.ts
+│  │           │  └─ signup.usage.ts
+│  │           └─ confirm.test.ts
+│  │              └─ confirm.ts
 │  ├─ features # 기능 구현체
 │  │  ├─ authActions # 로그인/회원가입 기능
 │  │  │  ├─ index.ts
@@ -131,7 +134,8 @@ PickMe-Auth-Parcel
 │  │  │  │  ├─ useLoginFetch.ts
 │  │  │  │  ├─ useForgotPasswordFetch.ts
 │  │  │  │  ├─ useResetPasswordFetch.ts
-│  │  │  │  └─ useSignupFetch.ts
+│  │  │  │  ├─ useSignupFetch.ts
+│  │  │  │  └─ useConfirmFetch.ts
 │  │  │  ├─ atom # 상태저장소
 │  │  │  │  ├─ index.ts
 │  │  │  │  └─ actionTypeAtom.ts
@@ -140,22 +144,26 @@ PickMe-Auth-Parcel
 │  │  │  │  ├─ useLoginForm.ts
 │  │  │  │  ├─ useForgotPasswordForm.ts
 │  │  │  │  ├─ useResetPasswordForm.ts
-│  │  │  │  └─ useSignupForm.ts
+│  │  │  │  ├─ useSignupForm.ts
+│  │  │  │  └─ useConfirmForm.ts
 │  │  │  ├─ model # 스키마
 │  │  │  │  ├─ index.ts
 │  │  │  │  ├─ LoginSchema.ts
 │  │  │  │  ├─ ForgotPasswordSchema.ts
 │  │  │  │  ├─ ResetPasswordSchema.ts
-│  │  │  │  └─ SignupSchema.ts
+│  │  │  │  ├─ SignupSchema.ts
+│  │  │  │  └─ ConfirmSchema.ts
 │  │  │  └─ ui
 │  │  │     ├─ index.ts
-│  │  │     ├─ FormField.tsx # 필드
-│  │  │     ├─ FormLayout.tsx # 폼 레이아웃
-│  │  │     ├─ LoginForm.tsx # 로그인 폼
-│  │  │     ├─ ForgotPasswordForm.tsx # 비밀번호 찾기 폼
-│  │  │     ├─ ResetPasswordForm.tsx # 비밀번호 리셋 폼
-│  │  │     ├─ SignupForm.tsx # 회원가입 폼
-│  │  │     ├─ SocialLoginForm.tsx # 소셜로그인 폼
+│  │  │     ├─ forms
+│  │  │     │  ├─ Field.tsx # 필드
+│  │  │     │  ├─ Layout.tsx # 폼 레이아웃
+│  │  │     │  ├─ LoginForm.tsx # 로그인 폼
+│  │  │     │  ├─ ForgotPasswordForm.tsx # 비밀번호 찾기 폼
+│  │  │     │  ├─ ResetPasswordForm.tsx # 비밀번호 리셋 폼
+│  │  │     │  ├─ SocialLoginForm.tsx # 소셜로그인 폼
+│  │  │     │  ├─ SignupForm.tsx # 회원가입 폼
+│  │  │     │  └─ ConfirmForm.tsx # 회원가입 인증 폼
 │  │  │     ├─ ActionLayout.tsx # 액션 레이아웃
 │  │  │     └─ PopoverLayout.tsx # 팝오버 레이아웃
 │  │  └─ userMenu # 로그인 인증 후 사용자메뉴 기능
@@ -179,6 +187,9 @@ PickMe-Auth-Parcel
 │  │  ├─ ActionType.ts
 │  │  ├─ thema.ts
 │  │  ├─ trans-ko.ts
+│  │  ├─ styles
+│  │  │  ├─ global.css
+│  │  │  └─ index.js
 │  │  └─ ui
 │  │     ├─ atoms
 │  │     │  ├─ index.ts

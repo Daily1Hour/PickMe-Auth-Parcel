@@ -2,11 +2,11 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 import { Stack, Text } from "@chakra-ui/react";
 
-import { ForgotPasswordFieldValues } from "../model";
-import { useForgotPasswordForm } from "../hook";
-import { useForgotPasswordFetch } from "../api";
-import FormLayout from "./FormLayout";
-import FormField from "./FormField";
+import { ForgotPasswordFieldValues } from "../../model";
+import { useForgotPasswordForm } from "../../hook";
+import { useForgotPasswordFetch } from "../../api";
+import FormLayout from "./Layout";
+import Field from "./Field";
 import ResetPasswordForm from "./ResetPasswordForm";
 
 const testUsername = import.meta.env.VITE_TEST_USERNAME;
@@ -19,7 +19,7 @@ export default function ForgotPasswordForm(): React.ReactElement {
         <Stack>
             <FormProvider {...methods}>
                 <FormLayout<ForgotPasswordFieldValues> title="passwordForgot" onSubmit={submit}>
-                    <FormField<ForgotPasswordFieldValues> name="username" default={testUsername} />
+                    <Field<ForgotPasswordFieldValues> name="username" default={testUsername} />
                 </FormLayout>
             </FormProvider>
 

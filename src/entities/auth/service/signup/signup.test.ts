@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
 
 import signup from "./signup";
 import userPool from "../../config/userPool";
@@ -7,7 +7,7 @@ import { SignupRequest } from "../../api/dto";
 vi.mock("../../config/userPool");
 
 describe("signup", () => {
-    const mockSignUp = userPool.signUp as jest.Mock;
+    const mockSignUp = userPool.signUp as Mock;
     const username = "testuser";
     const password = "testpassword";
     const confirmPassword = "testpassword";
@@ -22,7 +22,7 @@ describe("signup", () => {
         // Arrange
         mockSignUp.mockImplementation(
             (_username, _password, _attributes, _validationData, callback) => {
-                callback(undefined, {});
+                callback(undefined, { message: "success" });
             },
         );
 

@@ -5,13 +5,13 @@ import {
 } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
-import { SignupRequest, SignupResponse } from "../../api/dto";
+import { SignupRequest } from "../../api/dto";
 
 export default async function signup({
     username,
     password,
     email,
-}: SignupRequest): Promise<SignupResponse> {
+}: SignupRequest): Promise<ISignUpResult | undefined> {
     // Required attributes를 추가
     const requiredAttribute: ICognitoUserAttributeData = {
         Name: "email",
@@ -19,18 +19,19 @@ export default async function signup({
     };
     const attributes = [new CognitoUserAttribute(requiredAttribute)];
 
-    return new Promise((resolve: (value: SignupResponse) => void, reject) => {
+    return new Promise((resolve: (value: ISignUpResult | undefined) => void, reject) => {
         // 가입 요청
         userPool.signUp(
             username,
             password,
             attributes,
             attributes,
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            (err: Error | undefined, _result: ISignUpResult | undefined): void => {
+            (err: Error | undefined, result: ISignUpResult | undefined): void => {
                 if (err) {
                     reject({ message: err.message || JSON.stringify(err) });
-                } else resolve({ message: "success" });
+                } else {
+                    resolve(result);
+                }
             },
         );
     });

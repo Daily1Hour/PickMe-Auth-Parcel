@@ -1,4 +1,4 @@
-import { CognitoUser, CodeDeliveryDetails } from "amazon-cognito-identity-js";
+import { CognitoUser } from "amazon-cognito-identity-js";
 
 import userPool from "../../config/userPool";
 import { ForgotPasswordResponse, ForgotPasswordRequest } from "../../api/dto";
@@ -15,12 +15,8 @@ export default async function forgotPassword({
     return new Promise((resolve, reject) => {
         // 비밀번호 재설정 코드 전송 요청
         cognitoUser.forgotPassword({
-            onSuccess: function ({
-                CodeDeliveryDetails,
-            }: {
-                CodeDeliveryDetails: CodeDeliveryDetails;
-            }) {
-                resolve(CodeDeliveryDetails);
+            onSuccess: function ({ response }: { response: ForgotPasswordResponse }) {
+                resolve(response);
             },
             onFailure: function (err) {
                 reject(err.message || JSON.stringify(err));
