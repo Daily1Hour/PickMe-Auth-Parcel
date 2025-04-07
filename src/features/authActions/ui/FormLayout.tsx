@@ -9,7 +9,7 @@ export default function FormLayout<T extends FieldValues>({
     onSubmit,
     children, // 폼 필드들
 }: {
-    title: "login" | "signup" | "passwordForgot" | "passwordReset";
+    title: "login" | "signup" | "confirm" | "passwordForgot" | "passwordReset";
     onSubmit: SubmitHandler<T>;
     children: React.ReactNode;
 }): React.ReactElement {
