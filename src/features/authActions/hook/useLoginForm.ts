@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Login, LoginSchema } from "../model";
+import { LoginFieldValues, LoginSchema } from "../model";
 
 export default function useLoginForm() {
-    return useForm<Login>({
+    return useForm<LoginFieldValues>({
         // 유효성 검사
         resolver: yupResolver(LoginSchema),
         mode: "onChange",
