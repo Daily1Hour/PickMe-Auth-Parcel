@@ -16,6 +16,11 @@ export interface SignupRequest {
     email: string;
 }
 
+export interface ConfirmReuest {
+    username: string;
+    code: string;
+}
+
 export interface SignupResponse {
     message: string;
 }
