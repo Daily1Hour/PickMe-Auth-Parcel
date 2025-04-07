@@ -3,12 +3,12 @@ import { FormProvider } from "react-hook-form";
 import { useSetAtom } from "jotai";
 
 import ActionType from "@/shared/ActionType";
-import { ConfirmFieldValues } from "../model";
-import { useConfirmForm } from "../hook";
-import { useConfirmFetch } from "../api";
-import { actionTypeAtom } from "../atom";
-import FormLayout from "./FormLayout";
-import FormField from "./FormField";
+import { ConfirmFieldValues } from "../../model";
+import { useConfirmForm } from "../../hook";
+import { useConfirmFetch } from "../../api";
+import { actionTypeAtom } from "../../atom";
+import FormLayout from "./Layout";
+import Field from "./Field";
 
 export default function ConfirmForm({ username }: { username: string }): React.ReactElement {
     const setActionType = useSetAtom(actionTypeAtom);
@@ -26,7 +26,7 @@ export default function ConfirmForm({ username }: { username: string }): React.R
     return (
         <FormProvider {...methods}>
             <FormLayout<ConfirmFieldValues> title="confirm" onSubmit={onSubmit}>
-                <FormField<ConfirmFieldValues> name="code" isSecret />
+                <Field<ConfirmFieldValues> name="code" isSecret />
             </FormLayout>
         </FormProvider>
     );

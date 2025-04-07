@@ -1,11 +1,11 @@
 import React from "react";
 import { FormProvider } from "react-hook-form";
 
-import { LoginFieldValues } from "../model";
-import { useLoginForm } from "../hook";
-import { useLoginFetch } from "../api";
-import FormLayout from "./FormLayout";
-import FormField from "./FormField";
+import { LoginFieldValues } from "../../model";
+import { useLoginForm } from "../../hook";
+import { useLoginFetch } from "../../api";
+import FormLayout from "./Layout";
+import Field from "./Field";
 
 const testUsername = import.meta.env.VITE_TEST_USERNAME;
 const testPassword = import.meta.env.VITE_TEST_PASSWORD;
@@ -17,8 +17,8 @@ export default function LoginForm(): React.ReactElement {
     return (
         <FormProvider {...methods}>
             <FormLayout<LoginFieldValues> title="login" onSubmit={submit}>
-                <FormField<LoginFieldValues> name="username" default={testUsername} />
-                <FormField<LoginFieldValues> name="password" default={testPassword} isSecret />
+                <Field<LoginFieldValues> name="username" default={testUsername} />
+                <Field<LoginFieldValues> name="password" default={testPassword} isSecret />
             </FormLayout>
         </FormProvider>
     );

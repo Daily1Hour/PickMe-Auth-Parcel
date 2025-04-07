@@ -2,12 +2,12 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 import { Stack, Text } from "@chakra-ui/react";
 
-import { SignupResponse } from "@/entities/auth/api/dto";
-import { SignupFieldValues } from "../model";
-import { useSignupForm } from "../hook";
-import { useSignupFetch } from "../api";
-import FormLayout from "./FormLayout";
-import FormField from "./FormField";
+import { dto } from "@/entities/auth";
+import { SignupFieldValues } from "../../model";
+import { useSignupForm } from "../../hook";
+import { useSignupFetch } from "../../api";
+import FormLayout from "./Layout";
+import Field from "./Field";
 import ConfirmForm from "./ConfirmForm";
 
 export default function SignupForm(): React.ReactElement {
@@ -18,10 +18,10 @@ export default function SignupForm(): React.ReactElement {
         <Stack>
             <FormProvider {...methods}>
                 <FormLayout<SignupFieldValues> title="signup" onSubmit={submit}>
-                    <FormField<SignupFieldValues> name="username" />
-                    <FormField<SignupFieldValues> name="email" />
-                    <FormField<SignupFieldValues> name="password" isSecret />
-                    <FormField<SignupFieldValues> name="confirmPassword" isSecret />
+                    <Field<SignupFieldValues> name="username" />
+                    <Field<SignupFieldValues> name="email" />
+                    <Field<SignupFieldValues> name="password" isSecret />
+                    <Field<SignupFieldValues> name="confirmPassword" isSecret />
                 </FormLayout>
             </FormProvider>
 
@@ -33,7 +33,7 @@ export default function SignupForm(): React.ReactElement {
 function Confirm({
     codeDeliveryDetails: { Destination: email },
     user,
-}: Exclude<SignupResponse, undefined>): React.ReactElement {
+}: Exclude<dto.SignupResponse, undefined>): React.ReactElement {
     return (
         <Stack>
             <Text>{email}로 인증 코드가 전송되었습니다.</Text>

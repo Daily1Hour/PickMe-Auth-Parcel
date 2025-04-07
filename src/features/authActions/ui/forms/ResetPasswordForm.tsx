@@ -5,12 +5,12 @@ import { toaster } from "@/third-party/chakra-ui";
 
 import ActionType from "@/shared/ActionType";
 import { dto } from "@/entities/auth";
-import { ResetPasswordFieldValues } from "../model";
-import { actionTypeAtom } from "../atom";
-import { useResetPasswordForm } from "../hook";
-import { useResetPasswordFetch } from "../api";
-import FormLayout from "./FormLayout";
-import FormField from "./FormField";
+import { ResetPasswordFieldValues } from "../../model";
+import { actionTypeAtom } from "../../atom";
+import { useResetPasswordForm } from "../../hook";
+import { useResetPasswordFetch } from "../../api";
+import FormLayout from "./Layout";
+import Field from "./Field";
 
 export default function ResetPasswordForm({ username }: { username: string }): React.ReactElement {
     const setType = useSetAtom(actionTypeAtom);
@@ -28,10 +28,10 @@ export default function ResetPasswordForm({ username }: { username: string }): R
     return (
         <FormProvider {...methods}>
             <FormLayout<ResetPasswordFieldValues> title="passwordReset" onSubmit={onSubmit}>
-                <FormField<ResetPasswordFieldValues> name="username" default={username} isHidden />
-                <FormField<ResetPasswordFieldValues> name="code" />
-                <FormField<ResetPasswordFieldValues> name="password" isSecret />
-                <FormField<ResetPasswordFieldValues> name="confirmPassword" isSecret />
+                <Field<ResetPasswordFieldValues> name="username" default={username} isHidden />
+                <Field<ResetPasswordFieldValues> name="code" />
+                <Field<ResetPasswordFieldValues> name="password" isSecret />
+                <Field<ResetPasswordFieldValues> name="confirmPassword" isSecret />
             </FormLayout>
         </FormProvider>
     );
