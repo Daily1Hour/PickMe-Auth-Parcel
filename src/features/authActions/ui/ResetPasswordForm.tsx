@@ -30,8 +30,8 @@ export default function ResetPasswordForm({ username }: { username: string }): R
             <FormLayout<ResetPasswordFieldValues> title="passwordReset" onSubmit={onSubmit}>
                 <FormField<ResetPasswordFieldValues> name="username" default={username} isHidden />
                 <FormField<ResetPasswordFieldValues> name="code" />
-                <FormField<ResetPasswordFieldValues> name="password" isPassword />
-                <FormField<ResetPasswordFieldValues> name="confirmPassword" isPassword />
+                <FormField<ResetPasswordFieldValues> name="password" isSecret />
+                <FormField<ResetPasswordFieldValues> name="confirmPassword" isSecret />
             </FormLayout>
         </FormProvider>
     );

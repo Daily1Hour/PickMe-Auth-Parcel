@@ -1,3 +1,5 @@
+import { ISignUpResult } from "amazon-cognito-identity-js";
+
 export interface LoginRequest {
     username: string;
     password: string;
@@ -21,9 +23,7 @@ export interface ConfirmReuest {
     code: string;
 }
 
-export interface SignupResponse {
-    message: string;
-}
+export type SignupResponse = ISignUpResult | undefined;
 
 export interface ForgotPasswordRequest {
     username: string;

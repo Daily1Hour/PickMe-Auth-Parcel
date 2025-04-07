@@ -14,14 +14,14 @@ export default function ConfirmForm({ username }: { username: string }): React.R
         const { message } = await submit({ ...e, username }); // 폼 제출
 
         if (message === "SUCCESS") {
-            // 성공 토스트 메시지
+            alert("인증 코드가 확인되었습니다."); // 성공 토스트 메시지
         }
     };
 
     return (
         <FormProvider {...methods}>
             <FormLayout<ConfirmFieldValues> title="confirm" onSubmit={onSubmit}>
-                <FormField<ConfirmFieldValues> name="code" isPassword />
+                <FormField<ConfirmFieldValues> name="code" isSecret />
             </FormLayout>
         </FormProvider>
     );

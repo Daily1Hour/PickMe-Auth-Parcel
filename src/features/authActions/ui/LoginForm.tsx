@@ -18,7 +18,7 @@ export default function LoginForm(): React.ReactElement {
         <FormProvider {...methods}>
             <FormLayout<LoginFieldValues> title="login" onSubmit={submitLogin}>
                 <FormField<LoginFieldValues> name="username" default={testUsername} />
-                <FormField<LoginFieldValues> name="password" default={testPassword} isPassword />
+                <FormField<LoginFieldValues> name="password" default={testPassword} isSecret />
             </FormLayout>
         </FormProvider>
     );

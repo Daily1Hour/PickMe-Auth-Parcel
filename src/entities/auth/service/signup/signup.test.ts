@@ -22,7 +22,7 @@ describe("signup", () => {
         // Arrange
         mockSignUp.mockImplementation(
             (_username, _password, _attributes, _validationData, callback) => {
-                callback(undefined, {});
+                callback(undefined, { message: "success" });
             },
         );
 

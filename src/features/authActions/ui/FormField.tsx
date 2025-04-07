@@ -7,12 +7,12 @@ import { FieldDictionary } from "@/shared/trans-ko";
 export default function FormField<T extends FieldValues>({
     name, // 필드 이름
     default: defaultValues, // 필드 기본값
-    isPassword, // 비밀번호 필드 여부
+    isSecret, // 비밀 필드 여부
     isHidden, // 숨김 필드 여부
 }: {
     name: Path<T>;
     default?: string;
-    isPassword?: boolean;
+    isSecret?: boolean;
     isHidden?: boolean;
 }) {
     const {
@@ -28,7 +28,7 @@ export default function FormField<T extends FieldValues>({
             hidden={isHidden}
             required
         >
-            {!isPassword ? (
+            {!isSecret ? (
                 <Input {...register(name)} defaultValue={defaultValues} borderRadius="lg" />
             ) : (
                 <PasswordInput {...register(name)} defaultValue={defaultValues} borderRadius="lg" />
