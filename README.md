@@ -5,10 +5,17 @@
 ## 🚩 목차
 
 -   [🛠️ 기술 스택](#️-기술-스택)
+-   [💁 소개](#-소개)
 -   [🎨 스크린샷](#-스크린샷)
 -   [💡 주요 기능](#-주요-기능)
     -   [🔐 Amazon Cognito](#-amazon-cognito)
     -   [🗃️ 로컬 스토리지 저장](#️-로컬-스토리지-저장)
+-   [📖 개발 문서](#-개발-문서)
+    -   [📋 테스트 리포트](#-테스트-리포트)
+    -   [📘 타입 문서](#-타입-문서)
+-   [📐 다이어그램](#-다이어그램)
+    -   [🧭 시퀀스 다이어그램](#-시퀀스-다이어그램)
+    -   [🚚 CI/CD 파이프라인](#-cicd-파이프라인)
 -   [📂 폴더 구조](#-폴더-구조)
 -   [🚀 실행 방법](#-실행-방법)
     -   [💻 개발 서버 실행](#-개발-서버-실행)
@@ -36,7 +43,15 @@
 [![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)  
 [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![TypeDoc](https://img.shields.io/badge/TypeDoc-3178c6.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZT5maWxlX3R5cGVfdHlwZWRvYzwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDMgOSAxNiAyIDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiNiNDRjZmUiLz48cG9seWdvbiBwb2ludHM9IjMgOSAxNiAxNiAyOSA5IDE2IDIgMyA5IiBzdHlsZT0iZmlsbDojOTYwMWZlIi8+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDE2IDE2IDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiM5OWNiZmUiLz48cG9seWdvbiBwb2ludHM9IjI5IDkgMTYgMTYgMTYgMzAgMjkgMjMgMjkgOSIgc3R5bGU9ImZpbGw6IzBjMzY0ZiIvPjwvc3ZnPg==&style=flat-square&logoColor=black)](https://typedoc.org/)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)](https://www.postman.com/)
+
+## 💁 소개
+
+이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
+회원가입 시 이메일 인증을 통해 사용자를 확인하며,
+로그인 후에는 액세스 토큰, 리프레시 토큰, ID 토큰을 로컬 스토리지에 저장하여 인증 상태를 유지합니다.  
+안전하고 신뢰할 수 있는 사용자 인증 흐름을 제공합니다.
 
 ## 🎨 스크린샷
 
@@ -45,12 +60,9 @@
 <img title="비밀번호찾기" width="32%" src="https://github.com/user-attachments/assets/e8a369c4-4c39-4f86-b35b-dd3a539691cf" />  
 <img title="토큰" width="100%" src="https://github.com/user-attachments/assets/1fd709f1-c89e-4f5e-8cc7-79b4698d004d" />
 
-## 💡 주요 기능
+<br/>
 
-이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
-회원가입 시 이메일 인증을 통해 사용자를 확인하며,
-로그인 후에는 액세스 토큰, 리프레시 토큰, ID 토큰을 로컬 스토리지에 저장하여 인증 상태를 유지합니다.  
-안전하고 신뢰할 수 있는 사용자 인증 흐름을 제공합니다.
+## 💡 주요 기능
 
 ### 🔐 Amazon Cognito
 
@@ -77,6 +89,109 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 -   **idToken**; 클라이언트에서 사용자 정보를 가져올 때 사용
 -   **accessToken**; 백엔드 서비스에 접근할 때 사용
 -   **refreshToken**; 두 토큰의 만료 시 갱신에 사용
+
+<br/>
+
+## 📖 개발 문서
+
+### 📋 테스트 리포트
+
+> 테스트 케이스 통과 여부 및 커버리지 현황 등을 시각적으로 제공합니다.  
+> 이 테스트 리포트는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://daily1hour.github.io/PickMe-Auth-Parcel/test/report">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" alt="Vitest" width='50px' /> 테스트 리포트 바로가기
+</a>
+
+<br/><br/>
+
+### 📘 타입 문서
+
+> 프로젝트에서 사용되는 타입 정의를 문서화한 자료입니다.  
+> 이 타입 문서는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://daily1hour.github.io/PickMe-Auth-Parcel/docs">
+<img src="https://github.com/user-attachments/assets/6225376e-d3bf-49e2-a537-bbb8ae1caf97" alt="TypeDoc" width='50px' /> 타입 문서 바로가기
+</a>
+
+<br/><br/>
+
+## 📐 다이어그램
+
+### 🧭 시퀀스 다이어그램
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Frontend
+    participant Cognito
+    participant API Gateway
+    participant Backend
+
+    User ->> Frontend: 로그인 정보 입력
+    Frontend ->> Cognito: 인증 요청 (username, password)
+    Cognito -->> Frontend: 토큰(ID/Access/Refresh)
+    note over Frontend: 토큰(ID/Access/Refresh)은 localStorage에 저장됨
+    Frontend ->> Frontend: ID Token을 디코딩해 사용자 정보 추출
+
+    alt Access Token 만료됨
+        alt Refresh Token 유효
+            Frontend ->> Cognito: 새 Access Token 요청 (Refresh Token)
+            Cognito -->> Frontend: 새 Access Token 응답
+            Frontend ->> API Gateway: API 요청
+        else Refresh Token도 만료됨
+            Frontend -->> User: 재로그인 요청
+        end
+    else Access Token 유효
+        loop API 요청 반복
+            Frontend ->> API Gateway: API 요청 (Authorization: Bearer Access Token)
+            API Gateway ->> Cognito: Access Token 검증 (User Pool Authorizer)
+            Cognito -->> API Gateway: 검증 결과 (Claim 포함)
+            note over API Gateway: 백엔드에서 디코딩 하지 않고 전달받은 사용자 Claim 사용
+            API Gateway ->> Backend: API 요청 전달 (Claim 포함)
+            Backend -->> API Gateway: 응답 데이터
+            API Gateway -->> Frontend: 응답 데이터
+        end
+    end
+```
+
+<br/>
+
+### 🚚 CI/CD 파이프라인
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions" title="GitHub Actions">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHubActions" height="45" /> GitHub Actions 바로가기
+</a>
+
+```mermaid
+graph LR
+    subgraph CD[🚀 CD 영역]
+        direction LR
+        Tag[태그 푸시] --> DeployGH[gh-pages에 배포] --> |자동 워크플로 실행|pages-build-deployment[GitHub Pages 배포 완료]
+        Tag --> DeployAWS[Amazon S3에 배포] --> |콘텐츠 서빙|CloudFront[Amazon CloudFront]
+    end
+
+    Build -.-> |📦 아티팩트|Tag
+
+    subgraph CI[🧪 CI 영역]
+        direction LR
+        Push[브랜치 푸시] --> Lint[린트]
+        Lint --> |🟢 통과|Test[테스트]
+        Test --> |🟢 통과|Docs[문서화] --> Review
+        Test --> |🟢 통과|Build[빌드]
+        Build --> |🟢 통과|Review[리뷰]
+        Review -->|✔️ 승인|Merge[머지]
+    end
+
+    click Build "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/vite-build.yml"
+    click Review "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/auto-assign.yml"
+    click DeployGH "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-gh-pages.yml"
+    click pages-build-deployment "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/pages/pages-build-deployment"
+    click DeployAWS "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-aws-s3.yml"
+```
 
 ## 📂 폴더 구조
 
@@ -185,7 +300,7 @@ PickMe-Auth-Parcel
 │  │        └─ TokenInfo.tsx # 로그인 후 토큰 정보
 │  ├─ shared # 공용
 │  │  ├─ ActionType.ts
-│  │  ├─ thema.ts
+│  │  ├─ theme.ts
 │  │  ├─ trans-ko.ts
 │  │  ├─ styles
 │  │  │  ├─ global.css
@@ -206,6 +321,10 @@ PickMe-Auth-Parcel
 │  └─ userscript # 유저스크립트
 │     ├─ widget.meta.ts # 메타데이터
 │     └─ widget.user.js # 스크립트
+├─ tsconfig.json # ts 설정
+│  ├─ tsconfig.app.json
+│  ├─ tsconfig.node.json
+│  └─ typedoc.json # 문서화 설정
 ├─ package.json # 의존성 설정
 │  ├─ .prettierrc # 포맷터 설정
 │  ├─ eslint.config.js # 린트 설정
@@ -215,6 +334,7 @@ PickMe-Auth-Parcel
 ```
 
 </details>
+<br/>
 
 ## 🚀 실행 방법
 

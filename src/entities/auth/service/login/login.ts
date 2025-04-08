@@ -3,6 +3,18 @@ import { CognitoUser, AuthenticationDetails, CognitoUserSession } from "amazon-c
 import userPool from "../../config/userPool";
 import { LoginRequest, LoginResponse } from "../../api/dto";
 
+/**
+ * AWS Cognito를 사용하여 사용자를 인증하고 인증 토큰을 반환합니다.
+ *
+ * @param {LoginRequest} params - 사용자 이름과 비밀번호를 포함하는 객체.
+ * @param params.username - 로그인하려는 사용자의 사용자 이름.
+ * @param params.password - 로그인하려는 사용자의 비밀번호.
+ * @returns {Promise<LoginResponse>} 인증 토큰을 포함하는 Promise:
+ * - `IdToken`: 사용자 인증 정보를 포함한 토큰으로, 클라이언트에서 사용자 정보를 가져올 때 사용.
+ * - `AccessToken`: API 접근 권한을 증명하는 토큰으로, 백엔드 서비스에 접근할 때 사용.
+ * - `RefreshToken`: `IdToken` 및 `AccessToken`이 만료되었을 때 갱신에 사용되는 토큰.
+ * @throws 인증에 실패할 경우 에러 메시지와 함께 거부됩니다.
+ */
 export default async function login({ username, password }: LoginRequest): Promise<LoginResponse> {
     // CognitoUser 인스턴스 생성
     const cognitoUser = new CognitoUser({
@@ -20,14 +32,8 @@ export default async function login({ username, password }: LoginRequest): Promi
         cognitoUser.authenticateUser(details, {
             onSuccess: function (result: CognitoUserSession) {
                 const response = {
-                    // 사용자 인증 정보를 포함한 토큰
-                    // 클라이언트에서 사용자 정보를 가져올 때 사용
                     IdToken: result.getIdToken(),
-                    // API 접근 권한을 증명하는 토큰
-                    // 백엔드 서비스에 접근할 때 사용
                     AccessToken: result.getAccessToken(),
-                    // 사용자 인증 정보를 갱신하는 토큰
-                    //  idToken, accessToken 만료 시 갱신에 사용
                     RefreshToken: result.getRefreshToken(),
                 };
 

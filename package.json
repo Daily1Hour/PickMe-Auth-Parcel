@@ -1,24 +1,25 @@
 {
   "name": "@pickme/auth",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.8.0",
+  "description": "PickMe 프로젝트의 관리 마이크로 꾸러미 조각",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "docs": "typedoc",
     "preview": "vite preview",
     "lint": "npx steiger ./src",
     "start": "npm run build && npm run preview"
   },
-  "author": "",
+  "author": "NarciSource",
   "license": "ISC",
   "dependencies": {
     "@chakra-ui/react": "^3.1.1",
     "@hookform/resolvers": "^3.9.1",
     "@tanstack/react-query": "^5.60.2",
     "amazon-cognito-identity-js": "^6.3.12",
-    "dotenv": "^16.4.5",
     "jotai": "^2.11.3",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
@@ -28,7 +29,6 @@
     "react-hook-form": "^7.53.2",
     "react-icons": "^5.3.0",
     "single-spa-react": "^6.0.2",
-    "steiger": "^0.5.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -40,12 +40,17 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
+    "@vitest/coverage-istanbul": "^2.1.5",
+    "@vitest/ui": "^2.1.5",
+    "dotenv": "^16.4.5",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "steiger": "^0.5.1",
     "terser": "^5.39.0",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.28.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
     "vite": "^5.4.10",
@@ -53,5 +58,10 @@
     "vite-plugin-single-spa": "^0.7.0",
     "vite-tsconfig-paths": "^5.1.2",
     "vitest": "^2.1.5"
+  },
+  "homepage": "https://github.com/Daily1Hour/PickMe",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Daily1Hour/PickMe-Auth-Parcel.git"
   }
 }
