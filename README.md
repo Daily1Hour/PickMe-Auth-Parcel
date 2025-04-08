@@ -9,6 +9,8 @@
 -   [💡 주요 기능](#-주요-기능)
     -   [🔐 Amazon Cognito](#-amazon-cognito)
     -   [🗃️ 로컬 스토리지 저장](#️-로컬-스토리지-저장)
+-   [📋 테스트 리포트](#-테스트-리포트)
+-   [🔄 CI/CD 파이프라인](#-cicd-파이프라인)
 -   [📂 폴더 구조](#-폴더-구조)
 -   [🚀 실행 방법](#-실행-방법)
     -   [💻 개발 서버 실행](#-개발-서버-실행)
@@ -45,6 +47,8 @@
 <img title="비밀번호찾기" width="32%" src="https://github.com/user-attachments/assets/e8a369c4-4c39-4f86-b35b-dd3a539691cf" />  
 <img title="토큰" width="100%" src="https://github.com/user-attachments/assets/1fd709f1-c89e-4f5e-8cc7-79b4698d004d" />
 
+<br/>
+
 ## 💡 주요 기능
 
 이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
@@ -77,6 +81,36 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 -   **idToken**; 클라이언트에서 사용자 정보를 가져올 때 사용
 -   **accessToken**; 백엔드 서비스에 접근할 때 사용
 -   **refreshToken**; 두 토큰의 만료 시 갱신에 사용
+
+<br/>
+
+## 📋 테스트 리포트
+
+> 이 테스트 리포트는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
+
+<a href="https://daily1hour.github.io/PickMe-Chat-Parcel/test-report">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" width='50px' /> 테스트 리포트 바로가기
+</a>
+
+<br/><br/>
+
+## 🔄 CI/CD 파이프라인
+
+<a href="https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions" title="GitHub Actions">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" height="45" /> GitHub Actions 바로가기
+</a>
+
+```mermaid
+graph LR
+    Push[코드 푸시] --> Review[코드 리뷰]
+    Review -->|Accept| Merge[main 브랜치로 머지]
+    Merge --> Test[테스트]
+    Test --> |Success|Lint[린트]
+    Lint --> |Success|DeployGH[gh-pages 배포]
+    Lint --> |Success|DeployAWS[AWS S3 배포]
+```
+
+<br/>
 
 ## 📂 폴더 구조
 
@@ -215,6 +249,7 @@ PickMe-Auth-Parcel
 ```
 
 </details>
+<br/>
 
 ## 🚀 실행 방법
 
