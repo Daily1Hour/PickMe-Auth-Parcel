@@ -14,6 +14,18 @@ import {
     SignupForm,
 } from "./ui";
 
+/**
+ * AuthActions 컴포넌트는 현재 액션 타입에 따라 인증 관련 폼을 렌더링합니다.
+ *
+ * 컴포넌트는 `actionType`에 따라 다음 폼 중 하나를 렌더링합니다:
+ * - `ActionType.Login`: 로그인 폼과 소셜 로그인 옵션을 표시합니다.
+ * - `ActionType.Signup`: 회원가입 폼과 소셜 로그인 옵션을 표시합니다.
+ * - `ActionType.ForgotPassword`: 비밀번호 찾기 폼을 표시합니다.
+ * 렌더링된 폼은 제목과 추가 레이아웃 스타일이 포함된 `PopoverLayout`으로 감싸져 있습니다.
+ *
+ * @returns {React.ReactElement} 레이아웃으로 감싸진 렌더링된 인증 폼 컴포넌트.
+ *
+ */
 export default function AuthActions(): React.ReactElement {
     const actionType = useAtomValue(actionTypeAtom); // 현재 액션 타입 상태
 
