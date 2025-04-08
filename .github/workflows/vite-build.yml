@@ -41,6 +41,9 @@ jobs:
       - name: Test code
         run: npm run test:coverage # 테스트 실행
 
+      - name: Documentation
+        run: npm run docs # 문서 빌드
+
       - name: Build Vite project
         run: npm run build # Vite 프로젝트 빌드
 
