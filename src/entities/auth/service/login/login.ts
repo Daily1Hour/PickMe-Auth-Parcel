@@ -7,8 +7,8 @@ import { LoginRequest, LoginResponse } from "../../api/dto";
  * AWS Cognito를 사용하여 사용자를 인증하고 인증 토큰을 반환합니다.
  *
  * @param {LoginRequest} params - 사용자 이름과 비밀번호를 포함하는 객체.
- * @param {string} params.username - 로그인하려는 사용자의 사용자 이름.
- * @param {string} params.password - 로그인하려는 사용자의 비밀번호.
+ * @param params.username - 로그인하려는 사용자의 사용자 이름.
+ * @param params.password - 로그인하려는 사용자의 비밀번호.
  * @returns {Promise<LoginResponse>} 인증 토큰을 포함하는 Promise:
  * - `IdToken`: 사용자 인증 정보를 포함한 토큰으로, 클라이언트에서 사용자 정보를 가져올 때 사용.
  * - `AccessToken`: API 접근 권한을 증명하는 토큰으로, 백엔드 서비스에 접근할 때 사용.

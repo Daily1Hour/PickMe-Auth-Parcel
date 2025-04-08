@@ -11,7 +11,6 @@ import App from "./app/App";
  * 이 parcel은 React 애플리케이션을 single-spa 환경에서 사용할 수 있도록 래핑합니다.
  * AuthControls 컴포넌트는 인증 관련 UI를 제공합니다.
  *
- * @constant
  * @type {ReactAppOrParcel}
  *
  * @property {React.ComponentType} rootComponent - 렌더링할 루트 React 컴포넌트입니다.

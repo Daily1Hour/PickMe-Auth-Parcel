@@ -9,11 +9,11 @@ import { ForgotPasswordResponse, ForgotPasswordRequest } from "../../api/dto";
  * 사용자의 등록된 이메일로 비밀번호 재설정 코드를 전송합니다.
  *
  * @param {ForgotPasswordRequest} params - 사용자 이름을 포함하는 요청 객체입니다.
- * @param {string} params.username - 비밀번호 재설정을 요청하는 사용자의 사용자 이름입니다.
+ * @param params.username - 비밀번호 재설정을 요청하는 사용자의 사용자 이름입니다.
  * @returns {Promise<ForgotPasswordResponse>} 비밀번호 재설정 요청의 응답을 포함하는
  * Promise 객체를 반환하며, 실패 시 에러 메시지와 함께 거부됩니다.
  *
- * @throws {string} 비밀번호 재설정 요청이 실패한 경우, 에러 메시지 또는 문자열화된
+ * @throws 비밀번호 재설정 요청이 실패한 경우, 에러 메시지 또는 문자열화된
  * 에러 객체와 함께 Promise가 거부됩니다.
  */
 export default async function forgotPassword({

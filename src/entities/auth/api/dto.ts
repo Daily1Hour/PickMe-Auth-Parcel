@@ -1,6 +1,5 @@
 import {
     CodeDeliveryDetails,
-    IAuthenticationDetailsData,
     ICognitoUserSessionData,
     ISignUpResult,
 } from "amazon-cognito-identity-js";
@@ -10,13 +9,10 @@ import {
  *
  * @property username - 사용자의 사용자 이름입니다.
  * @property password - 사용자의 비밀번호입니다.
- * @property validationData - 추가적인 검증 데이터입니다.
- * @property clientMetadata - 클라이언트 메타데이터입니다.
  */
 export type LoginRequest = {
-    [K in keyof IAuthenticationDetailsData as CapitalizeFirstLetter<
-        K & string
-    >]: IAuthenticationDetailsData[K];
+    username: string;
+    password: string;
 };
 /**
  * 로그인 작업에 대한 응답 데이터를 나타냅니다.
@@ -122,7 +118,3 @@ export type UserTokens = {
     accessToken: string;
     refreshToken: string;
 };
-
-type CapitalizeFirstLetter<T extends string> = T extends `${infer F}${infer R}`
-    ? `${Lowercase<F>}${R}`
-    : T;

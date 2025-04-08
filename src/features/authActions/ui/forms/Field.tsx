@@ -11,7 +11,7 @@ import { FieldDictionary } from "@/shared/trans-ko";
  *
  * @param {Object} props - props 객체입니다.
  * @param {Path<T>} props.name - `react-hook-form`에 필드를 등록하는 데 사용되는 필드 이름입니다.
- * @param {string} [props.default] - 필드의 기본값입니다.
+ * @param [props.default] - 필드의 기본값입니다.
  * @param {boolean} [props.isSecret] - 필드가 비밀번호 입력인지 여부입니다.
  * @param {boolean} [props.isHidden] - 필드가 숨겨져야 하는지 여부입니다.
  *

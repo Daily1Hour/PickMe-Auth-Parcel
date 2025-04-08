@@ -18,7 +18,7 @@ import { PrimaryButton, PrimaryIconButton } from "@/shared/ui";
  * - 중간 및 더 큰 화면(`md`)에서는 제목 텍스트가 포함된 기본 버튼을 표시합니다.
  *
  * @param {Object} props - PopoverLayout 컴포넌트의 속성입니다.
- * @param {string} props.title - 팝오버의 제목으로, 접근성과 표시를 위해 사용됩니다.
+ * @param props.title - 팝오버의 제목으로, 접근성과 표시를 위해 사용됩니다.
  * @param {React.ReactNode} props.children - 팝오버 본문에 표시될 콘텐츠입니다.
  * @returns {React.ReactElement} 팝오버 레이아웃을 나타내는 React 엘리먼트를 반환합니다.
  */

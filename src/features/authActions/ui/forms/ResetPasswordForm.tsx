@@ -16,7 +16,7 @@ import Field from "./Field";
  * ResetPasswordForm 컴포넌트는 비밀번호 재설정 폼을 렌더링합니다.
  *
  * @param {Object} props - props 객체입니다.
- * @param {string} props.username - 비밀번호 재설정을 요청하는 사용자의 사용자 이름입니다.
+ * @param props.username - 비밀번호 재설정을 요청하는 사용자의 사용자 이름입니다.
  * 
  * @returns {React.ReactElement} 렌더링된 ResetPasswordForm 컴포넌트입니다.
  *
