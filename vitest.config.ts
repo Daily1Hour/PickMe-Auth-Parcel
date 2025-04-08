@@ -6,5 +6,10 @@ export default defineConfig({
     test: {
         reporters: ["verbose", "html"],
         outputFile: "./dist/test-report.html",
+        coverage: {
+            provider: "istanbul",
+            reporter: ["json-summary", "html"],
+            reportsDirectory: "./dist",
+        },
     },
 });
