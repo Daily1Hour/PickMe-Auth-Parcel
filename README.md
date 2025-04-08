@@ -125,13 +125,29 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 
 ```mermaid
 graph LR
-    Push[코드 푸시] --> Review[코드 리뷰]
-    Review -->|Accept| Merge[main 브랜치로 머지]
-    Merge --> Lint[린트]
-    Lint --> |Success|Test[테스트]
-    Test --> |Success|Docs[문서화]
-    Docs --> DeployGH[gh-pages 배포]
-    Test --> |Success|DeployAWS[AWS S3 배포]
+    subgraph CD[🚀 CD 영역]
+        direction LR
+        Tag[태그 푸시] --> DeployGH[gh-pages에 배포] --> |자동 워크플로 실행|pages-build-deployment[GitHub Pages 배포 완료]
+        Tag --> DeployAWS[Amazon S3에 배포] --> |콘텐츠 서빙|CloudFront[Amazon CloudFront]
+    end
+
+    Build -.-> |📦 아티팩트|Tag
+
+    subgraph CI[🧪 CI 영역]
+        direction LR
+        Push[브랜치 푸시] --> Lint[린트]
+        Lint --> |🟢 통과|Test[테스트]
+        Test --> |🟢 통과|Docs[문서화] --> Review
+        Test --> |🟢 통과|Build[빌드]
+        Build --> |🟢 통과|Review[리뷰]
+        Review -->|✔️ 승인|Merge[머지]
+    end
+
+    click Build "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/vite-build.yml"
+    click Review "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/auto-assign.yml"
+    click DeployGH "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-gh-pages.yml"
+    click pages-build-deployment "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/pages/pages-build-deployment"
+    click DeployAWS "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-aws-s3.yml"
 ```
 
 ## 📂 폴더 구조
