@@ -10,7 +10,9 @@
 -   [💡 주요 기능](#-주요-기능)
     -   [🔐 Amazon Cognito](#-amazon-cognito)
     -   [🗃️ 로컬 스토리지 저장](#️-로컬-스토리지-저장)
--   [📋 테스트 리포트](#-테스트-리포트)
+-   [📖 개발 문서](#-개발-문서)
+    -   [📋 테스트 리포트](#-테스트-리포트)
+    -   [📘 타입 문서](#-타입-문서)
 -   [🔄 CI/CD 파이프라인](#-cicd-파이프라인)
 -   [📂 폴더 구조](#-폴더-구조)
 -   [🚀 실행 방법](#-실행-방법)
@@ -39,6 +41,7 @@
 [![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)  
 [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![TypeDoc](https://img.shields.io/badge/TypeDoc-3178c6.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZT5maWxlX3R5cGVfdHlwZWRvYzwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDMgOSAxNiAyIDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiNiNDRjZmUiLz48cG9seWdvbiBwb2ludHM9IjMgOSAxNiAxNiAyOSA5IDE2IDIgMyA5IiBzdHlsZT0iZmlsbDojOTYwMWZlIi8+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDE2IDE2IDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiM5OWNiZmUiLz48cG9seWdvbiBwb2ludHM9IjI5IDkgMTYgMTYgMTYgMzAgMjkgMjMgMjkgOSIgc3R5bGU9ImZpbGw6IzBjMzY0ZiIvPjwvc3ZnPg==&style=flat-square&logoColor=black)](https://github.com/feature-sliced/steiger)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)](https://www.postman.com/)
 
 ## 💁 소개
@@ -87,33 +90,49 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 
 <br/>
 
-## 📋 테스트 리포트
+## 📖 개발 문서
 
+### 📋 테스트 리포트
+
+> 테스트 케이스 통과 여부 및 커버리지 현황 등을 시각적으로 제공합니다.  
 > 이 테스트 리포트는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
 
-<a href="https://daily1hour.github.io/PickMe-Chat-Parcel/test-report">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" width='50px' /> 테스트 리포트 바로가기
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://daily1hour.github.io/PickMe-Auth-Parcel/test/report">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" alt="Vitest" width='50px' /> 테스트 리포트 바로가기
+</a>
+
+<br/><br/>
+
+### 📘 타입 문서
+
+> 프로젝트에서 사용되는 타입 정의를 문서화한 자료입니다.  
+> 이 타입 문서는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://daily1hour.github.io/PickMe-Auth-Parcel/docs">
+<img src="https://github.com/user-attachments/assets/6225376e-d3bf-49e2-a537-bbb8ae1caf97" alt="TypeDoc" width='50px' /> 타입 문서 바로가기
 </a>
 
 <br/><br/>
 
 ## 🔄 CI/CD 파이프라인
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions" title="GitHub Actions">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" height="45" /> GitHub Actions 바로가기
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHubActions" height="45" /> GitHub Actions 바로가기
 </a>
 
 ```mermaid
 graph LR
     Push[코드 푸시] --> Review[코드 리뷰]
     Review -->|Accept| Merge[main 브랜치로 머지]
-    Merge --> Test[테스트]
-    Test --> |Success|Lint[린트]
-    Lint --> |Success|DeployGH[gh-pages 배포]
-    Lint --> |Success|DeployAWS[AWS S3 배포]
+    Merge --> Lint[린트]
+    Lint --> |Success|Test[테스트]
+    Test --> |Success|Docs[문서화]
+    Docs --> DeployGH[gh-pages 배포]
+    Test --> |Success|DeployAWS[AWS S3 배포]
 ```
-
-<br/>
 
 ## 📂 폴더 구조
 
@@ -222,7 +241,7 @@ PickMe-Auth-Parcel
 │  │        └─ TokenInfo.tsx # 로그인 후 토큰 정보
 │  ├─ shared # 공용
 │  │  ├─ ActionType.ts
-│  │  ├─ thema.ts
+│  │  ├─ theme.ts
 │  │  ├─ trans-ko.ts
 │  │  ├─ styles
 │  │  │  ├─ global.css
@@ -243,6 +262,10 @@ PickMe-Auth-Parcel
 │  └─ userscript # 유저스크립트
 │     ├─ widget.meta.ts # 메타데이터
 │     └─ widget.user.js # 스크립트
+├─ tsconfig.json # ts 설정
+│  ├─ tsconfig.app.json
+│  ├─ tsconfig.node.json
+│  └─ typedoc.json # 문서화 설정
 ├─ package.json # 의존성 설정
 │  ├─ .prettierrc # 포맷터 설정
 │  ├─ eslint.config.js # 린트 설정

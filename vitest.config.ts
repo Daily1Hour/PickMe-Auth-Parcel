@@ -5,11 +5,11 @@ export default defineConfig({
     plugins: [tsconfigPaths({ loose: true })],
     test: {
         reporters: ["verbose", "html"],
-        outputFile: "./dist/report/test-report.html",
+        outputFile: "./dist/test/report.html",
         coverage: {
             provider: "istanbul",
             reporter: ["json-summary", "html"],
-            reportsDirectory: "./dist/report",
+            reportsDirectory: "./dist/test",
         },
     },
 });
