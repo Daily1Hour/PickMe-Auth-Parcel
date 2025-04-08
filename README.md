@@ -5,6 +5,7 @@
 ## 🚩 목차
 
 -   [🛠️ 기술 스택](#️-기술-스택)
+-   [💁 소개](#-소개)
 -   [🎨 스크린샷](#-스크린샷)
 -   [💡 주요 기능](#-주요-기능)
     -   [🔐 Amazon Cognito](#-amazon-cognito)
@@ -40,6 +41,13 @@
 [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)](https://www.postman.com/)
 
+## 💁 소개
+
+이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
+회원가입 시 이메일 인증을 통해 사용자를 확인하며,
+로그인 후에는 액세스 토큰, 리프레시 토큰, ID 토큰을 로컬 스토리지에 저장하여 인증 상태를 유지합니다.  
+안전하고 신뢰할 수 있는 사용자 인증 흐름을 제공합니다.
+
 ## 🎨 스크린샷
 
 <img title="회원가입" width="33%" src="https://github.com/user-attachments/assets/a3bccafc-e13d-41f1-95cf-69741f578beb" /> 
@@ -50,11 +58,6 @@
 <br/>
 
 ## 💡 주요 기능
-
-이 애플리케이션은 *Amazon Cognito*를 이용해 사용자 회원가입, 로그인, 로그아웃 등의 인증 기능을 제공합니다.  
-회원가입 시 이메일 인증을 통해 사용자를 확인하며,
-로그인 후에는 액세스 토큰, 리프레시 토큰, ID 토큰을 로컬 스토리지에 저장하여 인증 상태를 유지합니다.  
-안전하고 신뢰할 수 있는 사용자 인증 흐름을 제공합니다.
 
 ### 🔐 Amazon Cognito
 
