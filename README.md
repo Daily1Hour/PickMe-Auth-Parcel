@@ -34,7 +34,7 @@
 [![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=flat-square&logo=chakraui&logoColor=white)](https://www.chakra-ui.com/)
 [![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)](https://axios-http.com/kr/docs/intro)
 [![Yup](https://img.shields.io/badge/🔲_Yup-333333?style=flat-square&logo=yup&logoColor=white)](https://github.com/jquense/yup)
-[![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)](https://github.com/jquense/yup)  
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)  
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://ko.vite.dev)
 [![Rollup.js](https://img.shields.io/badge/Rollup-EC4A3F?style=flat-square&logo=rollupdotjs&logoColor=white)](https://rollupjs.org/)
 [![Terser](https://img.shields.io/badge/Terser-1E4A7A.svg?logo=data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Zz48cGF0aCBmaWxsPSIjZmZjODQzIiBkPSJNMjU2LDMyOWw2MywzNnYxMjhIMTkzVjM2NUwyNTYsMzI5eiBNMzE5LDE0N1YxOUgxOTN2MTI4bDYzLDM2TDMxOSwxNDd6Ii8+PHBhdGggZmlsbD0iI2ZmMzUwZiIgZD0iTTI1NiwxODNsNjMtMzZ2NzNMMjU2LDE4M3ogTTE5MywyOTJ2NzNsNjMtMzZMMTkzLDI5MnoiLz48cGF0aCBmaWxsPSIjZmY0MzM4IiBkPSJNMzE5LDIyMHYtNzNsMTEwLTY0bDYzLDEwOWwtMTExLDY0TDMxOSwyMjB6IE0xMzAsMjU2TDE5LDMyMGw2MywxMDlsMTExLTY0di03M0wxMzAsMjU2eiIvPjxwYXRoIGZpbGw9IiMwMDJmMzIiIGQ9Ik0zMTksMjIwbDYyLDM2bC02MiwzNlYyMjB6IE0xOTMsMjIwbC02MywzNmw2MywzNlYyMjB6Ii8+PHBhdGggZmlsbD0iIzAwYjNlMyIgZD0iTTE5MywyMjBsLTYzLDM2TDE5LDE5Mkw4Myw4M2wxMTAsNjRWMjIweiBNMzE5LDI5MnY3M2wxMTAsNjRsNjMtMTA5bC0xMTEtNjRMMzE5LDI5MnoiLz48cGF0aCBmaWxsPSIjMDA4YzNjIiBkPSJNMzE5LDI5MnY3M2wtNjMtMzZMMzE5LDI5MnogTTI1NiwxODNsLTYzLTM2djczTDI1NiwxODN6Ii8+PHBvbHlnb24gZmlsbD0iIzAwMjUwRCIgcG9pbnRzPSIyNTYsMTgzIDE5MywyMjAgMTkzLDI5MiAyNTYsMzI5IDMxOSwyOTIgMzE5LDIyMCIvPjwvZz48L3N2Zz4=&style=flat-square&logoColor)](https://terser.org/)  
@@ -132,8 +132,8 @@ sequenceDiagram
 
     User ->> Frontend: 로그인 정보 입력
     Frontend ->> Cognito: 인증 요청 (username, password)
-    Cognito -->> Frontend: 토큰(ID/Access/Refresh)
-    note over Frontend: 토큰(ID/Access/Refresh)은 localStorage에 저장됨
+    Cognito -->> Frontend: 토큰(ID / Access / Refresh)
+    note over Frontend: 토큰(ID / Access / Refresh)은 localStorage에 저장됨
     Frontend ->> Frontend: ID Token을 디코딩해 사용자 정보 추출
 
     alt Access Token 만료됨
@@ -146,16 +146,32 @@ sequenceDiagram
         end
     else Access Token 유효
         loop API 요청 반복
-            Frontend ->> API Gateway: API 요청 (Authorization: Bearer Access Token)
-            API Gateway ->> Cognito: Access Token 검증 (User Pool Authorizer)
+            Frontend ->> API Gateway: API 요청<br>Authorization: Bearer <ID Token><br>X-Access-Token: Bearer <Access Token>
+            note right of Frontend: <ID Token>은 인증용, <Access Token>은 인가용으로 전송
+            API Gateway ->> Cognito: ID Token 검증 (User Pool Authorizer)
             Cognito -->> API Gateway: 검증 결과 (Claim 포함)
-            note over API Gateway: 백엔드에서 디코딩 하지 않고 전달받은 사용자 Claim 사용
-            API Gateway ->> Backend: API 요청 전달 (Claim 포함)
+            API Gateway ->> Backend: API 요청 전달<br>Authorization: Bearer <Access Token>
+            Backend ->> Backend: Access Token 디코딩 및 권한 확인
             Backend -->> API Gateway: 응답 데이터
             API Gateway -->> Frontend: 응답 데이터
         end
     end
 ```
+
+<br/>
+
+1.  **프론트엔드**는 Cognito SDK를 사용해 사용자 인증을 자체적으로 처리하고, 응답으로 받은 토큰을 저장한다.
+2.  프론트엔드는 *ID Token*을 디코딩하여 사용자 정보를 활용한다.
+3.  *Access Token*이 만료되면 *Refresh Token*으로 갱신하고,
+    *Refresh Token*까지 만료되면 재로그인이 필요하다.
+4.  API 요청을 하며 두 토큰을 하나의 요청에 각각 다른 헤더에 담아 전송된다.
+    ```http
+    Authorization: Bearer <ID Token>
+    X-Access-Token: Bearer <Access Token>
+    ```
+5.  **API Gateway**는 Cognito User Pool **Authorizer**를 통해 *ID Token*으로 사용자를 인증(authentication)한다.
+6.  API Gateway는 X-Access-Token을 Authorization 헤더로 덮어써서 백엔드로 전달한다.
+7.  **백엔드**는 전달받은 *Access Token*을 디코딩되어 인가(authorization) 처리를 담당한다.
 
 <br/>
 

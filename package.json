@@ -1,8 +1,10 @@
 {
   "name": "@pickme/auth",
   "version": "1.8.0",
-  "description": "PickMe 프로젝트의 관리 마이크로 꾸러미 조각",
+  "description": "PickMe 프로젝트의 사용자 관리 마이크로 꾸러미 조각",
+  "author": "NarciSource",
   "type": "module",
+  "license": "ISC",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,8 +15,6 @@
     "lint": "npx steiger ./src",
     "start": "npm run build && npm run preview"
   },
-  "author": "NarciSource",
-  "license": "ISC",
   "dependencies": {
     "@chakra-ui/react": "^3.1.1",
     "@hookform/resolvers": "^3.9.1",
