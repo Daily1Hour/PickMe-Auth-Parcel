@@ -11,7 +11,7 @@
     -   [🔐 Amazon Cognito](#-amazon-cognito)
     -   [🗃️ 로컬 스토리지 저장](#️-로컬-스토리지-저장)
 -   [📖 개발 문서](#-개발-문서)
-    -   [📋 테스트 리포트](#-테스트-리포트)
+    -   [🧪 테스트 리포트](#-테스트-리포트)
     -   [📘 타입 문서](#-타입-문서)
 -   [📐 다이어그램](#-다이어그램)
     -   [🧭 시퀀스 다이어그램](#-시퀀스-다이어그램)
@@ -79,23 +79,25 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 
 ## 📖 개발 문서
 
-### 📋 테스트 리포트
+### 🧪 테스트 리포트
 
 > 테스트 케이스 통과 여부 및 커버리지 현황 등을 시각적으로 제공합니다.  
 > 이 테스트 리포트는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://daily1hour.github.io/PickMe-Auth-Parcel/test/report"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg" alt="Vitest" width='50px' /> 테스트 리포트 바로가기 </a>
-
-<br/><br/>
+| [![Vitest](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg)](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) |
+| --- |
+| [테스트 리포트 바로가기](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) |
 
 ### 📘 타입 문서
 
 > 프로젝트에서 사용되는 타입 정의를 문서화한 자료입니다.  
 > 이 타입 문서는 매 릴리즈 업데이트 시 자동으로 최신 상태로 배포됩니다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://daily1hour.github.io/PickMe-Auth-Parcel/docs"> <img src="https://github.com/user-attachments/assets/6225376e-d3bf-49e2-a537-bbb8ae1caf97" alt="TypeDoc" width='50px' /> 타입 문서 바로가기 </a>
+| [![TypeDoc](https://github.com/user-attachments/assets/8828fd5d-9f40-44ee-bc7c-0325d52b0804)](https://daily1hour.github.io/PickMe-Auth-Parcel/docs) |
+| --- |
+| &nbsp;&nbsp;&nbsp;[ 타입 문서 바로가기](https://daily1hour.github.io/PickMe-Auth-Parcel/docs)&nbsp;&nbsp;&nbsp; |
 
-<br/><br/>
+<br/>
 
 ## 📐 다이어그램
 
