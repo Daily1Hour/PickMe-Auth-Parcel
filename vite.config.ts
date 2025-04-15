@@ -5,7 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import vitePluginSingleSpa from "vite-plugin-single-spa";
 
-import userscriptMeta from "./src/userscript/widget.meta";
+// @ts-expect-error: JS file has no type declarations
+import userscriptMeta from "./src/userscript/metadata";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -59,10 +60,13 @@ export default defineConfig(({ mode }) => {
                 input: {
                     main: "index.html",
                     "widget.user": "src/userscript/widget.user.js",
+                    "widget.meta": "src/userscript/widget.meta.js",
                 },
                 output: {
                     banner: (chunkInfo) => {
-                        return chunkInfo.name === "widget.user" ? `${userscriptMeta}` : "";
+                        return chunkInfo.name === "widget.user" || chunkInfo.name === "widget.meta"
+                            ? `${userscriptMeta}`
+                            : "";
                     },
                 },
             },
