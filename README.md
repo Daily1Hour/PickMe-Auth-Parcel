@@ -2,6 +2,9 @@
 
 > Single-Spa Parcel 구성
 
+[![cicd](https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/vite-build.yml/badge.svg)](https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/vite-build.yml)
+[![codecov](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel/branch/main/graph/badge.svg)](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel)
+
 ## 🚩 목차
 
 -   [🛠️ 기술 스택](#️-기술-스택)
@@ -43,6 +46,7 @@
 [![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)  
 [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![Codecov](https://img.shields.io/badge/Codecov-F01F7A?style=flat-square&logo=codecov&logoColor=white)](https://about.codecov.io/)
 [![TypeDoc](https://img.shields.io/badge/TypeDoc-3178c6.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZT5maWxlX3R5cGVfdHlwZWRvYzwvdGl0bGU+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDMgOSAxNiAyIDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiNiNDRjZmUiLz48cG9seWdvbiBwb2ludHM9IjMgOSAxNiAxNiAyOSA5IDE2IDIgMyA5IiBzdHlsZT0iZmlsbDojOTYwMWZlIi8+PHBvbHlnb24gcG9pbnRzPSIzIDIzIDE2IDE2IDE2IDMwIDMgMjMiIHN0eWxlPSJmaWxsOiM5OWNiZmUiLz48cG9seWdvbiBwb2ludHM9IjI5IDkgMTYgMTYgMTYgMzAgMjkgMjMgMjkgOSIgc3R5bGU9ImZpbGw6IzBjMzY0ZiIvPjwvc3ZnPg==&style=flat-square&logoColor=black)](https://typedoc.org/)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)](https://www.postman.com/)
 
@@ -99,9 +103,9 @@ VITE_COGNITO_CLIENT_ID= # Cognito 앱클라이언트 아이디
 > 커버리지는 Codecov를 통해 분석됩니다. [![codecov](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel/branch/main/graph/badge.svg)](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel)
 
 <!-- prettier-ignore -->
-| [![Vitest](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg)](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) |
-| --- |
-| [테스트 리포트 바로가기](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) |
+| [![Vitest](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg)](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) | [![Codecov](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codecov/codecov-plain.svg)](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel) |
+| --- | --- |
+| [테스트 리포트 바로가기](https://daily1hour.github.io/PickMe-Auth-Parcel/test/report) | [커버리지 대시보드 바로가기](https://codecov.io/gh/Daily1Hour/PickMe-Auth-Parcel) |
 
 ### 📘 타입 문서
 
@@ -184,6 +188,7 @@ graph LR
         direction LR
         Tag[태그 푸시] --> DeployGH[gh-pages에 배포] --> |자동 워크플로 실행|pages-build-deployment[GitHub Pages 배포 완료]
         Tag --> DeployAWS[Amazon S3에 배포] --> |콘텐츠 서빙|CloudFront[Amazon CloudFront]
+        Tag --> Codecov[CodeCov에<br>테스트 커버리지 배포]
     end
 
     Build -.-> |📦 아티팩트|Tag
@@ -203,6 +208,7 @@ graph LR
     click DeployGH "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-gh-pages.yml"
     click pages-build-deployment "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/pages/pages-build-deployment"
     click DeployAWS "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-aws-s3.yml"
+    click Codecov "https://github.com/Daily1Hour/PickMe-Auth-Parcel/actions/workflows/deploy-codecov.yml"
 ```
 
 ## 📂 폴더 구조
