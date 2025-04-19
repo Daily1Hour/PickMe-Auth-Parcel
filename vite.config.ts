@@ -14,12 +14,12 @@ export default defineConfig(({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
     const SERVER_PORT = Number(process.env.VITE_SERVER_PORT); // 서버포트
-    const PUBLIC_URL = process.env.VITE_PUBLIC_URL; // 기본경로
+    const VITE_BASE = process.env.VITE_BASE; // 기본경로
 
     // vite 설정
     return {
         // 기본 경로 설정
-        base: PUBLIC_URL,
+        base: `/${VITE_BASE}/`,
 
         // 플러그인
         plugins: [

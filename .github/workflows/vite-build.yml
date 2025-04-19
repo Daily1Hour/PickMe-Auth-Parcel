@@ -20,10 +20,12 @@ jobs:
       VITE_COGNITO_CLIENT_ID: ${{ secrets.VITE_COGNITO_CLIENT_ID }}
       VITE_TEST_USERNAME: ${{ secrets.VITE_TEST_USERNAME }}
       VITE_TEST_PASSWORD: ${{ secrets.VITE_TEST_PASSWORD }}
-      VITE_PUBLIC_URL: ${{ vars.VITE_PUBLIC_URL }}
       VITE_DOMAIN: ${{ vars.VITE_GH_PAGE_DOMAIN }}
 
     steps:
+      - name: Get repo name and set as env
+        run: echo "VITE_BASE=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)" >> $GITHUB_ENV
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -41,6 +43,12 @@ jobs:
       - name: Test code
         run: npm run test:coverage # 테스트 실행
 
+      - name: Move coverage path into test
+        run: |
+          cp $VITE_BASE/lcov.info $VITE_BASE/test/coverage/ # lcov 파일 이동
+          cp $VITE_BASE/coverage-summary.json $VITE_BASE/test/coverage/ # 요약 파일 이동
+          cp -r $VITE_BASE/test/coverage/. test/coverage/ # 커버리지 폴더 이동
+
       - name: Documentation
         run: npm run docs # 문서 빌드
 
@@ -51,4 +59,6 @@ jobs:
         uses: actions/upload-artifact@v4 # 아티팩트를 업로드하는 액션
         with:
           name: build-artifact # 아티팩트 이름
-          path: dist
+          path: |
+            dist
+            test

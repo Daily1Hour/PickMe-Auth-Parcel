@@ -1,5 +1,5 @@
 const containerId = "@pickme/auth-widget";
-const authWidgetUrl = import.meta.env.VITE_DOMAIN + import.meta.env.VITE_PUBLIC_URL + "parcel.js"; // 빌드된 auth 위젯의 URL
+const authWidgetUrl = `${import.meta.env.VITE_DOMAIN}/${import.meta.env.VITE_BASE}/parcel.js`; // 빌드된 auth 위젯의 URL
 
 // 컴포넌트 저장할 div
 const containerDiv = document.createElement("div");

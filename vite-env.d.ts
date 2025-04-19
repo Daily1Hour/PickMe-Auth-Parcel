@@ -5,7 +5,7 @@ interface ImportMetaEnv {
     readonly VITE_COGNITO_CLIENT_ID: string;
     readonly VITE_TEST_USERNAME: string;
     readonly VITE_TEST_PASSWORD: string;
-    readonly VITE_PUBLIC_URL: string;
+    readonly VITE_BASE: string;
     readonly VITE_SERVER_PORT: number;
 }
 
