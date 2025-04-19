@@ -16,9 +16,10 @@ export default defineConfig(({ mode }) => {
             coverage: {
                 provider: "istanbul",
                 reporter: [
-                    "json-summary",
+                    "lcovonly", // 커버리지 데이터 표준 형식
+                    "json-summary", // 커버리지 요약 데이터
                     [
-                        "html",
+                        "html", // 웹페이지 형식 보고서
                         {
                             subdir: "test/coverage",
                         },
