@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     // 환경변수 증설
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-    const PUBLIC_URL = process.env.VITE_PUBLIC_URL;
+    const BASE = process.env.VITE_BASE;
 
     return {
         plugins: [tsconfigPaths({ loose: true })],
@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
                         },
                     ],
                 ],
-                reportsDirectory: PUBLIC_URL,
+                reportsDirectory: BASE,
             },
         },
     };

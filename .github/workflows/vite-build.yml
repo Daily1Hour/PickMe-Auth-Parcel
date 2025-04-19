@@ -24,6 +24,9 @@ jobs:
       VITE_DOMAIN: ${{ vars.VITE_GH_PAGE_DOMAIN }}
 
     steps:
+      - name: Get repo name and set as env
+        run: echo "VITE_BASE=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)" >> $GITHUB_ENV
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -42,7 +45,7 @@ jobs:
         run: npm run test:coverage # 테스트 실행
 
       - name: Move coverage path into test
-        run: cp -r $VITE_PUBLIC_URL/test/. test/ # 커버리지 폴더 이동
+        run: cp -r $VITE_BASE/test/. test/ # 커버리지 폴더 이동
 
       - name: Documentation
         run: npm run docs # 문서 빌드
