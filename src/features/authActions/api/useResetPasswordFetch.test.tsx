@@ -1,23 +1,11 @@
-import { vi, describe, it, expect, beforeEach, Mock } from "vitest";
+import { vi, describe, it, expect, beforeEach } from "vitest";
 import { renderHook } from "@testing-library/react";
-import { useMutation } from "@tanstack/react-query";
 
+import { mutateAsyncMock } from "@/__mocks__/reactQueryMock";
 import createWrapper from "@/test-utils/createWrapper";
 
 import { dto } from "@/entities/auth";
 import useResetPasswordFetch from "./useResetPasswordFetch";
-
-vi.mock("@tanstack/react-query", async () => {
-    const actual = await vi.importActual("@tanstack/react-query");
-    return {
-        ...actual,
-        useMutation: vi.fn(),
-    };
-});
-
-vi.mock("@/entities/auth", () => ({
-    resetPassword: vi.fn(),
-}));
 
 describe("useResetPasswordFetch", () => {
     const mockData: dto.ResetPasswordRequest = {
@@ -26,12 +14,8 @@ describe("useResetPasswordFetch", () => {
         confirmPassword: "newPassword",
         code: "123456",
     };
-    const mutateAsyncMock = vi.fn();
 
     beforeEach(() => {
-        (useMutation as Mock).mockReturnValue({
-            mutateAsync: mutateAsyncMock,
-        });
         vi.clearAllMocks();
     });
 
