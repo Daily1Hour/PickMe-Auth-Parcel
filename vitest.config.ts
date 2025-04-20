@@ -16,7 +16,12 @@ export default defineConfig(({ mode }) => {
             environment: "jsdom",
 
             // 테스트 실행 전 목 로드
-            setupFiles: ["./src/__mocks__/reactQueryMock.ts", "./src/__mocks__/authMock.ts"],
+            setupFiles: [
+                "./src/__mocks__/reactQueryMock.ts",
+                "./src/__mocks__/authMock.ts",
+                "./src/__mocks__/hookFormMock.ts",
+                "./src/__mocks__/yupResolverMock.ts",
+            ],
 
             // 모듈 경로 별칭
             resolve: {
