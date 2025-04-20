@@ -10,11 +10,17 @@ export default defineConfig(({ mode }) => {
 
     return {
         plugins: [tsconfigPaths({ loose: true })],
+
         test: {
+            // 테스트 리포터 설정
             reporters: ["verbose", "html"],
             outputFile: "./test/report.html",
+
+            // 커버리지 설정
             coverage: {
                 provider: "istanbul",
+                reportsDirectory: BASE,
+
                 reporter: [
                     "lcovonly", // 커버리지 데이터 표준 형식
                     "json-summary", // 커버리지 요약 데이터
@@ -25,7 +31,15 @@ export default defineConfig(({ mode }) => {
                         },
                     ],
                 ],
-                reportsDirectory: BASE,
+
+                include: ["src/**/*.{ts,tsx}"],
+
+                exclude: [
+                    "src/**/*.test.{ts,tsx}",
+                    "src/**/__tests__/**",
+                    "src/**/__mocks__/**",
+                    "src/**/*.usage.ts",
+                ],
             },
         },
     };

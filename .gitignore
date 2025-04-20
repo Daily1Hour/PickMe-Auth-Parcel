@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 
-test
-auth
+/test/
+/auth/
 
 # Editor directories and files
 .idea
