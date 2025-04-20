@@ -12,6 +12,8 @@ export default defineConfig(({ mode }) => {
         plugins: [tsconfigPaths({ loose: true })],
 
         test: {
+            environment: "jsdom",
+
             // 테스트 리포터 설정
             reporters: ["verbose", "html"],
             outputFile: "./test/report.html",

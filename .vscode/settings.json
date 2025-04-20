@@ -4,7 +4,7 @@
     ".env": ".env.*",
     ".gitignore": ".gitattributes",
     "setup.ps1": "setup.*, .gitconfig, .gitmessage",
-    "*.ts": "$(capture).spec.ts, $(capture).test.ts, $(capture).usage.ts",
+    "*.ts": "$(capture).spec.ts, $(capture).test.ts, $(capture).usage.ts, $(capture).spec.tsx, $(capture).test.tsx",
     "tsconfig.json": "tsconfig.*.json, env.d.ts, typedoc.*",
     "vite.config.*": "vite.*.config.ts, jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*, vite-env.d.ts",
     "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, steiger.config.ts"
