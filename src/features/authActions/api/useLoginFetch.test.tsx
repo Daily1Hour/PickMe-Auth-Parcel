@@ -1,16 +1,13 @@
 import { vi, describe, it, expect, beforeEach, Mock } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import {
-    QueryClient,
-    QueryClientProvider,
-    useMutation,
-    useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
     CognitoAccessToken,
     CognitoIdToken,
     CognitoRefreshToken,
 } from "amazon-cognito-identity-js";
+
+import createWrapper from "@/test-utils/createWrapper";
 
 import { dto } from "@/entities/auth";
 import useLoginFetch from "./useLoginFetch";
@@ -27,13 +24,6 @@ vi.mock("@tanstack/react-query", async () => {
 vi.mock("@/entities/auth", () => ({
     login: vi.fn(),
 }));
-
-const createWrapper = () => {
-    const client = new QueryClient();
-    return ({ children }: { children: React.ReactNode }) => (
-        <QueryClientProvider client={client}>{children}</QueryClientProvider>
-    );
-};
 
 describe("useLoginFetch", () => {
     const refetchQueriesMock = vi.fn();

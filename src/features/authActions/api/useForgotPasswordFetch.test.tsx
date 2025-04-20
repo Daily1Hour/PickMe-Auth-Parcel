@@ -1,6 +1,8 @@
 import { vi, describe, it, expect, beforeEach, Mock } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import { QueryClient, QueryClientProvider, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
+
+import createWrapper from "@/test-utils/createWrapper";
 
 import { dto } from "@/entities/auth";
 import useForgotPasswordFetch from "./useForgotPasswordFetch";
@@ -17,17 +19,10 @@ vi.mock("@/entities/auth", () => ({
     forgotPassword: vi.fn(),
 }));
 
-const createWrapper = () => {
-    const client = new QueryClient();
-    return ({ children }: { children: React.ReactNode }) => (
-        <QueryClientProvider client={client}>{children}</QueryClientProvider>
-    );
-};
-
 describe("useForgotPasswordFetch", () => {
     const mockRequest: dto.ForgotPasswordRequest = { username: "testuser" };
     const mockResponse: dto.ForgotPasswordResponse = {
-        Destination: " ",
+        Destination: "test@email.com",
         DeliveryMedium: "EMAIL",
         AttributeName: "testAttribute",
     };
