@@ -3,7 +3,7 @@ import { renderHook, act } from "@testing-library/react";
 import { useMutation } from "@tanstack/react-query";
 
 import { mockUseMutation } from "@/__mocks__/reactQueryMock";
-import createWrapper from "@/test-utils/createWrapper";
+import createWrapper from "@/__test-utils__/createWrapper";
 
 import { dto } from "@/entities/auth";
 import useSignupFetch from "./useSignupFetch";

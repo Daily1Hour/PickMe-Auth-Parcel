@@ -2,18 +2,13 @@ import { vi, describe, it, expect, beforeEach } from "vitest";
 import { renderHook } from "@testing-library/react";
 
 import { mutateAsyncMock } from "@/__mocks__/reactQueryMock";
-import createWrapper from "@/test-utils/createWrapper";
+import createWrapper from "@/__test-utils__/createWrapper";
 
 import { dto } from "@/entities/auth";
-import useResetPasswordFetch from "./useResetPasswordFetch";
+import useConfirmFetch from "./useConfirmFetch";
 
-describe("useResetPasswordFetch", () => {
-    const mockData: dto.ResetPasswordRequest = {
-        username: "mockUser",
-        password: "newPassword",
-        confirmPassword: "newPassword",
-        code: "123456",
-    };
+describe("useConfirmFetch", () => {
+    const mockData: dto.ConfirmRequest = { username: "mockUser", code: "123456" };
 
     beforeEach(() => {
         vi.clearAllMocks();
@@ -24,7 +19,7 @@ describe("useResetPasswordFetch", () => {
         const mockResponse = { success: true };
         mutateAsyncMock.mockResolvedValue(mockResponse);
 
-        const { result } = renderHook(useResetPasswordFetch, {
+        const { result } = renderHook(useConfirmFetch, {
             wrapper: createWrapper(),
         });
 
@@ -40,7 +35,7 @@ describe("useResetPasswordFetch", () => {
         const mockError = new Error("서버 실패");
         mutateAsyncMock.mockRejectedValue(mockError);
 
-        const { result } = renderHook(useResetPasswordFetch, {
+        const { result } = renderHook(useConfirmFetch, {
             wrapper: createWrapper(),
         });
 
