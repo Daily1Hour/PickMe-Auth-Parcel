@@ -1,5 +1,13 @@
 import { vi } from "vitest";
 
+export const mockUseQuery = vi.fn(
+    () =>
+        ({
+            data: {},
+            isSuccess: true,
+        } as unknown),
+);
+
 export const mutateAsyncMock = vi.fn();
 export const mockUseMutation = vi.fn(
     ({ onSuccess }) =>
@@ -23,6 +31,7 @@ vi.mock("@tanstack/react-query", async () => {
 
     return {
         ...actual,
+        useQuery: mockUseQuery,
         useMutation: mockUseMutation,
         useQueryClient: mockUseQueryClient,
     };

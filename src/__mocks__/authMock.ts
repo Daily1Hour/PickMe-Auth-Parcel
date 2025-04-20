@@ -6,4 +6,6 @@ vi.mock("@/entities/auth", () => ({
     confirm: vi.fn(),
     forgotPassword: vi.fn(),
     resetPassword: vi.fn(),
+    getLoggedIn: vi.fn(),
+    getTokens: vi.fn(),
 }));
