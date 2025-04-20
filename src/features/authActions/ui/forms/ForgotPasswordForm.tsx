@@ -2,8 +2,8 @@ import React from "react";
 import { FormProvider } from "react-hook-form";
 import { Stack, Text } from "@chakra-ui/react";
 
-import { ForgotPasswordFieldValues } from "../../model";
-import { useForgotPasswordForm } from "../../hook";
+import { ForgotPasswordFieldValues, ForgotPasswordSchema } from "../../model";
+import { useFormBy } from "../../hook";
 import { useForgotPasswordFetch } from "../../api";
 import FormLayout from "./Layout";
 import Field from "./Field";
@@ -22,7 +22,7 @@ const testUsername = import.meta.env.VITE_TEST_USERNAME;
  * - API 응답을 받으면, 사용자에게 재설정 코드가 전송되었음을 알리는 메시지를 표시합니다.
  */
 export default function ForgotPasswordForm(): React.ReactElement {
-    const methods = useForgotPasswordForm(); // 비밀번호 찾기 폼 상태 및 제출 메서드
+    const methods = useFormBy<ForgotPasswordFieldValues>(ForgotPasswordSchema); // 비밀번호 찾기 폼 상태 및 제출 메서드
     const { submit, response, username } = useForgotPasswordFetch(); // 비밀번호 찾기 API 호출 메서드
 
     return (

@@ -5,9 +5,9 @@ import { toaster } from "@/third-party/chakra-ui";
 
 import ActionType from "@/shared/ActionType";
 import { dto } from "@/entities/auth";
-import { ResetPasswordFieldValues } from "../../model";
+import { ResetPasswordFieldValues, ResetPasswordSchema } from "../../model";
 import { actionTypeAtom } from "../../atom";
-import { useResetPasswordForm } from "../../hook";
+import { useFormBy } from "../../hook";
 import { useResetPasswordFetch } from "../../api";
 import FormLayout from "./Layout";
 import Field from "./Field";
@@ -17,7 +17,7 @@ import Field from "./Field";
  *
  * @param {Object} props - props 객체입니다.
  * @param props.username - 비밀번호 재설정을 요청하는 사용자의 사용자 이름입니다.
- * 
+ *
  * @returns {React.ReactElement} 렌더링된 ResetPasswordForm 컴포넌트입니다.
  *
  * @remarks
@@ -30,7 +30,7 @@ import Field from "./Field";
  */
 export default function ResetPasswordForm({ username }: { username: string }): React.ReactElement {
     const setType = useSetAtom(actionTypeAtom);
-    const methods = useResetPasswordForm(); // 비밀번호 리셋 폼 상태 및 제출 메서드
+    const methods = useFormBy<ResetPasswordFieldValues>(ResetPasswordSchema); // 비밀번호 리셋 폼 상태 및 제출 메서드
     const { submit } = useResetPasswordFetch(); // 비밀번호 리셋 API 호출 메서드
     const onSubmit = async (e: dto.ResetPasswordRequest) => {
         const { message } = await submit(e); // 폼 제출

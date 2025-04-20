@@ -16,7 +16,12 @@ export default defineConfig(({ mode }) => {
             environment: "jsdom",
 
             // 테스트 실행 전 목 로드
-            setupFiles: ["./src/__mocks__/reactQueryMock.ts", "./src/__mocks__/authMock.ts"],
+            setupFiles: [
+                "./src/__mocks__/reactQueryMock.ts",
+                "./src/__mocks__/authMock.ts",
+                "./src/__mocks__/hookFormMock.ts",
+                "./src/__mocks__/yupResolverMock.ts",
+            ],
 
             // 모듈 경로 별칭
             resolve: {
@@ -49,9 +54,10 @@ export default defineConfig(({ mode }) => {
                 include: ["src/**/*.{ts,tsx}"],
                 exclude: [
                     "src/**/*.test.{ts,tsx}",
-                    "src/**/__tests__/**",
-                    "src/**/__mocks__/**",
                     "src/**/*.usage.ts",
+                    "src/**/__mocks__/**",
+                    "src/shared/**",
+                    "src/third-party/**",
                 ],
             },
         },
