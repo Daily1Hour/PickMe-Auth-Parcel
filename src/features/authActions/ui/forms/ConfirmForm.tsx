@@ -3,8 +3,8 @@ import { FormProvider } from "react-hook-form";
 import { useSetAtom } from "jotai";
 
 import ActionType from "@/shared/ActionType";
-import { ConfirmFieldValues } from "../../model";
-import { useConfirmForm } from "../../hook";
+import { ConfirmFieldValues, ConfirmSchema } from "../../model";
+import { useFormBy } from "../../hook";
 import { useConfirmFetch } from "../../api";
 import { actionTypeAtom } from "../../atom";
 import FormLayout from "./Layout";
@@ -16,7 +16,7 @@ import Field from "./Field";
  *
  * @param {Object} props - props 객체입니다.
  * @param props.username - 계정을 확인하려는 사용자의 사용자 이름입니다.
- * 
+ *
  * @returns {React.ReactElement} 렌더링된 ConfirmForm 컴포넌트입니다.
  *
  * @remarks
@@ -25,7 +25,7 @@ import Field from "./Field";
  */
 export default function ConfirmForm({ username }: { username: string }): React.ReactElement {
     const setActionType = useSetAtom(actionTypeAtom);
-    const methods = useConfirmForm(); // 회원가입 폼 상태 및 제출 메서드
+    const methods = useFormBy<ConfirmFieldValues>(ConfirmSchema); // 회원가입 폼 상태 및 제출 메서드
     const { submit } = useConfirmFetch(); // 회원가입 API 호출 메서드
     const onSubmit = async (e: ConfirmFieldValues) => {
         const { message } = await submit({ ...e, username }); // 폼 제출

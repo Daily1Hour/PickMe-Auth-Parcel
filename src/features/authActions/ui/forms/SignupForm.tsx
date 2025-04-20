@@ -3,8 +3,8 @@ import { FormProvider } from "react-hook-form";
 import { Stack, Text } from "@chakra-ui/react";
 
 import { dto } from "@/entities/auth";
-import { SignupFieldValues } from "../../model";
-import { useSignupForm } from "../../hook";
+import { SignupFieldValues, SignupSchema } from "../../model";
+import { useFormBy } from "../../hook";
 import { useSignupFetch } from "../../api";
 import FormLayout from "./Layout";
 import Field from "./Field";
@@ -24,7 +24,7 @@ import ConfirmForm from "./ConfirmForm";
  * - 회원가입이 성공하면 사용자에게 인증 코드가 전송됩니다.
  */
 export default function SignupForm(): React.ReactElement {
-    const methods = useSignupForm(); // 회원가입 폼 상태 및 제출 메서드
+    const methods = useFormBy<SignupFieldValues>(SignupSchema); // 회원가입 폼 상태 및 제출 메서드
     const { submit, response } = useSignupFetch(); // 회원가입 API 호출 메서드
 
     return (

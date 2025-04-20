@@ -1,8 +1,8 @@
 import React from "react";
 import { FormProvider } from "react-hook-form";
 
-import { LoginFieldValues } from "../../model";
-import { useLoginForm } from "../../hook";
+import { LoginFieldValues, LoginSchema } from "../../model";
+import { useFormBy } from "../../hook";
 import { useLoginFetch } from "../../api";
 import FormLayout from "./Layout";
 import Field from "./Field";
@@ -21,7 +21,7 @@ const testPassword = import.meta.env.VITE_TEST_PASSWORD;
  *   - `password`: 기본값이 있는 비밀번호 입력 필드(비밀로 표시됨).
  */
 export default function LoginForm(): React.ReactElement {
-    const methods = useLoginForm(); // 로그인 폼 상태 및 제출 메서드
+    const methods = useFormBy<LoginFieldValues>(LoginSchema); // 로그인 폼 상태 및 제출 메서드
     const { submit } = useLoginFetch(); // 로그인 API 호출 메서드
 
     return (
