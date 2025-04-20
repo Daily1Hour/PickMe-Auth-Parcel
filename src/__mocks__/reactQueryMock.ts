@@ -3,7 +3,11 @@ import { vi } from "vitest";
 export const mockUseQuery = vi.fn(
     () =>
         ({
-            data: {},
+            data: {
+                idToken: "mockIdToken",
+                accessToken: "mockAccessToken",
+                refreshToken: "mockRefreshToken",
+            },
             isSuccess: true,
         } as unknown),
 );
