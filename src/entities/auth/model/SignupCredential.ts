@@ -15,5 +15,12 @@ export default class SignupCredential {
         public password: string,
         public confirmPassword: string,
         public email: string,
-    ) {}
+    ) {
+        if (!username || !password || !confirmPassword || !email) {
+            throw new Error("Username, password, confirmPassword, and email are required.");
+        }
+        if (password !== confirmPassword) {
+            throw new Error("Password and confirm password do not match.");
+        }
+    }
 }

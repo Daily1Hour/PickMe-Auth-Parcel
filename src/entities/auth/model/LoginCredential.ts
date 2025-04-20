@@ -6,5 +6,9 @@ export default class LoginCredential {
      * @param username - 사용자의 사용자 이름.
      * @param password - 사용자의 비밀번호.
      */
-    constructor(public username: string, public password: string) {}
+    constructor(public username: string, public password: string) {
+        if (!username || !password) {
+            throw new Error("Username and password are required.");
+        }
+    }
 }
