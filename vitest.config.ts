@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
 
         test: {
             // 테스트 환경 설정
+            globals: true,
             environment: "jsdom",
 
             // 테스트 실행 전 목 로드
