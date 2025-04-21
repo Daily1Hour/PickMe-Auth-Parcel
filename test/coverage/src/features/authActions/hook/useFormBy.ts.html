@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/features/authActions/ui/forms/SocialLoginForm.tsx</title>
+    <title>Code coverage report for src/features/authActions/hook/useFormBy.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../../sort-arrow-sprite.png);
+            background-image: url(../../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../../index.html">All files</a> / <a href="index.html">src/features/authActions/ui/forms</a> SocialLoginForm.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/features/authActions/hook</a> useFormBy.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -84,18 +84,7 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,28 +98,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { FcGoogle } from "react-icons/fc";
-import { SiNaver } from "react-icons/si";
-import { RiKakaoTalkFill } from "react-icons/ri";
-import { HStack } from "@chakra-ui/react";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { yupResolver } from "@hookform/resolvers/yup";
+import { FieldValues, useForm, UseFormReturn } from "react-hook-form";
+import { AnyObjectSchema } from "yup";
 &nbsp;
-import { CircleButton } from "@/shared/ui";
+type SchemaFor&lt;T&gt; = AnyObjectSchema &amp; {
+    __outputType?: T;
+};
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >SocialLoginForm(): React.ReactElement {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;HStack justify="center" mx="10%" mt="10%" fontSize={50}&gt;
-            &lt;CircleButton bg="#FFFFFF" aria-label="google"&gt;
-                &lt;FcGoogle style={{ width: "1.8rem", height: "1.8rem" }} /&gt;
-            &lt;/CircleButton&gt;
-            &lt;CircleButton bg="#06CC80" color="#FFFFFF" aria-label="naver"&gt;
-                &lt;SiNaver id="naver" style={{ width: "1.2rem", height: "1.2rem" }} /&gt;
-            &lt;/CircleButton&gt;
-            &lt;CircleButton bg="#FEE500" color="#191919" aria-label="kakao"&gt;
-                &lt;RiKakaoTalkFill style={{ width: "1.8rem", height: "1.8rem" }} /&gt;
-            &lt;/CircleButton&gt;
-        &lt;/HStack&gt;
-    );
+/**
+ * 주어진 `schema`를 기반으로 `react-hook-form`의 `useForm` 훅을 생성합니다.
+ *
+ * @template T - 폼 필드 값의 타입을 나타내는 제네릭 타입.
+ * @param schema - `yup`을 사용하여 정의된 폼 검증 스키마.
+ * @returns `useForm` 훅의 반환값으로, 폼 상태와 메서드를 포함합니다.
+ */
+export default function useFormBy&lt;T extends FieldValues&gt;(schema: SchemaFor&lt;T&gt;): UseFormReturn&lt;T&gt; {
+    return useForm&lt;T&gt;({
+        resolver: yupResolver(schema),
+        mode: "onChange",
+    });
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -141,14 +135,14 @@ export default function <span class="fstat-no" title="function not covered" >Soc
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2025-04-21T17:26:56.768Z
             </div>
-        <script src="../../../../../prettify.js"></script>
+        <script src="../../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../../sorter.js"></script>
-        <script src="../../../../../block-navigation.js"></script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
     </body>
 </html>
     

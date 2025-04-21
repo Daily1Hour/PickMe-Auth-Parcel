@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,25 +111,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMutation, useQueryClient } from "@tanstack/react-query";
 &nbsp;
@@ -144,26 +144,26 @@ import { login, dto } from "@/entities/auth";
  * @returns 다음을 포함하는 객체를 반환합니다:
  * - `submit`: 로그인 변이를 트리거하는 함수. `dto.LoginRequest` 객체를 입력으로 받습니다.
  */
-export default function <span class="fstat-no" title="function not covered" >useLoginFetch() {</span>
-    const queryClient = <span class="cstat-no" title="statement not covered" >useQueryClient();</span>
+export default function useLoginFetch() {
+    const queryClient = useQueryClient();
 &nbsp;
-    const { mutate } = <span class="cstat-no" title="statement not covered" >useMutation({</span>
+    const { mutate } = useMutation({
         mutationFn: login,
-        onSuccess: <span class="fstat-no" title="function not covered" >async (t</span>okens: dto.LoginResponse) =&gt; {
-<span class="cstat-no" title="statement not covered" >            console.log("Login success", tokens);</span>
+        onSuccess: async (tokens: dto.LoginResponse) =&gt; {
+            console.log("Login success", tokens);
 &nbsp;
             // 로그인 성공 시 isLoggedIn 쿼리를 다시 불러옴
-<span class="cstat-no" title="statement not covered" >            await queryClient.refetchQueries({</span>
+            await queryClient.refetchQueries({
                 queryKey: ["isLoggedIn"],
             });
         },
     });
 &nbsp;
-    const submit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(d</span>ata: dto.LoginRequest) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        mutate(data);</span>
+    const submit = (data: dto.LoginRequest) =&gt; {
+        mutate(data);
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return { submit };</span>
+    return { submit };
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -172,7 +172,7 @@ export default function <span class="fstat-no" title="function not covered" >use
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-20T11:58:43.815Z
+                at 2025-04-21T17:26:56.768Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
