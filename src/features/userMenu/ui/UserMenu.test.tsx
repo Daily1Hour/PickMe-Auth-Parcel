@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import renderWithChakra from "@/__test-utils__/renderWithChakra";
+import { renderWithChakra } from "@/__test-utils__";
 
 import { useUserInfo, useLoggedIn } from "../api";
 import UserMenu from "./UserMenu";

@@ -1,8 +1,8 @@
 import { vi, describe, it, expect, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 
-import { mockUseMutation } from "@/__mocks__/reactQueryMock";
-import createWrapper from "@/__test-utils__/createWrapper";
+import { mockUseMutation } from "@/__mocks__";
+import { createWrapper } from "@/__test-utils__";
 
 import { dto } from "@/entities/auth";
 import useForgotPasswordFetch from "./useForgotPasswordFetch";

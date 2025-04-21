@@ -2,7 +2,7 @@ import { vi, describe, it, expect, Mock } from "vitest";
 import { renderHook } from "@testing-library/react";
 import jwt from "jsonwebtoken";
 
-import createWrapper from "@/__test-utils__/createWrapper";
+import { createWrapper } from "@/__test-utils__";
 
 import useUserInfo from "./useUserInfo";
 

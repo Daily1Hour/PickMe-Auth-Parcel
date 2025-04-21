@@ -4,10 +4,10 @@ import "@testing-library/jest-dom";
 import { ReactElement } from "react";
 import { useAtomValue } from "jotai";
 
-import renderWithChakra from "@/__test-utils__/renderWithChakra";
+import { renderWithChakra } from "@/__test-utils__";
 
 import ActionType from "@/shared/ActionType";
-import AuthActions from ".";
+import AuthActions from "./index";
 
 vi.mock("jotai", async (importOriginal) => {
     const actual = await importOriginal<typeof import("jotai")>();

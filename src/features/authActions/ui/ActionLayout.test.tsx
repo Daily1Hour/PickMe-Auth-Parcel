@@ -3,7 +3,7 @@ import { screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { useAtom } from "jotai";
 
-import renderWithChakra from "@/__test-utils__/renderWithChakra";
+import { renderWithChakra } from "@/__test-utils__";
 
 import ActionType from "@/shared/ActionType";
 import { ActionTypeDictionary } from "@/shared/trans-ko";

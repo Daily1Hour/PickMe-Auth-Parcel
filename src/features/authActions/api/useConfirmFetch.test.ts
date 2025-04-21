@@ -1,8 +1,8 @@
 import { vi, describe, it, expect, beforeEach } from "vitest";
 import { renderHook } from "@testing-library/react";
 
-import { mutateAsyncMock } from "@/__mocks__/reactQueryMock";
-import createWrapper from "@/__test-utils__/createWrapper";
+import { mutateAsyncMock } from "@/__mocks__";
+import { createWrapper } from "@/__test-utils__";
 
 import { dto } from "@/entities/auth";
 import useConfirmFetch from "./useConfirmFetch";

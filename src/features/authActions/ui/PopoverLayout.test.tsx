@@ -3,7 +3,7 @@ import { screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { useBreakpointValue } from "@chakra-ui/react";
 
-import renderWithChakra from "@/__test-utils__/renderWithChakra";
+import { renderWithChakra } from "@/__test-utils__";
 
 import PopoverLayout from "./PopoverLayout";
 
