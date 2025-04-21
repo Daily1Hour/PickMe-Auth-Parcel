@@ -1,8 +1,8 @@
 import { vi, describe, it, expect } from "vitest";
 import { renderHook } from "@testing-library/react";
 
-import { mockUseQuery } from "@/__mocks__/reactQueryMock";
-import createWrapper from "@/__test-utils__/createWrapper";
+import { mockUseQuery } from "@/__mocks__";
+import { createWrapper } from "@/__test-utils__";
 
 import useLoggedIn from "./useLoggedIn";
 

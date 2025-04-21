@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { mockUseQuery } from "@/__mocks__/reactQueryMock";
+import { mockUseQuery } from "@/__mocks__";
 
 import useTokens from "./useTokens";
 
