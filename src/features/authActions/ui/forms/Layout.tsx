@@ -36,7 +36,7 @@ export default function FormLayout<T extends FieldValues>({
     } = useFormContext<T>(); // 프로바이더로 제공
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+        <form role="form" onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
             <Fieldset.Root>
                 <Fieldset.Legend display="none">{FormTitleDictionary[title]}</Fieldset.Legend>
                 <Fieldset.Content>{children}</Fieldset.Content>
